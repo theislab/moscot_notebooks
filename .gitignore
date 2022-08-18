@@ -1,3 +1,4 @@
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -128,22 +129,19 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# patterns to prevent data and figures from being uploaded
-*.csv
-*.pickle
-*.h5ad
-*.loom
-*.pdf
-*.png
-*.jpg
-*.jpeg
-*.svg
-*.mtx
-*.txt
-*.rds
+# editor
+.idea
 
-# OS specifics
-**.DS_Store
+# gallery
+# these files are forcibly regenerated on the CI
+docs/source/auto_*
+docs/source/gen_modules/
+docs/source/data
 
-# R stuff
-*.Rhistory
+# vscode
+.DS_Store
+.vscode
+
+# data
+data
+tutorial_data
