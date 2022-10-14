@@ -25,15 +25,15 @@ sys.path.insert(0, str(HERE.parent.parent))  # this way, we don't have to instal
 from docs.source.monkeypatch import save_rst_example  # noqa: E402
 
 sys.path.insert(0, os.path.abspath("_ext"))
-needs_sphinx = "3.0"
+needs_sphinx = "5.0"
 
 # -- Project information -----------------------------------------------------
 
 project = "moscot"
-author = moscot.__author__
-copyright = f"{datetime.now():%Y}, {author}."
+#author = moscot.__author__
+#copyright = f"{datetime.now():%Y}, {author}."
 release = "main"
-version = f"{release} ({moscot.__version__})"
+#version = f"{release} ({moscot.__version__})"
 
 
 # -- General configuration ---------------------------------------------------
@@ -45,7 +45,6 @@ extensions = [
     "nbsphinx",
     "sphinx.ext.intersphinx",
     "sphinx_gallery.gen_gallery",
-    "sphinx_last_updated_by_git",
     "sphinxcontrib.bibtex",
     "sphinx_copybutton",
     "edit_on_github",
@@ -117,10 +116,9 @@ _root = Path(__file__).parent.parent.parent
 sphinx_gallery_conf = {
     "image_scrapers": "matplotlib",
     "reset_modules": (
-        "seaborn",
         reset_matplotlib,
     ),
-    "filename_pattern": f"{os.path.sep}(compute_|plot_|tutorial_)",
+    "filename_pattern": f"{os.path.sep}*.py", #f"{os.path.sep}(compute_|plot_|tutorial_)",
     "examples_dirs": [_root / "examples", _root / "tutorials"],
     "gallery_dirs": ["auto_examples", "auto_tutorials"],
     "abort_on_example_error": True,
@@ -145,16 +143,6 @@ sphinx_gallery_conf = {
             "--mathjax",
         ],
         "filters": [str(_root / ".scripts" / "filters" / "strip_interpreted_text.py")],
-    },
-    "binder": {
-        "org": "scverse",
-        "repo": "moscot_notebooks",
-        "branch": release,
-        "binderhub_url": "https://mybinder.org",
-        "dependencies": str(_root / "environment.yml"),
-        "filepath_prefix": "docs",
-        "notebooks_dir": "source",  # trick sphinx-gallery into producing the correct binder links
-        "use_jupyter_lab": False,
     },
     #"default_thumb_file": "docs/source/_static/img/squidpy_vertical.png",
     "plot_gallery": "'True'",  # https://github.com/sphinx-gallery/sphinx-gallery/issues/913
