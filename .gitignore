@@ -145,3 +145,6 @@ docs/source/data
 # data
 data
 tutorial_data
+
+# downloaded anndata files
+*.h5ad

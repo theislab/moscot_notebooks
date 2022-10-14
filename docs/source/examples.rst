@@ -7,12 +7,16 @@ Problems
 This section contains various examples from the :mod:`moscot.problems` module.
 
 .. nbgallery::
-    :glob:
+    :glob: 
 
+    auto_examples/problems/ex*
 
 Plotting
------
+--------
 This section contains various examples from the :mod:`moscot.pl` module.
 
 .. nbgallery::
+    :glob:
+
+    auto_examples/plotting/ex*
 
