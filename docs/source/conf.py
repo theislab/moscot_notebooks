@@ -118,7 +118,7 @@ sphinx_gallery_conf = {
     "reset_modules": (
         reset_matplotlib,
     ),
-    "filename_pattern": f"{os.path.sep}*.py", #f"{os.path.sep}(compute_|plot_|tutorial_)",
+    "filename_pattern": f"{os.path.sep}ex",
     "examples_dirs": [_root / "examples", _root / "tutorials"],
     "gallery_dirs": ["auto_examples", "auto_tutorials"],
     "abort_on_example_error": True,
@@ -142,7 +142,6 @@ sphinx_gallery_conf = {
         "extra_args": [
             "--mathjax",
         ],
-        "filters": [str(_root / ".scripts" / "filters" / "strip_interpreted_text.py")],
     },
     #"default_thumb_file": "docs/source/_static/img/squidpy_vertical.png",
     "plot_gallery": "'True'",  # https://github.com/sphinx-gallery/sphinx-gallery/issues/913
