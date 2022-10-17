@@ -9,12 +9,21 @@ Using different policies
 #
 # A policy is the rule which sets of transport maps are computed given different distributions of cells.
 #
+<<<<<<< HEAD:examples/problems/ex_03_different_policies.py
 # Some problem classes require a certain policy, e.g. the :class:`moscot.problems.space.MappingProblem`
 # only works with the :class:`moscot.problems._subset_policy.ExternalStarPolicy` meaning that all spatial
 # batches from the :class:`anndata.AnnData` object are mapped to the same single cell reference cell distribution.
 #
 # Each problem class has a set of valid policies. For the :class:`moscot.problems.time.LineageProblem` and the
 # :class:`moscot.problems.time.TemporalProblem` we can choose among different policies which we demonstrate below.
+=======
+# Some problem classes require a certain policy, e.g. the :class:`moscot.solvers.space.MappingProblem`
+# only works with the :class:`moscot.solvers._subset_policy.ExternalStarPolicy` meaning that all spatial
+# batches from the :class:`anndata.AnnData` object are mapped to the same single cell reference cell distribution. 
+#
+# Each problem class has a set of valid policies. For the :class:`moscot.solvers.time.LineageProblem` and the
+# :class:`moscot.solvers.time.TemporalProblem` we can choose among different policies which we demonstrate below.
+>>>>>>> add examples and draft for st tutorial:examples/example_different_policies.py
 
 from moscot.datasets import simulation
 from moscot.problems.time import TemporalProblem
@@ -30,8 +39,13 @@ adata = simulation(size=15360)
 #  Different policies
 #  ******************
 
+<<<<<<< HEAD:examples/problems/ex_03_different_policies.py
 # In the following, we consider a few policies which can be used for the
 # :class:`moscot.problems.time.TemporalProblem`.
+=======
+# In the following, we consider a few policies which can be used for the 
+# :class:`moscot.solvers.time.TemporalProblem`.
+>>>>>>> add examples and draft for st tutorial:examples/example_different_policies.py
 
 ###############################################################################
 #  Sequential policy
@@ -39,7 +53,7 @@ adata = simulation(size=15360)
 
 ###############################################################################
 # We start with the default policy, which is the sequential policy.
-# The following code shows which OT problems are prepared to be solved.
+# The following code shows which OT solvers are prepared to be solved.
 
 tp_sequential = TemporalProblem(adata)
 tp_sequential = tp_sequential.prepare(time_key="day", policy="sequential")
