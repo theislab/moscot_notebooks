@@ -9,6 +9,8 @@ Using different policies
 #
 # A policy is the rule which sets of transport maps are computed given different distributions of cells.
 #
+<<<<<<< HEAD
+<<<<<<<< HEAD:examples/example_different_policies.py
 <<<<<<< HEAD:examples/problems/ex_03_different_policies.py
 # Some problem classes require a certain policy, e.g. the :class:`moscot.problems.space.MappingProblem`
 # only works with the :class:`moscot.problems._subset_policy.ExternalStarPolicy` meaning that all spatial
@@ -28,9 +30,25 @@ Using different policies
 =======
 # :class:`moscot.problems.time.TemporalProblem` we can choose among different policies which we demonstrate below.
 >>>>>>> Update example_different_policies.py
+========
+=======
+>>>>>>> 6ee6519 (add examples and draft for st tutorial)
+# Some problem classes require a certain policy, e.g. the :class:`moscot.solvers.space.MappingProblem`
+# only works with the :class:`moscot.solvers._subset_policy.ExternalStarPolicy` meaning that all spatial
+# batches from the :class:`anndata.AnnData` object are mapped to the same single cell reference cell distribution. 
+#
+# Each problem class has a set of valid policies. For the :class:`moscot.solvers.time.LineageProblem` and the
+# :class:`moscot.solvers.time.TemporalProblem` we can choose among different policies which we demonstrate below.
+<<<<<<< HEAD
+>>>>>>>> 6ee6519 (add examples and draft for st tutorial):docs/source/auto_examples/problems/ex_03_different_policies.py
 
 from moscot.datasets import simulation
 from moscot.problems.time import TemporalProblem
+=======
+
+from moscot.problems.time import TemporalProblem
+from moscot.datasets import simulation
+>>>>>>> 6ee6519 (add examples and draft for st tutorial)
 
 adata = simulation(size=15360)
 
@@ -43,13 +61,21 @@ adata = simulation(size=15360)
 #  Different policies
 #  ******************
 
+<<<<<<< HEAD
 <<<<<<< HEAD:examples/problems/ex_03_different_policies.py
 # In the following, we consider a few policies which can be used for the
 # :class:`moscot.problems.time.TemporalProblem`.
 =======
 # In the following, we consider a few policies which can be used for the 
 # :class:`moscot.solvers.time.TemporalProblem`.
+<<<<<<<< HEAD:examples/example_different_policies.py
 >>>>>>> add examples and draft for st tutorial:examples/example_different_policies.py
+========
+>>>>>>>> 6ee6519 (add examples and draft for st tutorial):docs/source/auto_examples/problems/ex_03_different_policies.py
+=======
+# In the following, we consider a few policies which can be used for the 
+# :class:`moscot.solvers.time.TemporalProblem`.
+>>>>>>> 6ee6519 (add examples and draft for st tutorial)
 
 ###############################################################################
 #  Sequential policy
@@ -57,7 +83,7 @@ adata = simulation(size=15360)
 
 ###############################################################################
 # We start with the default policy, which is the sequential policy.
-# The following code shows which OT problems are prepared to be solved.
+# The following code shows which OT solvers are prepared to be solved.
 
 tp_sequential = TemporalProblem(adata)
 tp_sequential = tp_sequential.prepare(time_key="day", policy="sequential")
@@ -79,7 +105,11 @@ tp_triu.problems
 # ~~~~~~~~~~~~~~~
 
 tp_expl = TemporalProblem(adata)
+<<<<<<< HEAD
 tp_expl = tp_expl.prepare(time_key="day", policy="explicit", subset=[(10, 11), (12, 13), (10, 13)])
+=======
+tp_expl = tp_expl.prepare(time_key="day", policy="explicit", subset=[(10,11), (12,13), (10,13)])
+>>>>>>> 6ee6519 (add examples and draft for st tutorial)
 tp_expl.problems
 
 ###############################################################################
@@ -87,8 +117,12 @@ tp_expl.problems
 #  ***************************
 
 ###############################################################################
+<<<<<<< HEAD
 # If we want to use the sequential policy but restrict it to a
 # certain subset of distributions we can use the `filter` argument.
+=======
+# If we want to use the sequential policy but restrict it to a certain subset of distributions we can use the `filter` argument.
+>>>>>>> 6ee6519 (add examples and draft for st tutorial)
 
 tp_filtered = TemporalProblem(adata)
 tp_filtered = tp_filtered.prepare(time_key="day", policy="sequential", filter=[10, 12, 13])

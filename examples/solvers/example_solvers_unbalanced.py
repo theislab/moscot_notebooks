@@ -7,7 +7,7 @@ We showcase over a quadratic problem where unbalanced correction as introduced b
 
 """
 
-from moscot.problems.space import MappingProblem
+from moscot.problems.space import TemporalProblem
 from moscot.datasets import hspc
 
 ###############################################################################
