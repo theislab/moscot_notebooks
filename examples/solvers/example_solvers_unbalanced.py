@@ -8,20 +8,18 @@ We showcase over a quadratic problem where unbalanced correction as introduced b
 """
 
 from moscot.problems.space import MappingProblem
-from moscot.datasets import mapping
+from moscot.datasets import hspc
 
 ###############################################################################
-# Let's load the data, this dataset contains xxx
-adataref, adatasp = mapping()
+# Let's load the data, this dataset contains single cell data across 4 time point,
+# i.e. day 2.0, 3.0, 4.0 and 7.0.
+adata = hspc()
 
 ###############################################################################
-# We start by initializing a mapping problem and preparing it.
+# We start by initializing a temporal problem and preparing it.
 
-mp = MappingProblem(adataref, adatasp)
-mp = mp.prepare(
-        sc_attr="X_pca",
-        spatial_key="spatial"
-)
+tp = TemporalProblem(adata)
+tp = tp.prepare(time_key="day")
 
 ###############################################################################
 # Below are some useful parameters for `moscot.problems. .. .solve()` for the unbalanced case:
@@ -34,10 +32,9 @@ mp = mp.prepare(
 #       tau_b equalling 1 means no unbalancedness in the target distribution.
 #       The limit of tau_b going to 0 ignores the right marginals.
 #
-mp = mp.solve(
+tp = tp.solve(
         epsilon = 1e-3,
-        alpha=0.5,
         tau_a = 0.9,
         tau_b = 0.9
 )
-mp.solutions
+tp.solutions
