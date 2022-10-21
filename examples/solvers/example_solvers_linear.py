@@ -41,22 +41,11 @@ tp = tp.prepare(time_key="day")
 #
 # - `stage` – stages of sub-problems which are to be solved. By default, prepared and solved problems are solved,
 #     ("prepared", "solved").
-#
-# - `initializer` -     Initializer to use for the problem. In the non-low rank regime available options are:
-#         - `default` (constant scalings)
-#         - `gaussian` (:cite:`thornton2022rethinking:22`)
-#         - `sorting` (:cite:`thornton2022rethinking:22`)
-#     If `None`, the default is `default`.
-# - `initializer_kwargs` - keyword arguments for the initializer, taken from
-#       https://github.com/ott-jax/ott/blob/main/ott/core/initializers.py.
-#
+
 tp = tp.solve(
-        epsilon = 1e-3,
+        epsilon = 1e-2,
         scale_cost= "max_cost",
-        batch_size = 1024,
         max_iterations=1000,
         stage = ("prepared", "solved"),
-        initializer = "sorting",
-        initializer_kwargs = {"tolerance":1e-3},
 )
 tp.solutions

@@ -40,12 +40,12 @@ tp = tp.prepare(time_key="day")
 # - `initializer_kwargs` - keyword arguments for the initializer, taken from
 #       https://github.com/ott-jax/ott/blob/main/ott/core/initializers_lr.py.
 #
+
 tp = tp.solve(
-        epsilon = 1e-3,
-        rank=100,
-        batch_size = 1024,
-        stage = ("prepared", "solved"),
+        epsilon = 1e-1,
+        rank=10,
+        gamma=100,
         initializer = "k-means",
-        initializer_kwargs = {"min_iterations":100, "min_iterations":200}
+        initializer_kwargs = {"min_iterations":0, "max_iterations":100}
 )
 tp.solutions
