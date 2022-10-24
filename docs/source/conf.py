@@ -9,13 +9,10 @@ from pathlib import Path
 import os
 import sys
 
-from datetime import datetime
-
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import moscot
 import sphinx_gallery.gen_rst
 from sphinx.application import Sphinx
 
@@ -30,10 +27,10 @@ needs_sphinx = "5.0"
 # -- Project information -----------------------------------------------------
 
 project = "moscot"
-#author = moscot.__author__
-#copyright = f"{datetime.now():%Y}, {author}."
+# author = moscot.__author__
+# copyright = f"{datetime.now():%Y}, {author}."
 release = "main"
-#version = f"{release} ({moscot.__version__})"
+# version = f"{release} ({moscot.__version__})"
 
 
 # -- General configuration ---------------------------------------------------
@@ -52,7 +49,7 @@ extensions = [
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
-    "moscot": ("https://moscot.readthedocs.io/en/latest/", None),
+    # "moscot": ("https://moscot.readthedocs.io/en/latest/", None),
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
     "napari": ("https://napari.org/", None),
@@ -115,9 +112,7 @@ def reset_matplotlib(_gallery_conf, _fname):
 _root = Path(__file__).parent.parent.parent
 sphinx_gallery_conf = {
     "image_scrapers": "matplotlib",
-    "reset_modules": (
-        reset_matplotlib,
-    ),
+    "reset_modules": (reset_matplotlib,),
     "filename_pattern": f"{os.path.sep}ex",
     "examples_dirs": [_root / "examples", _root / "tutorials"],
     "gallery_dirs": ["auto_examples", "auto_tutorials"],
@@ -143,30 +138,30 @@ sphinx_gallery_conf = {
             "--mathjax",
         ],
     },
-    #"default_thumb_file": "docs/source/_static/img/squidpy_vertical.png",
+    # "default_thumb_file": "docs/source/_static/img/squidpy_vertical.png",
     "plot_gallery": "'True'",  # https://github.com/sphinx-gallery/sphinx-gallery/issues/913
 }
-#nbsphinx_thumbnails = {
+# nbsphinx_thumbnails = {
 #    "auto_**": "_static/img/squidpy_vertical.png",
 #    "external_tutorials/**": "_static/img/squidpy_vertical.png",
-#}
+# }
 nbsphinx_execute_arguments = [
     "--InlineBackend.figure_formats={'png', 'pdf'}",  # correct figure resize
     "--InlineBackend.rc={'figure.dpi': 96}",
 ]
 
 # we ignore this because external tutorials require some heavy libraries (tensorflow/pytorch/pyqt5)
-#_nbsphinx_prolog = r"""
-#{% set docname = 'docs/source/' + env.doc2path(env.docname, base=None) %}
-#.. raw:: html
+# _nbsphinx_prolog = r"""
+# {% set docname = 'docs/source/' + env.doc2path(env.docname, base=None) %}
+# .. raw:: html
 
 #    <div class="binder-badge docutils container">
 #        <a class="reference external image-reference"
-#           href="https://mybinder.org/v2/gh/scverse/squidpy_notebooks/{{ env.config.release|e }}?filepath={{ docname|e }}">
+#           href="https://mybinder.org/v2/gh/scverse/squidpy_notebooks/{{ env.config.release|e }}?filepath={{ docname|e }}"> # noqa: E501
 #        <img alt="Launch binder" src="https://mybinder.org/badge_logo.svg" width="150px">
 #        </a>
 #    </div>
-#"""  # noqa: E501
+# """  # noqa: E501
 
 # -- Options for HTML output -------------------------------------------------
 
