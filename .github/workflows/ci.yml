@@ -8,6 +8,9 @@ on:
     push:
         branches: [main]
 
+env:
+    MOSCOT_TOKEN: ${{ secrets.MOSCOT_TOKEN }}
+
 jobs:
     lint:
         runs-on: ubuntu-latest
