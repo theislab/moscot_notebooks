@@ -28,11 +28,10 @@ def _maybe_download_data(func_name: str, path: Path) -> Any:
 
 
 def main(args: argparse.Namespace) -> None:
-    from anndata import AnnData
-    import moscot
+    from moscot.datasets._datasets import __all__ as datasets
 
-    all_datasets = moscot.datasets.__all__
-    all_extensions = ["h5ad"] * len(moscot.datasets.__all__)
+    all_datasets = datasets
+    all_extensions = ["h5ad"] * len(datasets)
 
     if args.dry_run:
         for func_name, ext in zip(all_datasets, all_extensions):
