@@ -1,1 +1,1 @@
-git+https://github.com/theislab/moscot@master
+git clone https://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@github.com/theislab/moscot_notebooks
