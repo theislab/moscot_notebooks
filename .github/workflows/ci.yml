@@ -54,13 +54,13 @@ jobs:
         -   name: Get pip cache dir
             id: pip-cache-dir
             run: |
-                echo "{dir}={$(pip cache dir)}" >> $GITHUB_OUTPUT
+                echo "DIR=$(pip cache dir)" >> $GITHUB_OUTPUT
               # run: |
               #     echo "::set-output name=dir::$(pip cache dir)"
         -   name: Restore pip cache
             uses: actions/cache@v2
             with:
-                path: ${{ steps.pip-cache-dir.outputs.dir }}
+                path: ${{ steps.pip-cache-dir.outputs.DIR }}
                 key: pip-${{ runner.os }}-${{ env.pythonLocation }}-${{ hashFiles('**/requirements.txt') }}
 
         -   name: Install dependencies
