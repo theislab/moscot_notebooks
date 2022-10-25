@@ -8,21 +8,17 @@ Using different policies
 # This example shows how to use different policies.
 #
 # A policy is the rule which sets of transport maps are computed given different distributions of cells.
-# Some problem classes require a certain policy, e.g. the :class:`moscot.solvers.space.MappingProblem`
-# only works with the :class:`moscot.problems._subset_policy.ExternalStarPolicy` meaning that all spatial
-# batches from the :class:`anndata.AnnData` object are mapped to the same single cell reference cell distribution. 
 #
-# Each problem class has a set of valid policies. For the :class:`moscot.solvers.time.LineageProblem` and the
-# :class:`moscot.solvers.time.TemporalProblem` we can choose among different policies which we demonstrate below.
 # Some problem classes require a certain policy, e.g. the :class:`moscot.solvers.space.MappingProblem`
-# only works with the :class:`moscot.problems._subset_policy.ExternalStarPolicy` meaning that all spatial
-# batches from the :class:`anndata.AnnData` object are mapped to the same single cell reference cell distribution. 
+# only works with the :class:`moscot.solvers._subset_policy.ExternalStarPolicy` meaning that all spatial
+# batches from the :class:`anndata.AnnData` object are mapped to the same single cell reference cell distribution.
 #
 # Each problem class has a set of valid policies. For the :class:`moscot.solvers.time.LineageProblem` and the
 # :class:`moscot.solvers.time.TemporalProblem` we can choose among different policies which we demonstrate below.
 
-from moscot.datasets import simulation
+
 from moscot.problems.time import TemporalProblem
+from moscot.datasets import simulation
 
 adata = simulation(size=15360)
 
