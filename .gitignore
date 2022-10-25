@@ -135,7 +135,7 @@ dmypy.json
 # gallery
 # these files are forcibly regenerated on the CI
 docs/source/auto_*
-docs/source/gen_modules/
+docs/source/gen_modules/*
 docs/source/data
 
 # vscode
