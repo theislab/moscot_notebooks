@@ -10,30 +10,7 @@
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Let&#x27;s load one temporal dataset, with 4 time points.">
-
-.. only:: html
-
-  .. image:: /auto_examples/images/thumb/sphx_glr_example_problem_manager_thumb.png
-    :alt: In this notebook, we will showcase how to use the `ProblemManager`
-
-  :ref:`sphx_glr_auto_examples_example_problem_manager.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">In this notebook, we will showcase how to use the `ProblemManager`</div>
     </div>
-
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/example_problem_manager
 
 
 
@@ -74,6 +51,23 @@
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Bar</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Let&#x27;s load one temporal dataset, with 4 time points.">
+
+.. only:: html
+
+  .. image:: /auto_examples/problems/images/thumb/sphx_glr_ex_04_problem_manager_thumb.png
+    :alt: In this notebook, we will showcase how to use the `ProblemManager`
+
+  :ref:`sphx_glr_auto_examples_problems_ex_04_problem_manager.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">In this notebook, we will showcase how to use the `ProblemManager`</div>
     </div>
 
 
