@@ -8,6 +8,9 @@ on:
     push:
         branches: [main]
 
+env:
+    MOSCOT_TOKEN: ${{ secrets.MOSCOT_TOKEN }}
+
 jobs:
     lint:
         runs-on: ubuntu-latest
@@ -117,7 +120,7 @@ jobs:
                 PLATFORM: ubuntu-latest
 
         -   name: Temporarily update .gitignore
-            # git-auto-commit-action does not support `git add --force`
+                  # git-auto-commit-action does not support `git add --force`
             run: |
                 sed -i -E 's%docs/source/(auto_\*|gen_modules/)%%g' -- .gitignore
                 git status -s -- add docs/source/auto_* docs/source/gen_modules/backreferences/*
@@ -131,7 +134,7 @@ jobs:
                 skip_fetch: true
 
         -   name: Request documentation rebuild
-            # if: steps.auto-commit-action.outputs.changes_detected == 'true'
-            # does not seem to work with the above hack
+                  # if: steps.auto-commit-action.outputs.changes_detected == 'true'
+                  # does not seem to work with the above hack
             run: |
                 curl -X POST -d "branches=main" -d "token=${{ secrets.RTD_TOKEN }}" "${{ secrets.RTD_WEBHOOK }}"

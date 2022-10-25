@@ -20,11 +20,11 @@ This example shows how to use different policies.
 
 A policy is the rule which sets of transport maps are computed given different distributions of cells.
 
-Some problem classes require a certain policy, e.g. the :class:`moscot.problems.space.MappingProblem` 
-only works with the :class:`moscot.problems._subset_policy.ExternalStarPolicy` meaning that all spatial 
-batches from the :class:`anndata.AnnData` object are mapped to the same single cell reference cell distribution. 
+Some problem classes require a certain policy, e.g. the :class:`moscot.problems.space.MappingProblem`
+only works with the :class:`moscot.problems._subset_policy.ExternalStarPolicy` meaning that all spatial
+batches from the :class:`anndata.AnnData` object are mapped to the same single cell reference cell distribution.
 
-Each problem class has a set of valid policies. For the :class:`moscot.problems.time.LineageProblem` and the 
+Each problem class has a set of valid policies. For the :class:`moscot.problems.time.LineageProblem` and the
 :class:`moscot.problems.time.TemporalProblem` we can choose among different policies which we demonstrate below.
 
 .. GENERATED FROM PYTHON SOURCE LINES 18-24
@@ -32,14 +32,20 @@ Each problem class has a set of valid policies. For the :class:`moscot.problems.
 .. code-block:: default
 
 
-    from moscot.problems.time import TemporalProblem
     from moscot.datasets import simulation
+    from moscot.problems.time import TemporalProblem
 
     adata = simulation(size=15360)
 
 
 
 
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+      0%|          | 0.00/30.3M [00:00<?, ?B/s]      0%|          | 56.0k/30.3M [00:00<01:32, 341kB/s]      0%|          | 104k/30.3M [00:00<01:18, 403kB/s]       1%|          | 160k/30.3M [00:00<01:07, 467kB/s]      1%|          | 224k/30.3M [00:00<01:02, 503kB/s]      1%|          | 296k/30.3M [00:00<00:55, 572kB/s]      1%|1         | 360k/30.3M [00:00<00:52, 595kB/s]      1%|1         | 432k/30.3M [00:00<00:49, 636kB/s]      2%|1         | 512k/30.3M [00:00<00:48, 645kB/s]      2%|1         | 616k/30.3M [00:01<00:41, 757kB/s]      2%|2         | 720k/30.3M [00:01<00:36, 840kB/s]      3%|2         | 824k/30.3M [00:01<00:34, 892kB/s]      3%|3         | 944k/30.3M [00:01<00:31, 976kB/s]      3%|3         | 1.02M/30.3M [00:01<00:31, 973kB/s]      4%|3         | 1.13M/30.3M [00:01<00:29, 1.03MB/s]      4%|4         | 1.27M/30.3M [00:01<00:27, 1.12MB/s]      5%|4         | 1.40M/30.3M [00:01<00:25, 1.19MB/s]      5%|5         | 1.53M/30.3M [00:01<00:24, 1.24MB/s]      6%|5         | 1.68M/30.3M [00:01<00:22, 1.31MB/s]      6%|6         | 1.83M/30.3M [00:02<00:21, 1.36MB/s]      7%|6         | 2.00M/30.3M [00:02<00:20, 1.46MB/s]      7%|7         | 2.15M/30.3M [00:02<00:19, 1.48MB/s]      8%|7         | 2.31M/30.3M [00:02<00:19, 1.53MB/s]      8%|8         | 2.49M/30.3M [00:02<00:18, 1.61MB/s]      9%|8         | 2.68M/30.3M [00:02<00:17, 1.68MB/s]      9%|9         | 2.86M/30.3M [00:02<00:16, 1.72MB/s]     10%|#         | 3.06M/30.3M [00:02<00:15, 1.81MB/s]     11%|#         | 3.26M/30.3M [00:02<00:15, 1.85MB/s]     11%|#1        | 3.46M/30.3M [00:03<00:14, 1.90MB/s]     12%|#2        | 3.67M/30.3M [00:03<00:14, 1.97MB/s]     13%|#2        | 3.89M/30.3M [00:03<00:13, 2.03MB/s]     14%|#3        | 4.12M/30.3M [00:03<00:12, 2.13MB/s]     14%|#4        | 4.35M/30.3M [00:03<00:12, 2.17MB/s]     15%|#5        | 4.59M/30.3M [00:03<00:12, 2.23MB/s]     16%|#5        | 4.82M/30.3M [00:03<00:11, 2.27MB/s]     17%|#6        | 5.07M/30.3M [00:03<00:11, 2.34MB/s]     18%|#7        | 5.32M/30.3M [00:03<00:10, 2.40MB/s]     18%|#8        | 5.59M/30.3M [00:03<00:10, 2.48MB/s]     19%|#9        | 5.84M/30.3M [00:04<00:10, 2.51MB/s]     20%|##        | 6.12M/30.3M [00:04<00:09, 2.60MB/s]     21%|##1       | 6.40M/30.3M [00:04<00:09, 2.68MB/s]     22%|##2       | 6.68M/30.3M [00:04<00:09, 2.72MB/s]     23%|##2       | 6.96M/30.3M [00:04<00:08, 2.77MB/s]     24%|##3       | 7.26M/30.3M [00:04<00:08, 2.83MB/s]     25%|##5       | 7.58M/30.3M [00:04<00:08, 2.95MB/s]     26%|##6       | 7.89M/30.3M [00:04<00:07, 3.01MB/s]     27%|##7       | 8.20M/30.3M [00:04<00:07, 3.04MB/s]     28%|##8       | 8.49M/30.3M [00:04<00:07, 2.96MB/s]     29%|##9       | 8.79M/30.3M [00:05<00:07, 2.99MB/s]     29%|##9       | 8.92M/30.3M [00:05<00:08, 2.49MB/s]     30%|###       | 9.17M/30.3M [00:05<00:08, 2.51MB/s]     31%|###       | 9.34M/30.3M [00:05<00:09, 2.26MB/s]     31%|###1      | 9.52M/30.3M [00:05<00:10, 2.11MB/s]     32%|###2      | 9.70M/30.3M [00:05<00:10, 2.04MB/s]     33%|###2      | 9.90M/30.3M [00:05<00:10, 2.01MB/s]     33%|###3      | 10.1M/30.3M [00:05<00:10, 2.02MB/s]     34%|###3      | 10.3M/30.3M [00:05<00:10, 2.02MB/s]     35%|###4      | 10.5M/30.3M [00:06<00:10, 2.05MB/s]     35%|###5      | 10.7M/30.3M [00:06<00:09, 2.07MB/s]     36%|###6      | 11.0M/30.3M [00:06<00:09, 2.15MB/s]     37%|###6      | 11.2M/30.3M [00:06<00:09, 2.21MB/s]     38%|###7      | 11.4M/30.3M [00:06<00:08, 2.27MB/s]     38%|###8      | 11.7M/30.3M [00:06<00:08, 2.28MB/s]     39%|###9      | 11.9M/30.3M [00:06<00:08, 2.35MB/s]     40%|####      | 12.2M/30.3M [00:06<00:07, 2.40MB/s]     41%|####      | 12.4M/30.3M [00:06<00:07, 2.48MB/s]     42%|####1     | 12.7M/30.3M [00:06<00:07, 2.52MB/s]     43%|####2     | 13.0M/30.3M [00:07<00:06, 2.61MB/s]     44%|####3     | 13.2M/30.3M [00:07<00:06, 2.67MB/s]     45%|####4     | 13.5M/30.3M [00:07<00:06, 2.75MB/s]     46%|####5     | 13.8M/30.3M [00:07<00:06, 2.80MB/s]     47%|####6     | 14.1M/30.3M [00:07<00:05, 2.83MB/s]     47%|####7     | 14.4M/30.3M [00:07<00:05, 2.79MB/s]     48%|####8     | 14.6M/30.3M [00:07<00:06, 2.60MB/s]     49%|####8     | 14.8M/30.3M [00:07<00:07, 2.23MB/s]     50%|####9     | 15.0M/30.3M [00:07<00:07, 2.21MB/s]     50%|#####     | 15.2M/30.3M [00:08<00:07, 2.07MB/s]     51%|#####     | 15.4M/30.3M [00:08<00:07, 1.99MB/s]     51%|#####1    | 15.5M/30.3M [00:08<00:07, 1.94MB/s]     52%|#####1    | 15.7M/30.3M [00:08<00:08, 1.90MB/s]     53%|#####2    | 15.9M/30.3M [00:08<00:07, 1.94MB/s]     53%|#####3    | 16.1M/30.3M [00:08<00:07, 1.91MB/s]     54%|#####3    | 16.3M/30.3M [00:08<00:08, 1.80MB/s]     55%|#####4    | 16.5M/30.3M [00:08<00:07, 1.82MB/s]     55%|#####5    | 16.7M/30.3M [00:08<00:08, 1.68MB/s]     56%|#####5    | 16.9M/30.3M [00:09<00:08, 1.70MB/s]     56%|#####6    | 17.0M/30.3M [00:09<00:08, 1.56MB/s]     57%|#####6    | 17.1M/30.3M [00:09<00:09, 1.43MB/s]     57%|#####6    | 17.3M/30.3M [00:09<00:09, 1.41MB/s]     57%|#####7    | 17.4M/30.3M [00:09<00:10, 1.33MB/s]     58%|#####7    | 17.5M/30.3M [00:09<00:10, 1.34MB/s]     58%|#####8    | 17.7M/30.3M [00:09<00:09, 1.41MB/s]     59%|#####8    | 17.8M/30.3M [00:09<00:09, 1.40MB/s]     59%|#####9    | 18.0M/30.3M [00:09<00:08, 1.47MB/s]     60%|#####9    | 18.1M/30.3M [00:09<00:08, 1.49MB/s]     60%|######    | 18.3M/30.3M [00:10<00:08, 1.55MB/s]     61%|######    | 18.4M/30.3M [00:10<00:07, 1.58MB/s]     61%|######1   | 18.5M/30.3M [00:10<00:08, 1.44MB/s]     62%|######1   | 18.7M/30.3M [00:10<00:07, 1.54MB/s]     62%|######2   | 18.9M/30.3M [00:10<00:08, 1.49MB/s]     63%|######2   | 19.0M/30.3M [00:10<00:08, 1.45MB/s]     63%|######3   | 19.1M/30.3M [00:10<00:08, 1.43MB/s]     64%|######3   | 19.3M/30.3M [00:10<00:07, 1.46MB/s]     64%|######4   | 19.4M/30.3M [00:10<00:07, 1.47MB/s]     65%|######4   | 19.6M/30.3M [00:11<00:07, 1.48MB/s]     65%|######5   | 19.7M/30.3M [00:11<00:07, 1.49MB/s]     65%|######5   | 19.8M/30.3M [00:11<00:07, 1.40MB/s]     66%|######6   | 20.0M/30.3M [00:11<00:07, 1.48MB/s]     66%|######6   | 20.1M/30.3M [00:11<00:07, 1.40MB/s]     67%|######6   | 20.3M/30.3M [00:11<00:07, 1.38MB/s]     67%|######7   | 20.4M/30.3M [00:11<00:07, 1.37MB/s]     68%|######7   | 20.5M/30.3M [00:11<00:07, 1.37MB/s]     68%|######8   | 20.7M/30.3M [00:11<00:07, 1.42MB/s]     69%|######8   | 20.8M/30.3M [00:11<00:06, 1.46MB/s]     69%|######9   | 21.0M/30.3M [00:12<00:06, 1.55MB/s]     70%|######9   | 21.1M/30.3M [00:12<00:06, 1.55MB/s]     70%|#######   | 21.3M/30.3M [00:12<00:05, 1.64MB/s]     71%|#######   | 21.5M/30.3M [00:12<00:05, 1.65MB/s]     72%|#######1  | 21.7M/30.3M [00:12<00:05, 1.71MB/s]     72%|#######1  | 21.8M/30.3M [00:12<00:05, 1.54MB/s]     73%|#######2  | 22.0M/30.3M [00:12<00:05, 1.63MB/s]     73%|#######2  | 22.1M/30.3M [00:12<00:05, 1.49MB/s]     73%|#######3  | 22.2M/30.3M [00:12<00:06, 1.34MB/s]     74%|#######3  | 22.3M/30.3M [00:13<00:06, 1.29MB/s]     74%|#######3  | 22.4M/30.3M [00:13<00:06, 1.19MB/s]     74%|#######4  | 22.5M/30.3M [00:13<00:06, 1.23MB/s]     75%|#######4  | 22.6M/30.3M [00:13<00:06, 1.22MB/s]     75%|#######5  | 22.8M/30.3M [00:13<00:06, 1.26MB/s]     76%|#######5  | 22.9M/30.3M [00:13<00:06, 1.24MB/s]     76%|#######5  | 23.0M/30.3M [00:13<00:07, 1.06MB/s]     76%|#######6  | 23.1M/30.3M [00:13<00:06, 1.15MB/s]     77%|#######6  | 23.2M/30.3M [00:13<00:06, 1.10MB/s]     77%|#######6  | 23.3M/30.3M [00:13<00:06, 1.12MB/s]     77%|#######7  | 23.4M/30.3M [00:14<00:06, 1.15MB/s]     78%|#######7  | 23.6M/30.3M [00:14<00:06, 1.15MB/s]     78%|#######8  | 23.7M/30.3M [00:14<00:05, 1.20MB/s]     79%|#######8  | 23.8M/30.3M [00:14<00:05, 1.29MB/s]     79%|#######9  | 24.0M/30.3M [00:14<00:05, 1.31MB/s]     80%|#######9  | 24.1M/30.3M [00:14<00:04, 1.37MB/s]     80%|########  | 24.3M/30.3M [00:14<00:04, 1.41MB/s]     81%|########  | 24.4M/30.3M [00:14<00:04, 1.51MB/s]     81%|########1 | 24.6M/30.3M [00:14<00:03, 1.55MB/s]     82%|########1 | 24.8M/30.3M [00:14<00:03, 1.59MB/s]     82%|########2 | 25.0M/30.3M [00:15<00:03, 1.68MB/s]     83%|########2 | 25.1M/30.3M [00:15<00:03, 1.72MB/s]     84%|########3 | 25.3M/30.3M [00:15<00:02, 1.76MB/s]     84%|########4 | 25.5M/30.3M [00:15<00:02, 1.85MB/s]     85%|########4 | 25.7M/30.3M [00:15<00:02, 1.90MB/s]     86%|########5 | 25.9M/30.3M [00:15<00:02, 2.01MB/s]     86%|########6 | 26.2M/30.3M [00:15<00:02, 2.02MB/s]     87%|########6 | 26.3M/30.3M [00:15<00:02, 1.82MB/s]     87%|########7 | 26.5M/30.3M [00:15<00:02, 1.91MB/s]     88%|########8 | 26.7M/30.3M [00:16<00:02, 1.83MB/s]     89%|########8 | 26.8M/30.3M [00:16<00:02, 1.79MB/s]     89%|########9 | 27.0M/30.3M [00:16<00:01, 1.79MB/s]     90%|########9 | 27.2M/30.3M [00:16<00:01, 1.74MB/s]     90%|######### | 27.4M/30.3M [00:16<00:01, 1.78MB/s]     91%|######### | 27.6M/30.3M [00:16<00:01, 1.84MB/s]     92%|#########1| 27.8M/30.3M [00:16<00:01, 1.90MB/s]     92%|#########2| 28.0M/30.3M [00:16<00:01, 1.93MB/s]     93%|#########2| 28.2M/30.3M [00:16<00:01, 1.96MB/s]     94%|#########3| 28.4M/30.3M [00:16<00:01, 2.02MB/s]     94%|#########4| 28.6M/30.3M [00:17<00:00, 2.08MB/s]     95%|#########5| 28.8M/30.3M [00:17<00:00, 2.17MB/s]     96%|#########5| 29.1M/30.3M [00:17<00:00, 2.19MB/s]     97%|#########6| 29.3M/30.3M [00:17<00:00, 2.24MB/s]     97%|#########7| 29.5M/30.3M [00:17<00:00, 2.32MB/s]     98%|#########7| 29.7M/30.3M [00:17<00:00, 1.82MB/s]     99%|#########8| 30.0M/30.3M [00:17<00:00, 2.16MB/s]     99%|#########9| 30.1M/30.3M [00:17<00:00, 2.05MB/s]    100%|##########| 30.3M/30.3M [00:17<00:00, 1.77MB/s]
 
 
 
@@ -60,8 +66,8 @@ Different policies
 .. code-block:: default
 
 
-    # In the following, we consider a few policies which can be used for the 
-    # :class:`moscot.problems.time.TemporalProblem`. 
+    # In the following, we consider a few policies which can be used for the
+    # :class:`moscot.problems.time.TemporalProblem`.
 
 
 
@@ -97,9 +103,9 @@ The following code shows which OT problems are prepared to be solved.
 
  .. code-block:: none
 
-    INFO:root:Computing pca with `n_comps = {n_comps}` and `joint_space = {joint_space}`.
-    INFO:root:Computing pca with `n_comps = {n_comps}` and `joint_space = {joint_space}`.
-    INFO:root:Computing pca with `n_comps = {n_comps}` and `joint_space = {joint_space}`.
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                 
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                 
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                 
 
     {(11.0, 12.0): BirthDeathProblem[shape=(2048, 4096)], (10.0, 11.0): BirthDeathProblem[shape=(1024, 2048)], (12.0, 13.0): BirthDeathProblem[shape=(4096, 8192)]}
 
@@ -131,12 +137,12 @@ Upper triangular policy
 
  .. code-block:: none
 
-    INFO:root:Computing pca with `n_comps = {n_comps}` and `joint_space = {joint_space}`.
-    INFO:root:Computing pca with `n_comps = {n_comps}` and `joint_space = {joint_space}`.
-    INFO:root:Computing pca with `n_comps = {n_comps}` and `joint_space = {joint_space}`.
-    INFO:root:Computing pca with `n_comps = {n_comps}` and `joint_space = {joint_space}`.
-    INFO:root:Computing pca with `n_comps = {n_comps}` and `joint_space = {joint_space}`.
-    INFO:root:Computing pca with `n_comps = {n_comps}` and `joint_space = {joint_space}`.
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                 
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                 
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                 
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                 
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                 
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                 
 
     {(10.0, 11.0): BirthDeathProblem[shape=(1024, 2048)], (11.0, 13.0): BirthDeathProblem[shape=(2048, 8192)], (12.0, 13.0): BirthDeathProblem[shape=(4096, 8192)], (10.0, 13.0): BirthDeathProblem[shape=(1024, 8192)], (11.0, 12.0): BirthDeathProblem[shape=(2048, 4096)], (10.0, 12.0): BirthDeathProblem[shape=(1024, 4096)]}
 
@@ -153,7 +159,7 @@ Explicit policy
 
 
     tp_expl = TemporalProblem(adata)
-    tp_expl = tp_expl.prepare(time_key="day", policy="explicit", subset=[(10,11), (12,13), (10,13)])
+    tp_expl = tp_expl.prepare(time_key="day", policy="explicit", subset=[(10, 11), (12, 13), (10, 13)])
     tp_expl.problems
 
 
@@ -164,9 +170,9 @@ Explicit policy
 
  .. code-block:: none
 
-    INFO:root:Computing pca with `n_comps = {n_comps}` and `joint_space = {joint_space}`.
-    INFO:root:Computing pca with `n_comps = {n_comps}` and `joint_space = {joint_space}`.
-    INFO:root:Computing pca with `n_comps = {n_comps}` and `joint_space = {joint_space}`.
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                 
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                 
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                 
 
     {(10, 11): BirthDeathProblem[shape=(1024, 2048)], (12, 13): BirthDeathProblem[shape=(4096, 8192)], (10, 13): BirthDeathProblem[shape=(1024, 8192)]}
 
@@ -177,11 +183,12 @@ Explicit policy
 Using the `filter` argument
 ***************************
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-73
+.. GENERATED FROM PYTHON SOURCE LINES 72-74
 
-If we want to use the sequential policy but restrict it to a certain subset of distributions we can use the `filter` argument.
+If we want to use the sequential policy but restrict it to a
+certain subset of distributions we can use the `filter` argument.
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-78
+.. GENERATED FROM PYTHON SOURCE LINES 74-79
 
 .. code-block:: default
 
@@ -198,22 +205,24 @@ If we want to use the sequential policy but restrict it to a certain subset of d
 
  .. code-block:: none
 
-    INFO:root:Computing pca with `n_comps = {n_comps}` and `joint_space = {joint_space}`.
-    INFO:root:Computing pca with `n_comps = {n_comps}` and `joint_space = {joint_space}`.
-    INFO:root:Computing pca with `n_comps = {n_comps}` and `joint_space = {joint_space}`.
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                 
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                 
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                 
 
     {(11.0, 12.0): BirthDeathProblem[shape=(2048, 4096)], (10.0, 11.0): BirthDeathProblem[shape=(1024, 2048)], (12.0, 13.0): BirthDeathProblem[shape=(4096, 8192)]}
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-80
+.. GENERATED FROM PYTHON SOURCE LINES 80-81
 
 Analogously, the `filter` argument can also be applied to other policies, e.g. the upper triangular policy.
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.583 seconds)
+   **Total running time of the script:** ( 0 minutes  28.023 seconds)
+
+**Estimated memory usage:**  129 MB
 
 
 .. _sphx_glr_download_auto_examples_problems_ex_03_different_policies.py:
