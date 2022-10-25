@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 """
-In this notebook, we will showcase how to use the `ProblemManager`
-capabilities in :class:`from moscot.problems.CompoundProblem`.
-
-Let's load one temporal dataset, with 4 time points.
+Using the Problem Manager
+------------------------
 """
+
+###############################################################################
+# Let's prepare and solve the problem.
+# In this notebook, we will showcase how to use the `ProblemManager`
+# capabilities in :class:`from moscot.problems.CompoundProblem`.
+# Let's load one temporal dataset, with 4 time points.
 
 from moscot.datasets import hspc
 from moscot.problems.time import TemporalProblem
