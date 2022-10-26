@@ -8,8 +8,8 @@ This example shows how to solve a problem with the `Low Rank` approach suggested
 This is especially useful for large dataset which can not by handled with standard solvers.
 """
 
-from moscot.problems.time import TemporalProblem
 from moscot.datasets import hspc
+from moscot.problems.time import TemporalProblem
 
 ###############################################################################
 # Let's load the data, this dataset contains single cell data across 4 time point,

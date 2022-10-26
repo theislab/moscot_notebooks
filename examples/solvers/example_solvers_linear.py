@@ -11,8 +11,8 @@ This example shows the advanced options for a linear problem solver
     and :ref:`sphx_glr_auto_tutorials_tutorial_temporal.py` for additional properties.
 """
 
-from moscot.problems.time import TemporalProblem
 from moscot.datasets import hspc
+from moscot.problems.time import TemporalProblem
 
 ###############################################################################
 # Let's load the data, this dataset contains single cell data across 4 time point,
@@ -49,4 +49,3 @@ tp = tp.solve(
     stage=("prepared", "solved"),
 )
 tp.solutions
-
