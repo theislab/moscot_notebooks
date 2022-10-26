@@ -1,21 +1,21 @@
 #!/usr/bin/env python
 """
 Quadratic solver
----
-This example shows how to solve a Fused Qaudratic problem.
-
+----------------
 """
+###############################################################################
+# This example shows how to solve a Fused Qaudratic problem.
 
 ###############################################################################
 # Let's load the data, this dataset contains spatiotemporal transcriptomics
 
-from moscot.datasets import mosta_subsampled
+from moscot.datasets import mosta
 from moscot.problems.spatio_temporal import SpatioTemporalProblem
 
 ###############################################################################
 # Let's load the data, this dataset contains spatiotemporal transcriptomics
 # atlas of mouse organogenesis in two time points, E9.5, E10.5
-adata = mosta_subsampled()
+adata = mosta()
 
 ###############################################################################
 # We start by initializing a spatio-temporal problem and preparing it.
@@ -55,13 +55,13 @@ stp = SpatioTemporalProblem(adata=adata).prepare(
 # - `initializer_kwargs` - keyword arguments for the initializer, taken from
 #       https://github.com/ott-jax/ott/blob/main/ott/core/initializers.py.
 
-stp = stp.solve(
-    alpha=0.5,
-    epsilon=1e-3,
-    scale_cost="max_cost",
-    batch_size=256,
-    max_iterations=1000,
-    stage=("prepared", "solved"),
-    initializer="sorting",
-)
-stp.solutions
+#stp = stp.solve(
+#    alpha=0.5,
+#    epsilon=1e-3,
+#    scale_cost="mean",
+#    #batch_size=256,
+#    max_iterations=1e2,
+#    stage=("prepared", "solved"),
+#    initializer="sorting",
+#)
+#stp.solutions

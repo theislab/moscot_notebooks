@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 Using the Problem Manager
-------------------------
+-------------------------
 """
 
 ###############################################################################
@@ -31,7 +31,7 @@ for k in tp.problems.keys():
 
 key = (2, 3)
 new_problem = tp.problems[(2, 3)]
-new_problem = new_problem.solve(epsilon=1e-2, tau_a=0.95)
+new_problem = new_problem.solve(epsilon=1e-2, tau_a=0.95, max_iterations=1e2)
 new_problem.solution
 
 ###############################################################################

@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 """
 Unbalanced solver
----
-This example shows how to solve a problem with the unbalanced approach allowing for deviation from initial marginals.
-We showcase over a quadratic problem where unbalanced correction as introduced by :cite:`sejourne:21` is used.
-
+-----------------
 """
+###############################################################################
+# This example shows how to solve a problem with the unbalanced approach allowing for deviation from initial marginals.
+# We showcase over a quadratic problem where unbalanced correction as introduced by :cite:`sejourne:21` is used.
+
+
 from moscot.datasets import hspc
 from moscot.problems.time import TemporalProblem
 
@@ -32,5 +34,5 @@ tp = tp.prepare(time_key="day")
 #       The limit of tau_b going to 0 ignores the right marginals.
 #
 
-tp = tp.solve(epsilon=1e-3, tau_a=0.9, tau_b=0.9)
+tp = tp.solve(epsilon=1e-3, tau_a=0.9, tau_b=0.9, max_iterations=1e2)
 tp.solutions
