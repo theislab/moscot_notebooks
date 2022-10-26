@@ -70,7 +70,8 @@ tp_expl.problems
 #  ***************************
 
 ###############################################################################
-# If we want to use the sequential policy but restrict it to a certain subset of distributions we can use the `filter` argument.
+# If we want to use the sequential policy but restrict it to a certain subset of distributions
+# we can use the `filter` argument.
 
 tp_filtered = TemporalProblem(adata)
 tp_filtered = tp_filtered.prepare(time_key="day", policy="sequential", filter=[10, 12, 13])

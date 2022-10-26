@@ -3,7 +3,7 @@
 Low-rank solver
 ---
 This example shows how to solve a problem with the `Low Rank` approach suggested by
- Meyer et al. :cite`scetbon:2021_a` :cite`scetbon:2021_b`.
+ Meyer et al. :cite`scetbon:21a` :cite`scetbon:21b`.
 
 This is especially useful for large dataset which can not by handled with standard solvers.
 """

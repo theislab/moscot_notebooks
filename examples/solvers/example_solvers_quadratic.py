@@ -2,7 +2,7 @@
 """
 Quadratic solver
 ---
-This example shows how to solve a Fused Qaudratic problem. 
+This example shows how to solve a Fused Qaudratic problem.
 
 """
 

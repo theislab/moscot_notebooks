@@ -24,11 +24,11 @@ tp = tp.prepare(time_key="day")
 # Below are some useful parameters for `moscot.problems. .. .solve()` for the unbalanced case:
 #
 # - `tau_a` – unbalancedness parameter for left marginal between 0 and 1.
-#       tau_a equalling 1 means no unbalancedness in the source distribution.
+#       tau_a equaling 1 means no unbalancedness in the source distribution.
 #       The limit of tau_a going to 0 ignores the left marginals.
 #
 # - `tau_a` – unbalancedness parameter for right marginal between 0 and 1.
-#       tau_b equalling 1 means no unbalancedness in the target distribution.
+#       tau_b equaling 1 means no unbalancedness in the target distribution.
 #       The limit of tau_b going to 0 ignores the right marginals.
 #
 
