@@ -1,12 +1,15 @@
 #!/usr/bin/env python
 """
 Low-rank solver
----
-This example shows how to solve a problem with the `Low Rank` approach suggested by
- Meyer et al. :cite`scetbon:21a` :cite`scetbon:21b`.
-
-This is especially useful for large dataset which can not by handled with standard solvers.
+---------------
 """
+
+###############################################################################
+# This example shows how to solve a problem with the `Low Rank` approach suggested by
+# Meyer et al. :cite`scetbon:21a` :cite`scetbon:21b`.
+
+# This is especially useful for large dataset which can not by handled with standard solvers.
+
 
 from moscot.datasets import hspc
 from moscot.problems.time import TemporalProblem
@@ -37,6 +40,7 @@ tp = tp.prepare(time_key="day")
 #         - `k-means` (:cite:`scetbon:22b`)
 #         - `generalized-k-means` (:cite:`scetbon:22b`)
 #     If `None` the default is `random`.
+#
 # - `initializer_kwargs` - keyword arguments for the initializer, taken from
 #       https://github.com/ott-jax/ott/blob/main/ott/core/initializers_lr.py.
 #
@@ -45,6 +49,7 @@ tp = tp.solve(
     epsilon=1e-1,
     rank=10,
     gamma=100,
+    max_iterations=1e2,
     initializer="k-means",
     initializer_kwargs={"min_iterations": 0, "max_iterations": 100},
 )

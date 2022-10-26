@@ -1,3 +1,8 @@
 Tutorials
 =========
-This section contains various tutorials showcasing spatial molecular data analysis with :mod:`moscot`.
+This section contains various tutorials showcasing use cases for data analysis with :mod:`moscot`.
+
+.. nbgallery::
+    :glob:
+
+    auto_tutorials/tu*

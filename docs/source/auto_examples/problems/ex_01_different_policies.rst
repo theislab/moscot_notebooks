@@ -11,18 +11,58 @@
 
 .. _sphx_glr_auto_examples_problems_ex_01_different_policies.py:
 
-Foo
----
+Using different policies
+------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 6-11
+.. GENERATED FROM PYTHON SOURCE LINES 8-18
+
+This example shows how to use different policies.
+
+A policy is the rule which sets of transport maps are computed given different distributions of cells.
+
+Some problem classes require a certain policy, e.g. the :class:`moscot.solvers.space.MappingProblem`
+only works with the :class:`moscot.solvers._subset_policy.ExternalStarPolicy` meaning that all spatial
+batches from the :class:`anndata.AnnData` object are mapped to the same single cell reference cell distribution.
+
+Each problem class has a set of valid policies. For the :class:`moscot.solvers.time.LineageProblem` and the
+:class:`moscot.solvers.time.TemporalProblem` we can choose among different policies which we demonstrate below.
+
+.. GENERATED FROM PYTHON SOURCE LINES 18-25
+
+.. code-block:: default
+
+
+
+    from moscot.datasets import simulation
+    from moscot.problems.time import TemporalProblem
+
+    adata = simulation(size=15360)
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 26-29
+
+This simulated dataset contains single cell data across 4 time point, i.e. day 11.0, 12.0, 13.0 and 14.0.
+
+The policy allows us to determine which transport maps we want to compute.
+
+.. GENERATED FROM PYTHON SOURCE LINES 31-33
+
+Different policies
+******************
+
+.. GENERATED FROM PYTHON SOURCE LINES 33-37
 
 .. code-block:: default
 
 
-    import squidpy as sq
-
-    adata = sq.datasets.seqfish()
-
+    # In the following, we consider a few policies which can be used for the
+    # :class:`moscot.solvers.time.TemporalProblem`.
 
 
 
@@ -30,15 +70,26 @@ Foo
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-13
 
-This is a new cell.
+.. GENERATED FROM PYTHON SOURCE LINES 38-40
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-14
+Sequential policy
+~~~~~~~~~~~~~~~~~
+
+.. GENERATED FROM PYTHON SOURCE LINES 42-44
+
+We start with the default policy, which is the sequential policy.
+The following code shows which OT problems are prepared to be solved.
+
+.. GENERATED FROM PYTHON SOURCE LINES 44-49
 
 .. code-block:: default
 
-    adata
+
+    tp_sequential = TemporalProblem(adata)
+    tp_sequential = tp_sequential.prepare(time_key="day", policy="sequential")
+    tp_sequential.problems
+
 
 
 
@@ -47,18 +98,124 @@ This is a new cell.
 
  .. code-block:: none
 
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
 
-    AnnData object with n_obs × n_vars = 19416 × 351
-        obs: 'Area', 'celltype_mapped_refined'
-        uns: 'celltype_mapped_refined_colors'
-        obsm: 'X_umap', 'spatial'
+    {(11.0, 12.0): BirthDeathProblem[shape=(2048, 4096)], (10.0, 11.0): BirthDeathProblem[shape=(1024, 2048)], (12.0, 13.0): BirthDeathProblem[shape=(4096, 8192)]}
 
 
+
+.. GENERATED FROM PYTHON SOURCE LINES 50-51
+
+We see that all consecutive pairs of values in the `time_key` column are used to create an OT problem
+
+.. GENERATED FROM PYTHON SOURCE LINES 53-55
+
+Upper triangular policy
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. GENERATED FROM PYTHON SOURCE LINES 55-60
+
+.. code-block:: default
+
+
+    tp_triu = TemporalProblem(adata)
+    tp_triu = tp_triu.prepare(time_key="day", policy="triu")
+    tp_triu.problems
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+
+    {(10.0, 11.0): BirthDeathProblem[shape=(1024, 2048)], (11.0, 13.0): BirthDeathProblem[shape=(2048, 8192)], (12.0, 13.0): BirthDeathProblem[shape=(4096, 8192)], (10.0, 13.0): BirthDeathProblem[shape=(1024, 8192)], (11.0, 12.0): BirthDeathProblem[shape=(2048, 4096)], (10.0, 12.0): BirthDeathProblem[shape=(1024, 4096)]}
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 61-63
+
+Explicit policy
+~~~~~~~~~~~~~~~
+
+.. GENERATED FROM PYTHON SOURCE LINES 63-68
+
+.. code-block:: default
+
+
+    tp_expl = TemporalProblem(adata)
+    tp_expl = tp_expl.prepare(time_key="day", policy="explicit", subset=[(10, 11), (12, 13), (10, 13)])
+    tp_expl.problems
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+
+    {(10, 11): BirthDeathProblem[shape=(1024, 2048)], (12, 13): BirthDeathProblem[shape=(4096, 8192)], (10, 13): BirthDeathProblem[shape=(1024, 8192)]}
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 69-71
+
+Using the `filter` argument
+***************************
+
+.. GENERATED FROM PYTHON SOURCE LINES 73-75
+
+If we want to use the sequential policy but restrict it to a certain subset of distributions
+we can use the `filter` argument.
+
+.. GENERATED FROM PYTHON SOURCE LINES 75-80
+
+.. code-block:: default
+
+
+    tp_filtered = TemporalProblem(adata)
+    tp_filtered = tp_filtered.prepare(time_key="day", policy="sequential", filter=[10, 12, 13])
+    tp_filtered.problems
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+
+    {(11.0, 12.0): BirthDeathProblem[shape=(2048, 4096)], (10.0, 11.0): BirthDeathProblem[shape=(1024, 2048)], (12.0, 13.0): BirthDeathProblem[shape=(4096, 8192)]}
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 81-82
+
+Analogously, the `filter` argument can also be applied to other policies, e.g. the upper triangular policy.
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.044 seconds)
+   **Total running time of the script:** ( 0 minutes  3.443 seconds)
 
 
 .. _sphx_glr_download_auto_examples_problems_ex_01_different_policies.py:

@@ -1,15 +1,16 @@
 #!/usr/bin/env python
 """
-Linear solver
----
-This example shows the advanced options for a linear problem solver
-(the `SinkhornSolver`) exemplified using :class:`moscot.solvers.time.TemporalProblem`.
-
-
-.. seealso::
-    See `sphx_glr_auto_examples_example_different_policies.py` for policy alternatives
-    and `sphx_glr_auto_tutorials_tutorial_temporal.py` for additional properties.
+Linear solvers
+--------------
 """
+
+###############################################################################
+# This example shows the advanced options for a linear problem solver
+# (the `SinkhornSolver`) exemplified using :class:`moscot.solvers.time.TemporalProblem`.
+
+# .. seealso::
+#    See `sphx_glr_auto_examples_example_different_policies.py` for policy alternatives
+#    and `sphx_glr_auto_tutorials_tutorial_temporal.py` for additional properties.
 
 from moscot.datasets import hspc
 from moscot.problems.time import TemporalProblem
@@ -45,7 +46,7 @@ tp = tp.prepare(time_key="day")
 tp = tp.solve(
     epsilon=1e-2,
     scale_cost="max_cost",
-    max_iterations=1000,
+    max_iterations=1e2,
     stage=("prepared", "solved"),
 )
 tp.solutions
