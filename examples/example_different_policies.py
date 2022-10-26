@@ -17,8 +17,8 @@ Using different policies
 # :class:`moscot.solvers.time.TemporalProblem` we can choose among different policies which we demonstrate below.
 
 
-from moscot.problems.time import TemporalProblem
 from moscot.datasets import simulation
+from moscot.problems.time import TemporalProblem
 
 adata = simulation(size=15360)
 
@@ -31,7 +31,7 @@ adata = simulation(size=15360)
 #  Different policies
 #  ******************
 
-# In the following, we consider a few policies which can be used for the 
+# In the following, we consider a few policies which can be used for the
 # :class:`moscot.solvers.time.TemporalProblem`.
 
 ###############################################################################
@@ -62,7 +62,7 @@ tp_triu.problems
 # ~~~~~~~~~~~~~~~
 
 tp_expl = TemporalProblem(adata)
-tp_expl = tp_expl.prepare(time_key="day", policy="explicit", subset=[(10,11), (12,13), (10,13)])
+tp_expl = tp_expl.prepare(time_key="day", policy="explicit", subset=[(10, 11), (12, 13), (10, 13)])
 tp_expl.problems
 
 ###############################################################################

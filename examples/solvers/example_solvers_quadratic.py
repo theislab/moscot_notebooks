@@ -6,11 +6,11 @@ This example shows how to solve a Fused Qaudratic problem.
 
 """
 
-from moscot.problems.spatio_temporal import SpatioTemporalProblem
 from moscot.datasets import mosta_subsampled
+from moscot.problems.spatio_temporal import SpatioTemporalProblem
 
 ###############################################################################
-# Let's load the data, this dataset contains spatiotemporal transcriptomics 
+# Let's load the data, this dataset contains spatiotemporal transcriptomics
 # atlas of mouse organogenesis in two time points, E9.5, E10.5
 adata = mosta_subsampled()
 
@@ -25,7 +25,7 @@ stp = SpatioTemporalProblem(adata=adata_).prepare(
 )
 
 ###############################################################################
-# Below are some useful parameters of 
+# Below are some useful parameters of
 # `moscot.problems.time.SpatioTemporalProblem.solve()`:
 #
 # - `alpha` - Interpolation parameter between quadratic term (spatial coordinates) and linear term (PCA space).
@@ -54,11 +54,11 @@ stp = SpatioTemporalProblem(adata=adata_).prepare(
 
 stp = stp.solve(
     alpha=0.5,
-    epsilon = 1e-3,
-    scale_cost= "max_cost",
-    batch_size = 256,
+    epsilon=1e-3,
+    scale_cost="max_cost",
+    batch_size=256,
     max_iterations=1000,
-    stage = ("prepared", "solved"),
-    initializer = "sorting",
+    stage=("prepared", "solved"),
+    initializer="sorting",
 )
 stp.solutions

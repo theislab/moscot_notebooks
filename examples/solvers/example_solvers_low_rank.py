@@ -8,8 +8,8 @@ This example shows how to solve a problem with the `Low Rank` approach suggested
 This is especially useful for large dataset which can not by handled with standard solvers.
 """
 
-from moscot.problems.time import TemporalProblem
 from moscot.datasets import hspc
+from moscot.problems.time import TemporalProblem
 
 ###############################################################################
 # Let's load the data, this dataset contains single cell data across 4 time point,
@@ -42,10 +42,10 @@ tp = tp.prepare(time_key="day")
 #
 
 tp = tp.solve(
-        epsilon = 1e-1,
-        rank=10,
-        gamma=100,
-        initializer = "k-means",
-        initializer_kwargs = {"min_iterations":0, "max_iterations":100}
+    epsilon=1e-1,
+    rank=10,
+    gamma=100,
+    initializer="k-means",
+    initializer_kwargs={"min_iterations": 0, "max_iterations": 100},
 )
 tp.solutions
