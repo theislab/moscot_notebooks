@@ -33,7 +33,7 @@ tp = tp.prepare(time_key="day")
 #
 # - `initializer` - Initializer to use for the problem, for low-rank available options are
 #         - `random`
-#         - `rank2` (:cite:`scetbon:21`)
+#         - `rank2` (:cite:`scetbon:21a`)
 #         - `k-means` (:cite:`scetbon:22b`)
 #         - `generalized-k-means` (:cite:`scetbon:22b`)
 #     If `None` the default is `random`.

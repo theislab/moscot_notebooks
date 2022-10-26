@@ -7,8 +7,8 @@ This example shows the advanced options for a linear problem solver
 
 
 .. seealso::
-    See :ref:`sphx_glr_auto_examples_example_different_policies.py` for policy alternatives
-    and :ref:`sphx_glr_auto_tutorials_tutorial_temporal.py` for additional properties.
+    See `sphx_glr_auto_examples_example_different_policies.py` for policy alternatives
+    and `sphx_glr_auto_tutorials_tutorial_temporal.py` for additional properties.
 """
 
 from moscot.datasets import hspc
