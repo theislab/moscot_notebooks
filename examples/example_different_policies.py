@@ -17,8 +17,8 @@ Using different policies
 # :class:`moscot.solvers.time.TemporalProblem` we can choose among different policies which we demonstrate below.
 
 
-from moscot.datasets import simulation
 from moscot.problems.time import TemporalProblem
+from moscot.datasets import simulation
 
 adata = simulation(size=15360)
 
@@ -62,7 +62,7 @@ tp_triu.problems
 # ~~~~~~~~~~~~~~~
 
 tp_expl = TemporalProblem(adata)
-tp_expl = tp_expl.prepare(time_key="day", policy="explicit", subset=[(10, 11), (12, 13), (10, 13)])
+tp_expl = tp_expl.prepare(time_key="day", policy="explicit", subset=[(10,11), (12,13), (10,13)])
 tp_expl.problems
 
 ###############################################################################
@@ -70,8 +70,7 @@ tp_expl.problems
 #  ***************************
 
 ###############################################################################
-# If we want to use the sequential policy but restrict it to a
-# certain subset of distributions we can use the `filter` argument.
+# If we want to use the sequential policy but restrict it to a certain subset of distributions we can use the `filter` argument.
 
 tp_filtered = TemporalProblem(adata)
 tp_filtered = tp_filtered.prepare(time_key="day", policy="sequential", filter=[10, 12, 13])
