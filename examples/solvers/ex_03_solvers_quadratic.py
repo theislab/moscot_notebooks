@@ -55,7 +55,7 @@ stp = SpatioTemporalProblem(adata=adata).prepare(
 # - `initializer_kwargs` - keyword arguments for the initializer, taken from
 #       https://github.com/ott-jax/ott/blob/main/ott/core/initializers.py.
 
-#stp = stp.solve(
+# stp = stp.solve(
 #    alpha=0.5,
 #    epsilon=1e-3,
 #    scale_cost="mean",
@@ -63,5 +63,5 @@ stp = SpatioTemporalProblem(adata=adata).prepare(
 #    max_iterations=1e2,
 #    stage=("prepared", "solved"),
 #    initializer="sorting",
-#)
-#stp.solutions
+# )
+# stp.solutions
