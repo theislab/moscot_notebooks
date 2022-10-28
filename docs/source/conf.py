@@ -176,7 +176,7 @@ todo_include_todos = False
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_theme = "furo"
 html_static_path = ["_static"]
-html_theme_options = {"navigation_depth": 4, "logo_only": True}
+# html_theme_options = {"navigation_depth": 4, "logo_only": True} # TODO(giovp): seems unsupported
 html_show_sphinx = False
 
 github_repo = "moscot"
