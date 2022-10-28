@@ -18,7 +18,7 @@ from sphinx.application import Sphinx
 import sphinx_gallery.gen_rst
 
 HERE = Path(__file__).parent
-sys.path.insert(0, str(HERE.parent.parent))  # this way, we don't have to install squidpy
+sys.path.insert(0, str(HERE.parent.parent))
 
 from docs.source.monkeypatch import save_rst_example  # noqa: E402
 
