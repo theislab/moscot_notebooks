@@ -98,9 +98,9 @@ The following code shows which OT problems are prepared to be solved.
 
  .. code-block:: none
 
-    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
-    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
-    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                                         
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                                         
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                                         
 
     {(11.0, 12.0): BirthDeathProblem[shape=(2048, 4096)], (10.0, 11.0): BirthDeathProblem[shape=(1024, 2048)], (12.0, 13.0): BirthDeathProblem[shape=(4096, 8192)]}
 
@@ -132,12 +132,12 @@ Upper triangular policy
 
  .. code-block:: none
 
-    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
-    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
-    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
-    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
-    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
-    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                                         
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                                         
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                                         
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                                         
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                                         
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                                         
 
     {(10.0, 11.0): BirthDeathProblem[shape=(1024, 2048)], (11.0, 13.0): BirthDeathProblem[shape=(2048, 8192)], (12.0, 13.0): BirthDeathProblem[shape=(4096, 8192)], (10.0, 13.0): BirthDeathProblem[shape=(1024, 8192)], (11.0, 12.0): BirthDeathProblem[shape=(2048, 4096)], (10.0, 12.0): BirthDeathProblem[shape=(1024, 4096)]}
 
@@ -165,9 +165,9 @@ Explicit policy
 
  .. code-block:: none
 
-    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
-    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
-    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                                         
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                                         
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                                         
 
     {(10, 11): BirthDeathProblem[shape=(1024, 2048)], (12, 13): BirthDeathProblem[shape=(4096, 8192)], (10, 13): BirthDeathProblem[shape=(1024, 8192)]}
 
@@ -200,9 +200,9 @@ we can use the `filter` argument.
 
  .. code-block:: none
 
-    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
-    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
-    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                              
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                                         
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                                         
+    INFO     Computing pca with `n_comps = 30` on `adata.X`.                                                                                                                                                         
 
     {(11.0, 12.0): BirthDeathProblem[shape=(2048, 4096)], (10.0, 11.0): BirthDeathProblem[shape=(1024, 2048)], (12.0, 13.0): BirthDeathProblem[shape=(4096, 8192)]}
 
@@ -215,7 +215,7 @@ Analogously, the `filter` argument can also be applied to other policies, e.g. t
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.443 seconds)
+   **Total running time of the script:** ( 0 minutes  4.298 seconds)
 
 
 .. _sphx_glr_download_auto_examples_problems_ex_01_different_policies.py:

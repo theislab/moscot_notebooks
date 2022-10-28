@@ -60,7 +60,7 @@ intersphinx_mapping = {
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
-source_suffix = [".rst", ".ipynb"]
+#source_suffix = [".rst", ".ipynb"]
 master_doc = "index"
 pygments_style = "sphinx"
 
@@ -85,7 +85,7 @@ user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:25.0) Gecko/20100101 Firefox/25
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
-    "auto_*/**.ipynb",
+    #"auto_*/**.ipynb",
     "auto_*/**.md5",
     "auto_*/**.py",
     "**.ipynb_checkpoints",

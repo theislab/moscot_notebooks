@@ -14,13 +14,13 @@ from moscot.problems.time import TemporalProblem
 ###############################################################################
 # Let's load the data, this dataset contains single cell data across 4 time point,
 # i.e. day 2.0, 3.0, 4.0 and 7.0.
-adata = hspc()
+#adata = hspc()
 
 ###############################################################################
 # We start by initializing a temporal problem and preparing it.
 
-tp = TemporalProblem(adata)
-tp = tp.prepare(time_key="day")
+#tp = TemporalProblem(adata)
+#tp = tp.prepare(time_key="day")
 
 ###############################################################################
 # Below are some useful parameters for `moscot.problems. .. .solve()` for the unbalanced case:
@@ -34,5 +34,5 @@ tp = tp.prepare(time_key="day")
 #       The limit of tau_b going to 0 ignores the right marginals.
 #
 
-tp = tp.solve(epsilon=1e-3, tau_a=0.9, tau_b=0.9, max_iterations=1e2)
-tp.solutions
+#tp = tp.solve(epsilon=1e-3, tau_a=0.9, tau_b=0.9, max_iterations=1e2)
+#tp.solutions

@@ -12,19 +12,19 @@ Linear solvers
 #    See `sphx_glr_auto_examples_example_different_policies.py` for policy alternatives
 #    and `sphx_glr_auto_tutorials_tutorial_temporal.py` for additional properties.
 
-from moscot.datasets import hspc
-from moscot.problems.time import TemporalProblem
+#from moscot.datasets import hspc
+#from moscot.problems.time import TemporalProblem
 
 ###############################################################################
 # Let's load the data, this dataset contains single cell data across 4 time point,
 # i.e. day 2.0, 3.0, 4.0 and 7.0.
-adata = hspc()
+#adata = hspc()
 
 ###############################################################################
 # We start by initializing a temporal problem and preparing it.
 
-tp = TemporalProblem(adata)
-tp = tp.prepare(time_key="day")
+#tp = TemporalProblem(adata)
+#tp = tp.prepare(time_key="day")
 
 ###############################################################################
 # Below are some useful parameters of `moscot.problems.time.TemporalProblem.solve()`:
@@ -43,10 +43,10 @@ tp = tp.prepare(time_key="day")
 # - `stage` – stages of sub-problems which are to be solved. By default, prepared and solved problems are solved,
 #     ("prepared", "solved").
 
-tp = tp.solve(
-    epsilon=1e-2,
-    scale_cost="max_cost",
-    max_iterations=1e2,
-    stage=("prepared", "solved"),
-)
-tp.solutions
+#tp = tp.solve(
+#    epsilon=1e-2,
+#    scale_cost="max_cost",
+#    max_iterations=1e2,
+#    stage=("prepared", "solved"),
+#)
+#tp.solutions
