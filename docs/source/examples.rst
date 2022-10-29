@@ -1,15 +1,43 @@
 Examples
-========
+~~~~~~~~
 This section contains various short examples showcasing core :mod:`moscot` functionality.
 
 Problems
---------
+========
 This section contains various examples how to handle moscot problems.
+It is divided in section that correspond to the :mod:`moscot.problems` modules.
+
+Temporal
+========
 
 .. nbgallery::
     :glob:
 
-    auto_examples/problems/ex*
+    auto_examples/problems/time/ex*
+
+Spatial
+========
+
+.. nbgallery::
+    :glob:
+
+    auto_examples/problems/space/ex*
+
+SpatioTemporal
+==============
+
+.. nbgallery::
+    :glob:
+
+    auto_examples/problems/spatio_temporal/ex*
+
+Generic
+=======
+
+.. nbgallery::
+    :glob:
+
+    auto_examples/problems/generic/ex*
 
 Solvers
 -------
