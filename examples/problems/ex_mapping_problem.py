@@ -9,7 +9,7 @@ Spatial mapping
 # :class:`moscot.problems.space.MappingProblem`.
 
 from moscot.datasets import drosophila_sc, drosophila_sp
-from moscot.problems.time import MappingProblem
+from moscot.problems.space import MappingProblem
 
 adata_sc = drosophila_sc()
 adata_sp = drosophila_sp()

@@ -9,7 +9,7 @@ Spatial alignment
 # :class:`moscot.problems.space.AlignmentProblem`.
 
 from moscot.datasets import sim_align
-from moscot.problems.time import AlignmentProblem
+from moscot.problems.space import AlignmentProblem
 
 adata = sim_align()
 
