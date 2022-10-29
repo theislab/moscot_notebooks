@@ -47,11 +47,11 @@ stp = SpatioTemporalProblem(adata=adata).prepare(
 # - `stage` – stages of sub-problems which are to be solved. By default, prepared and solved problems are solved,
 #     ("prepared", "solved").
 #
-# - `initializer` -     Initializer to use for the problem. In the non-low rank regime available options are:
+# - `initializer` - Initializer to use for the problem. Valid only in the non-low rank regime.
+# If `None`, the default is `default`. Available options are:
 #         - `default` (constant scalings)
 #         - `gaussian` (:cite:`thornton:22`)
 #         - `sorting` (:cite:`thornton:22`)
-#     If `None`, the default is `default`.
 # - `initializer_kwargs` - keyword arguments for the initializer, taken from
 #       https://github.com/ott-jax/ott/blob/main/ott/core/initializers.py.
 

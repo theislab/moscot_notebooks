@@ -7,7 +7,6 @@ Low-rank solver
 ###############################################################################
 # This example shows how to solve a problem with the `Low Rank` approach suggested by
 # Meyer et al. :cite`scetbon:21a` :cite`scetbon:21b`.
-
 # This is especially useful for large dataset which can not by handled with standard solvers.
 
 
@@ -30,16 +29,15 @@ tp = tp.prepare(time_key="day")
 #
 # - `epsilon` – entropic regularization term.
 #
-# - `rank` – the rank constraint on the coupling to minimize the linear OT problem
+# - `rank` – the rank constraint on the coupling to minimize the linear OT problem.
 #
 # - `gamma` – the (inverse of) gradient stepsize used by mirror descent.
 #
-# - `initializer` - Initializer to use for the problem, for low-rank available options are
+# - `initializer` - Initializer to use for the problem, If `None` the default is `random`:
 #         - `random`
 #         - `rank2` (:cite:`scetbon:21a`)
 #         - `k-means` (:cite:`scetbon:22b`)
 #         - `generalized-k-means` (:cite:`scetbon:22b`)
-#     If `None` the default is `random`.
 #
 # - `initializer_kwargs` - keyword arguments for the initializer, taken from
 #       https://github.com/ott-jax/ott/blob/main/ott/core/initializers_lr.py.
