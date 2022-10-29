@@ -13,7 +13,7 @@ Temporal
 .. nbgallery::
     :glob:
 
-    auto_examples/problems/time/ex*
+    auto_examples/ex_temporal_problem
 
 Spatial
 -------
@@ -21,7 +21,8 @@ Spatial
 .. nbgallery::
     :glob:
 
-    auto_examples/problems/space/ex*
+    auto_examples/ex_alignment_problem
+    auto_examples/ex_mapping_problem
 
 SpatioTemporal
 --------------
@@ -29,7 +30,7 @@ SpatioTemporal
 .. nbgallery::
     :glob:
 
-    auto_examples/problems/spatio_temporal/ex*
+    auto_examples/ex_spatiotemporal_problem
 
 Generic
 -------
@@ -37,7 +38,7 @@ Generic
 .. nbgallery::
     :glob:
 
-    auto_examples/problems/ex*
+    auto_examples/ex_generic*
 
 Solvers
 =======
