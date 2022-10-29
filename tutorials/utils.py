@@ -1,22 +1,25 @@
-import networkx as nx
-from Bio import Phylo
-import io
-from typing import Any, List, Optional, Mapping, Literal, Dict
-import pandas as pd
-import matplotlib.pyplot as plt
-import lineageot.inference as lot_inf
-import seaborn as sns
-import numpy as np
 from copy import deepcopy
+from typing import Any, Dict, List, Literal, Mapping, Optional
+import io
 
-import scanpy as sc
+from Bio import Phylo
+import lineageot.inference as lot_inf
+
 from anndata import AnnData
+import scanpy as sc
+
+import numpy as np
+import pandas as pd
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+import networkx as nx
 
 CPAL = sns.color_palette("deep", 9)
 
-def process_data(
-    rna_arrays: Mapping[Literal["early", "late"], np.ndim], *, n_pcs: int = 30, pca=True
-) -> np.ndarray:
+
+def _process_data(rna_arrays: Mapping[Literal["early", "late"], np.ndim], *, n_pcs: int = 30, pca=True) -> np.ndarray:
     adata = AnnData(rna_arrays["early"], dtype=np.float32).concatenate(
         AnnData(rna_arrays["late"], dtype=np.float32),
         batch_key="time",
@@ -31,8 +34,7 @@ def process_data(
     return adata.X.astype(float, copy=True)
 
 
-
-def annotate(
+def _annotate(
     G: nx.DiGraph,
     cell_arr_data: List[lot_inf.sim.Cell],
     meta: List[Dict[str, Any]],
@@ -68,7 +70,7 @@ def annotate(
     return nx.relabel_nodes(G, {n_leaves: "root"}, copy=False)
 
 
-def cut_at_depth(G: nx.DiGraph, *, max_depth: Optional[int] = None) -> nx.DiGraph:
+def _cut_at_depth(G: nx.DiGraph, *, max_depth: Optional[int] = None) -> nx.DiGraph:
     if max_depth is None:
         return deepcopy(G)
     selected_nodes = [n for n in G.nodes if G.nodes[n]["node_depth"] <= max_depth]
@@ -81,7 +83,7 @@ def cut_at_depth(G: nx.DiGraph, *, max_depth: Optional[int] = None) -> nx.DiGrap
     return G
 
 
-def build_true_trees(
+def _build_true_trees(
     rna: np.ndarray,
     barcodes: np.ndarray,
     meta: pd.DataFrame,
@@ -92,36 +94,26 @@ def build_true_trees(
     pca: bool = True,
     ttp: float = 100.0,
 ) -> Dict[Literal["early", "late"], nx.DiGraph]:
-    cell_arr_adata = [
-        lot_inf.sim.Cell(rna[nid], barcodes[nid]) for nid in range(rna.shape[0])
-    ]
+    cell_arr_adata = [lot_inf.sim.Cell(rna[nid], barcodes[nid]) for nid in range(rna.shape[0])]
     metadata = [meta.iloc[nid].to_dict() for nid in range(rna.shape[0])]
 
-    G = newick2digraph(tree)
-    G = annotate(G, cell_arr_adata, metadata, ttp=ttp)
-    for s, t in G.edges:
-        sn, tn = G.nodes[s], G.nodes[t]
+    G = _newick2digraph(tree)
+    G = _annotate(G, cell_arr_adata, metadata, ttp=ttp)
 
-    trees = {"early": cut_at_depth(G, max_depth=depth), "late": cut_at_depth(G)}
+    trees = {"early": _cut_at_depth(G, max_depth=depth), "late": _cut_at_depth(G)}
     rna_arrays = {
-        kind: np.asarray(
-            [
-                trees[kind].nodes[n]["cell"].x
-                for n in trees[kind].nodes
-                if is_leaf(trees[kind], n)
-            ]
-        )
+        kind: np.asarray([trees[kind].nodes[n]["cell"].x for n in trees[kind].nodes if _is_leaf(trees[kind], n)])
         for kind in ["early", "late"]
     }
-    data = process_data(rna_arrays, n_pcs=n_pcs, pca=pca)
+    data = _process_data(rna_arrays, n_pcs=n_pcs, pca=pca)
 
-    n_early_leaves = len([n for n in trees["early"] if is_leaf(trees["early"], n)])
+    n_early_leaves = len([n for n in trees["early"] if _is_leaf(trees["early"], n)])
     data_early, data_late = data[:n_early_leaves], data[n_early_leaves:]
 
     for kind, data in zip(["early", "late"], [data_early, data_late]):
         i, G = 0, trees[kind]
         for n in G.nodes:
-            if is_leaf(G, n):
+            if _is_leaf(G, n):
                 G.nodes[n]["cell"].x = data[i]
                 i += 1
             else:
@@ -130,11 +122,11 @@ def build_true_trees(
     return trees
 
 
-def is_leaf(G: nx.DiGraph, n: Any) -> bool:
+def _is_leaf(G: nx.DiGraph, n: Any) -> bool:
     return not list(nx.descendants(G, n))
 
 
-def newick2digraph(tree: str) -> nx.DiGraph:
+def _newick2digraph(tree: str) -> nx.DiGraph:
     def trav(clade, prev: Any, depth: int) -> None:
         nonlocal cnt
         if depth == 0:
@@ -163,7 +155,7 @@ def newick2digraph(tree: str) -> nx.DiGraph:
     for n in list(nx.dfs_preorder_nodes(G)):
         if n == "root":
             pass
-        if is_leaf(G, n):
+        if _is_leaf(G, n):
             continue
 
         assert start not in G.nodes
@@ -172,55 +164,55 @@ def newick2digraph(tree: str) -> nx.DiGraph:
 
     return G
 
-def state_tree_draw(state_tree='((t1:2, t2:2):1, (t3:2, t4:2):1):2;'):
-    fig, axs = plt.subplots(figsize=(4,4))
-    state_tree_ = newick2digraph(state_tree)
+
+def state_tree_draw(state_tree="((t1:2, t2:2):1, (t3:2, t4:2):1):2;"):
+    """Draw the state tree"""
+    fig, axs = plt.subplots(figsize=(4, 4))
+    state_tree_ = _newick2digraph(state_tree)
     pos = nx.drawing.nx_pydot.graphviz_layout(state_tree_, prog="dot")
 
     node_list = [1, 2, 3, 4, 5, 6, 7]
     labels = {node: node_list[node] for node in state_tree_.nodes}
     node_color = [CPAL[node_list[node]] for node in state_tree_.nodes]
 
-    nx.draw(state_tree_, pos, labels=labels, node_color = node_color, node_size=400, arrowsize=4, arrows=False, ax=axs)
+    nx.draw(state_tree_, pos, labels=labels, node_color=node_color, node_size=400, arrowsize=4, arrows=False, ax=axs)
     axs.set_title("cell state tree", fontsize=22)
     plt.tight_layout()
     plt.show()
-    
-    
+
+
 def tree_draw(adata, depth=8):
+    """Draw tree"""
     tree = adata.uns["tree"]
     rna = adata.X.copy()
     barcodes = adata.obsm["barcodes"].copy()
 
-    true_trees = build_true_trees(
-            rna, barcodes, meta=adata.obs, tree=tree, depth=depth, pca=False
-    )
-    
+    true_trees = _build_true_trees(rna, barcodes, meta=adata.obs, tree=tree, depth=depth, pca=False)
+
     g_ = true_trees["early"]
     node_color = [CPAL[int(g_.nodes[node]["cluster"])] for node in g_.nodes]
     pos = nx.drawing.nx_pydot.graphviz_layout(g_, prog="dot")
 
-    fig, axs = plt.subplots(figsize=(6,4))
-    nx.draw(g_, pos, node_color = node_color, node_size=50, arrowsize=5, arrows=False, ax=axs)
+    fig, axs = plt.subplots(figsize=(6, 4))
+    nx.draw(g_, pos, node_color=node_color, node_size=50, arrowsize=5, arrows=False, ax=axs)
     axs.set_title(f"The early cell division tree (up to depth {depth})", fontsize=22)
     plt.tight_layout()
     plt.show()
-    
-    
+
+
 def plot_cost(lp, depth_early=8, depth_late=12):
+    """Plot cost matrix"""
     for problem in lp.problems:
-        fig, axs = plt.subplots(1, 2, figsize=(8,4))
+        fig, axs = plt.subplots(1, 2, figsize=(8, 4))
         sns.heatmap(lp.problems[problem].x.data, ax=axs[0], cbar=False, xticklabels=False, yticklabels=False)
         axs[0].set_title(f"Barcode distances\n(cells at depth {depth_early})", fontsize=16)
         axs[0].set_xlabel("cells", fontsize=14)
         axs[0].set_ylabel("cells", fontsize=14)
-        
-        
+
         sns.heatmap(lp.problems[problem].y.data, ax=axs[1], cbar=False, xticklabels=False, yticklabels=False)
         axs[1].set_title(f"Barcode distances\n(cells at depth {depth_late})", fontsize=16)
         axs[1].set_xlabel("cells", fontsize=14)
         axs[1].set_ylabel("cells", fontsize=14)
-        
-        
+
         plt.tight_layout()
         plt.show()
