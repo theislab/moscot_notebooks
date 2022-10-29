@@ -8,7 +8,7 @@ This section contains various examples how to handle moscot problems.
 It is divided in section that correspond to the :mod:`moscot.problems` modules.
 
 Temporal
-========
+--------
 
 .. nbgallery::
     :glob:
@@ -16,7 +16,7 @@ Temporal
     auto_examples/problems/time/ex*
 
 Spatial
-========
+-------
 
 .. nbgallery::
     :glob:
@@ -24,7 +24,7 @@ Spatial
     auto_examples/problems/space/ex*
 
 SpatioTemporal
-==============
+--------------
 
 .. nbgallery::
     :glob:
@@ -32,15 +32,15 @@ SpatioTemporal
     auto_examples/problems/spatio_temporal/ex*
 
 Generic
-=======
+-------
 
 .. nbgallery::
     :glob:
 
-    auto_examples/problems/generic/ex*
+    auto_examples/problems/ex*
 
 Solvers
--------
+=======
 This section contains various examples on how to solve moscot problems.
 
 .. nbgallery::
@@ -49,7 +49,7 @@ This section contains various examples on how to solve moscot problems.
     auto_examples/solvers/ex*
 
 Plotting
---------
+========
 This section contains various examples from the :mod:`moscot.pl` module.
 
 .. nbgallery::
