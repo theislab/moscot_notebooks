@@ -50,12 +50,8 @@ extensions = [
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
-    # "moscot": ("https://moscot.readthedocs.io/en/latest/", None),
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
-    "napari": ("https://napari.org/", None),
-    "skimage": ("https://scikit-image.org/docs/stable/", None),
-    "dask": ("https://docs.dask.org/en/latest/", None),
 }
 
 # Add any paths that contain templates here, relative to this directory.
@@ -90,7 +86,6 @@ exclude_patterns = [
     "auto_*/**.py",
     "**.ipynb_checkpoints",
     "auto_*/**/index.rst",
-    #  "tutorials/.ipynb_checkpoints"
 ]  # ignore anything that isn't .rst or .ipynb
 
 # -- sphinx gallery
