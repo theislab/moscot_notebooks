@@ -15,11 +15,6 @@ Solvers
 =======
 This section contains various examples on how to solve moscot problems.
 
-.. nbgallery::
-    :glob:
-
-    auto_examples/solvers/ex*
-
 Plotting
 ========
 This section contains various examples from the :mod:`moscot.pl` module.
