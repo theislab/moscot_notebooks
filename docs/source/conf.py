@@ -18,7 +18,7 @@ from sphinx.application import Sphinx
 import sphinx_gallery.gen_rst
 
 HERE = Path(__file__).parent
-sys.path.insert(0, str(HERE.parent.parent))  # this way, we don't have to install squidpy
+sys.path.insert(0, str(HERE.parent.parent))
 
 from docs.source.monkeypatch import save_rst_example  # noqa: E402
 
@@ -50,12 +50,8 @@ extensions = [
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
-    # "moscot": ("https://moscot.readthedocs.io/en/latest/", None),
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
-    "napari": ("https://napari.org/", None),
-    "skimage": ("https://scikit-image.org/docs/stable/", None),
-    "dask": ("https://docs.dask.org/en/latest/", None),
 }
 
 # Add any paths that contain templates here, relative to this directory.
@@ -89,8 +85,8 @@ exclude_patterns = [
     "auto_*/**.md5",
     "auto_*/**.py",
     "**.ipynb_checkpoints",
+    "auto_examples/problems/**/index.rst",
     "auto_*/**/index.rst",
-    #  "tutorials/.ipynb_checkpoints"
 ]  # ignore anything that isn't .rst or .ipynb
 
 # -- sphinx gallery
@@ -116,8 +112,8 @@ sphinx_gallery_conf = {
     "image_scrapers": "matplotlib",
     "reset_modules": (reset_matplotlib,),
     "filename_pattern": f"{os.path.sep}ex",
-    "examples_dirs": [_root / "examples", _root / "tutorials"],
-    "gallery_dirs": ["auto_examples", "auto_tutorials"],
+    "examples_dirs": [_root / "examples"],
+    "gallery_dirs": ["auto_examples"],
     "abort_on_example_error": True,
     "show_memory": True,
     "reference_url": {
@@ -176,7 +172,7 @@ todo_include_todos = False
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_theme = "furo"
 html_static_path = ["_static"]
-html_theme_options = {"navigation_depth": 4, "logo_only": True}
+# html_theme_options = {"navigation_depth": 4, "logo_only": True} # TODO(giovp): seems unsupported
 html_show_sphinx = False
 
 github_repo = "moscot"

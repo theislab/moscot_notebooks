@@ -1,9 +1,9 @@
 Examples
-========
+~~~~~~~~
 This section contains various short examples showcasing core :mod:`moscot` functionality.
 
 Problems
---------
+========
 This section contains various examples how to handle moscot problems.
 
 .. nbgallery::
@@ -12,7 +12,7 @@ This section contains various examples how to handle moscot problems.
     auto_examples/problems/ex*
 
 Solvers
--------
+=======
 This section contains various examples on how to solve moscot problems.
 
 .. nbgallery::
@@ -21,7 +21,7 @@ This section contains various examples on how to solve moscot problems.
     auto_examples/solvers/ex*
 
 Plotting
---------
+========
 This section contains various examples from the :mod:`moscot.pl` module.
 
 .. nbgallery::

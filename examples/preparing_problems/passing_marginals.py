@@ -59,5 +59,6 @@ print(ap2["0","1"].a, ap2["1","2"].b)
 # Similarly, the cells belonging to batch "0" are never part of a target distribution.
 # Hence, the values in `adata[adata.obs["batch"]=="0"].obs["target_marginals"]` are 
 # irrelevant.
-# 
+# Also note that the scale of the marginals influences the convergence criterion.
+# Hence, we recommend normalizing the marginals to 1.
 # TODO See other examples for ...

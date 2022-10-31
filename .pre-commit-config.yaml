@@ -27,7 +27,6 @@ repos:
     hooks:
     -   id: check-docstring-first
     -   id: end-of-file-fixer
-    -   id: check-added-large-files
     -   id: check-executables-have-shebangs
     -   id: trailing-whitespace
     -   id: check-merge-conflict
