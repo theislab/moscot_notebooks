@@ -3,7 +3,9 @@ al
 backend
 barcodes
 dataset
+datasets
 Drosophila
+embeddings
 entropic
 EryP
 et

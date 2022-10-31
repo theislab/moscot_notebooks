@@ -7,8 +7,8 @@ Plotting pull or push distributions
 ###############################################################################
 # In this notebook, we will showcase how to use :meth:`moscot.plotting.push` and
 # its counterpart :meth:`moscot.plotting.pull`.
-# These visualisation functions are only implemented for non-spatial problems.
-# To see how pullback or pushforward cell distributions can be visualized for
+# These visualization functions are only implemented for non-spatial problems.
+# To see how pullback or push forward cell distributions can be visualized for
 # problems incorporating spatial information, please have a look at the tutorials.
 # Here, we use the HSPC dataset to demonstrate the usage of :meth:`moscot.plotting.push` and
 # :meth:`moscot.plotting.pull` with the :class:`moscot.problems.time.TemporalProblem`.
