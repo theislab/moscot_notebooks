@@ -17,14 +17,13 @@ Using different policies
 # :class:`moscot.solvers.time.TemporalProblem` we can choose among different policies which we demonstrate below.
 
 
-from moscot.datasets import simulation
+from moscot.datasets import hspc
 from moscot.problems.time import TemporalProblem
 
-adata = simulation(size=15360)
+adata = hspc()
 
 ###############################################################################
-# This simulated dataset contains single cell data across 4 time point, i.e. day 11.0, 12.0, 13.0 and 14.0.
-#
+# This simulated dataset contains single cell data across 5 batches
 # The policy allows us to determine which transport maps we want to compute.
 
 ###############################################################################
@@ -62,7 +61,7 @@ tp_triu.problems
 # ~~~~~~~~~~~~~~~
 
 tp_expl = TemporalProblem(adata)
-tp_expl = tp_expl.prepare(time_key="day", policy="explicit", subset=[(10, 11), (12, 13), (10, 13)])
+tp_expl = tp_expl.prepare(time_key="day", policy="explicit", subset=[(2, 4), (3, 4), (4, 7)])
 tp_expl.problems
 
 ###############################################################################
