@@ -26,9 +26,9 @@ tp = TemporalProblem(adata).prepare(time_key="day").solve(epsilon=1e-2, threshol
 # the problem class, which stores the results of the computation in the
 # :class:`anndata.AnnData` instance. Let us assume we want to plot the cell transition
 # between time point 4 and time point 7. Moreover, we want the rows and columns
-# of our transition matrix to represent cell types. In general, we can aggregagte
+# of our transition matrix to represent cell types. In general, we can aggregate
 # by any column in :attr:`anndata.AnnData.obs` via the `source_groups` parameter and
-# the `target_groups` parameter, respectively. Moreover, we are intereseted in
+# the `target_groups` parameter, respectively. Moreover, we are interested in
 # descendants as opposed to ancestors, which is why we choose `forward` to be `True`.
 
 cell_transition = tp.cell_transition(
@@ -58,7 +58,7 @@ mpl.cell_transition(tp, dpi=100, fontsize=10)
 # a dictionary also allows to specify the order of the `source_groups` and `target_groups`,
 # respectively.
 new_key = "subset_cell_transition"
-_ = tp.cell_transition(
+tp.cell_transition(
     source=4,
     target=7,
     source_groups={"cell_type": ["HSC", "MasP", "MkP", "NeuP"]},

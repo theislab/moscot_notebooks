@@ -5,4 +5,4 @@ This section contains various tutorials showcasing use cases for data analysis w
 .. nbgallery::
     :glob:
 
-    auto_tutorials/tu*
+    tutorials/tutorial_*
