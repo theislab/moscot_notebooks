@@ -12,6 +12,7 @@ et
 Fused
 Gromov
 Hematopoietic
+hyperparameter
 initializer
 Initializer
 instantiation
@@ -23,6 +24,7 @@ MkP
 Monocyte
 MoP
 moscot
+nanoball
 NeuP
 Neutrophil
 organogenesis
@@ -31,6 +33,7 @@ PCA
 pre
 precomputed
 preprocessing
+preprocessed
 Qaudratic
 rescale
 Sankey
