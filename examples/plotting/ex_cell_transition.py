@@ -58,7 +58,7 @@ mpl.cell_transition(tp, dpi=100, fontsize=10)
 # a dictionary also allows to specify the order of the `source_groups` and `target_groups`,
 # respectively.
 new_key = "subset_cell_transition"
-_ = tp.cell_transition(
+tp.cell_transition(
     source=4,
     target=7,
     source_groups={"cell_type": ["HSC", "MasP", "MkP", "NeuP"]},
