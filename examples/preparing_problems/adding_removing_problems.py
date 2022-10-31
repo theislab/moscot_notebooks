@@ -8,7 +8,7 @@ Adding and removing problems
 # This notebook demonstrates how to add or remove single problems.
 #
 # Adding a single problem can be useful for finetuning, and is sometimes needed
-# for certain downstream functions, e.g. for 
+# for certain downstream functions, e.g. for
 # :meth:`moscot.problems.time.TemporalProblem.compute_interpolated_distance`.
 
 from moscot.datasets import simulate_data
@@ -50,7 +50,7 @@ for k in tp.problems.keys():
 # interested in the first three time points. Hence, we remove the map from day
 # 3 to day 4.
 print(f"Problem before removal: {tp}.")
-tp = tp.remove_problem((3,4))
+tp = tp.remove_problem((3, 4))
 print(f"Problem after removal: {tp}.")
 
 ###############################################################################
