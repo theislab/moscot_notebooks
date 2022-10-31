@@ -3,7 +3,9 @@ al
 backend
 barcodes
 dataset
+datasets
 Drosophila
+embeddings
 entropic
 EryP
 et
@@ -38,7 +40,6 @@ scalings
 scanpy
 scetbon
 scvi
-embeddings
 Sinkhorn
 spatio
 spatiotemporal
