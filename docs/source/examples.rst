@@ -5,40 +5,11 @@ This section contains various short examples showcasing core :mod:`moscot` funct
 Problems
 ========
 This section contains various examples how to handle moscot problems.
-It is divided in section that correspond to the :mod:`moscot.problems` modules.
-
-Temporal
---------
 
 .. nbgallery::
     :glob:
 
-    auto_examples/ex_temporal_problem
-
-Spatial
--------
-
-.. nbgallery::
-    :glob:
-
-    auto_examples/ex_alignment_problem
-    auto_examples/ex_mapping_problem
-
-SpatioTemporal
---------------
-
-.. nbgallery::
-    :glob:
-
-    auto_examples/ex_spatiotemporal_problem
-
-Generic
--------
-
-.. nbgallery::
-    :glob:
-
-    auto_examples/ex_generic*
+    auto_examples/problems/ex*
 
 Solvers
 =======
