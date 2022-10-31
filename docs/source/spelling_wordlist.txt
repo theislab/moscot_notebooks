@@ -1,4 +1,5 @@
 al
+affine
 dataset
 Drosophila
 entropic
@@ -12,11 +13,13 @@ kwargs
 moscot
 organogenesis
 OT
-pre-processed
+pre
+
 Qaudratic
 rescale
 scaling
 scalings
+scalable
 scanpy
 scetbon
 Sinkhorn
