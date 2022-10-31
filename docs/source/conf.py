@@ -112,8 +112,8 @@ sphinx_gallery_conf = {
     "image_scrapers": "matplotlib",
     "reset_modules": (reset_matplotlib,),
     "filename_pattern": f"{os.path.sep}ex",
-    "examples_dirs": [_root / "examples", _root / "tutorials"],
-    "gallery_dirs": ["auto_examples", "auto_tutorials"],
+    "examples_dirs": [_root / "examples"],
+    "gallery_dirs": ["auto_examples"],
     "abort_on_example_error": True,
     "show_memory": True,
     "reference_url": {
