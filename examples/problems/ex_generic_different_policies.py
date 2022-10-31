@@ -66,4 +66,4 @@ tp_expl = tp_expl.prepare(time_key="day", policy="explicit", subset=[(10, 11), (
 tp_expl.problems
 
 ###############################################################################
-# TODO: refer to similar exmplaes
+# TODO: refer to similar examples
