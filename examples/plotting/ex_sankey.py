@@ -24,11 +24,11 @@ tp = TemporalProblem(adata).prepare(time_key="day").solve(epsilon=1e-2, threshol
 ###############################################################################
 # As for all plotting functionalities in moscot, we first call the method of
 # the problem class, which stores the results of the computation in the
-# :class:`anndata.AnnData` instance. Let us assume we want to plot the sankey diagram
+# :class:`anndata.AnnData` instance. Let us assume we want to plot the Sankey diagram
 # across all time points 2, 3, 4, and 7. Moreover, we want the Sankey diagram
 # to visualize flows between cell types. In general, we can visualize the flow defined
 # by any column in :attr:`anndata.AnnData.obs` via the `source_groups` parameter and
-# the `target_groups` parameter, respectively. In this example, we are intereseted in
+# the `target_groups` parameter, respectively. In this example, we are interested in
 # descendants as opposed to ancestors, which is why we choose `forward` to be `True`.
 # The information required to plot the Sankey diagram is provided in transition matrices,
 # which we would obtain by `return_data` to `True`. Here, we are only interested in the

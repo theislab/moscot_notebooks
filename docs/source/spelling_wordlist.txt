@@ -38,6 +38,7 @@ scalings
 scanpy
 scetbon
 scvi
+embeddings
 Sinkhorn
 spatio
 spatiotemporal
