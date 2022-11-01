@@ -48,6 +48,7 @@ extensions = [
     "sphinx_gallery.load_style",
     "nbsphinx",
     "sphinxcontrib.bibtex",
+    "sphinx_last_updated_by_git",
 ]
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
