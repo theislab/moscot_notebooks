@@ -10,7 +10,6 @@ Solving linear problems
 # :class:`moscot.problems.time.TemporalProblem` and the
 # :class:`moscot.problems.generic.SinkhornProblem`.
 
-import numpy as np
 from moscot.datasets import simulate_data
 from moscot.problems.generic import SinkhornProblem
 
