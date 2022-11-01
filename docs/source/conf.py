@@ -39,16 +39,14 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
+    "sphinx_gallery.gen_gallery",
     "sphinx_autodoc_typehints",
     "sphinx.ext.intersphinx",
     "sphinx.ext.autosummary",
-    "sphinx_gallery.load_style",
-    "nbsphinx",
-    "sphinxcontrib.bibtex",
-    "sphinx_gallery.load_style",
     "nbsphinx",
     "sphinxcontrib.bibtex",
     "sphinx_last_updated_by_git",
+    "edit_on_github",
 ]
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
@@ -60,6 +58,7 @@ intersphinx_mapping = {
     "pandas": ("https://pandas.pydata.org/pandas-docs/stable/", None),
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
+    "moscot": ("https://moscot.readthedocs.io/en/latest/", None),
 }
 
 # Add any paths that contain templates here, relative to this directory.
