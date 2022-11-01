@@ -14,7 +14,7 @@ Adding and removing problems
 from moscot.datasets import simulate_data
 from moscot.problems.time import TemporalProblem
 
-adata = simulate_data(n_distributions=4, key="time")
+adata = simulate_data(n_distributions=4, key="day")
 adata
 
 ###############################################################################
@@ -44,14 +44,6 @@ extracted_problem.solution
 tp = tp.add_problem((2, 3), extracted_problem, overwrite=True)
 for k in tp.problems.keys():
     print(f"key: {k}", f"solutions: {tp.problems[k].solution}")
-
-###############################################################################
-# Similarly, we can remove a problem. For example, we realize that we are only
-# interested in the first three time points. Hence, we remove the map from day
-# 3 to day 4.
-print(f"Problem before removal: {tp}.")
-tp = tp.remove_problem((3, 4))
-print(f"Problem after removal: {tp}.")
 
 ###############################################################################
 # In TODO link different_policies the use of different policies are explained.
