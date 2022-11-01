@@ -32,8 +32,8 @@ OT
 PCA
 pre
 precomputed
-preprocessing
 preprocessed
+preprocessing
 Qaudratic
 rescale
 Sankey
