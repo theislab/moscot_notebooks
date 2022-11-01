@@ -14,13 +14,9 @@ from sphinx.application import Sphinx
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-import sphinx_gallery.gen_rst
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parent.parent))
-
-from docs.source.monkeypatch import save_rst_example  # noqa: E402
 
 sys.path.insert(0, os.path.abspath("_ext"))
 needs_sphinx = "5.0"
@@ -150,10 +146,10 @@ sphinx_gallery_conf = {
     # "default_thumb_file": "docs/source/_static/img/squidpy_vertical.png",
     "plot_gallery": "'True'",  # https://github.com/sphinx-gallery/sphinx-gallery/issues/913
 }
-# nbsphinx_thumbnails = {
-#    "auto_**": "_static/img/squidpy_vertical.png",
-#    "external_tutorials/**": "_static/img/squidpy_vertical.png",
-# }
+nbsphinx_thumbnails = {
+    "auto_examples/problems/**": "_static/img/logo.png",
+    "auto_examples/plotting/**": "_static/img/logo.png",
+}
 nbsphinx_execute_arguments = [
     "--InlineBackend.figure_formats={'png', 'pdf'}",  # correct figure resize
     "--InlineBackend.rc={'figure.dpi': 96}",
@@ -188,8 +184,6 @@ html_show_sphinx = False
 
 github_repo = "moscot"
 github_repo_nb = "moscot_notebooks"
-
-sphinx_gallery.gen_rst.save_rst_example = save_rst_example
 
 
 def setup(app: Sphinx) -> None:
