@@ -1,0 +1,99 @@
+
+
+Examples using ``moscot.problems.time.TemporalProblem``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Plotting pull or push distributions">
+
+.. only:: html
+
+ .. figure:: /auto_examples/plotting/images/thumb/sphx_glr_ex_push_pull_thumb.png
+     :alt: Plotting pull or push distributions
+
+     :ref:`sphx_glr_auto_examples_plotting_ex_push_pull.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_plotting_ex_push_pull.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Plotting Sankey diagrams">
+
+.. only:: html
+
+ .. figure:: /auto_examples/plotting/images/thumb/sphx_glr_ex_sankey_thumb.png
+     :alt: Plotting Sankey diagrams
+
+     :ref:`sphx_glr_auto_examples_plotting_ex_sankey.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_plotting_ex_sankey.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Using the Problem Manager">
+
+.. only:: html
+
+ .. figure:: /auto_examples/problems/images/thumb/sphx_glr_ex_problem_manager_thumb.png
+     :alt: Using the Problem Manager
+
+     :ref:`sphx_glr_auto_examples_problems_ex_problem_manager.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_problems_ex_problem_manager.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Adding and removing problems">
+
+.. only:: html
+
+ .. figure:: /auto_examples/problems/images/thumb/sphx_glr_ex_adding_removing_problems_thumb.png
+     :alt: Adding and removing problems
+
+     :ref:`sphx_glr_auto_examples_problems_ex_adding_removing_problems.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_problems_ex_adding_removing_problems.py`
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Using different policies">
+
+.. only:: html
+
+ .. figure:: /auto_examples/problems/images/thumb/sphx_glr_ex_different_policies_thumb.png
+     :alt: Using different policies
+
+     :ref:`sphx_glr_auto_examples_problems_ex_different_policies.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_problems_ex_different_policies.py`

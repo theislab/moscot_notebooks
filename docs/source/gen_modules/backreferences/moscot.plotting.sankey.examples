@@ -1,0 +1,23 @@
+
+
+Examples using ``moscot.plotting.sankey``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Plotting Sankey diagrams">
+
+.. only:: html
+
+ .. figure:: /auto_examples/plotting/images/thumb/sphx_glr_ex_sankey_thumb.png
+     :alt: Plotting Sankey diagrams
+
+     :ref:`sphx_glr_auto_examples_plotting_ex_sankey.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_plotting_ex_sankey.py`

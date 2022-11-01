@@ -1,0 +1,23 @@
+
+
+Examples using ``moscot.plotting.push``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Plotting pull or push distributions">
+
+.. only:: html
+
+ .. figure:: /auto_examples/plotting/images/thumb/sphx_glr_ex_push_pull_thumb.png
+     :alt: Plotting pull or push distributions
+
+     :ref:`sphx_glr_auto_examples_plotting_ex_push_pull.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_plotting_ex_push_pull.py`
