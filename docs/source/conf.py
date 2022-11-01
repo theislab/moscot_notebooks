@@ -49,7 +49,6 @@ extensions = [
     "sphinx_gallery.load_style",
     "nbsphinx",
     "sphinxcontrib.bibtex",
-    "typed_returns",
     "sphinx_gallery.load_style",
     "nbsphinx",
     "sphinxcontrib.bibtex",
