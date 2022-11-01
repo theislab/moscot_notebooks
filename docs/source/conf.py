@@ -143,7 +143,7 @@ sphinx_gallery_conf = {
             "--mathjax",
         ],
     },
-    "default_thumb_file": "_static/img/logo.png",
+    "default_thumb_file": "docs/source/_static/img/logo.png",
     "plot_gallery": "'True'",  # https://github.com/sphinx-gallery/sphinx-gallery/issues/913
 }
 nbsphinx_thumbnails = {
