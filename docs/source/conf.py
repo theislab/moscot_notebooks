@@ -40,16 +40,28 @@ release = "main"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "nbsphinx",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.viewcode",
+    "sphinx_autodoc_typehints",
     "sphinx.ext.intersphinx",
-    "sphinx_gallery.gen_gallery",
+    "sphinx.ext.autosummary",
+    "sphinx_gallery.load_style",
+    "nbsphinx",
     "sphinxcontrib.bibtex",
-    "sphinx_copybutton",
-    "edit_on_github",
+    "typed_returns",
+    "sphinx_gallery.load_style",
+    "nbsphinx",
+    "sphinxcontrib.bibtex",
 ]
-
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
+    "numpy": ("https://docs.scipy.org/doc/numpy/", None),
+    "scipy": ("https://docs.scipy.org/doc/scipy/reference/", None),
+    "matplotlib": ("https://matplotlib.org/stable/", None),
+    "jax": ("https://jax.readthedocs.io/en/latest/", None),
+    "ott": ("https://ott-jax.readthedocs.io/en/latest/", None),
+    "pandas": ("https://pandas.pydata.org/pandas-docs/stable/", None),
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
 }
