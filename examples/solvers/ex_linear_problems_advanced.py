@@ -28,10 +28,10 @@ adata
 # ~~~~~~~~~~~~
 # Different Initializers can help to improve convergence. For the full-rank
 # case we can set the initializer to the trivial initializing method denoted
-# by `default`. The `gaussian` (:cite:`thornton2022`) initializer computes
+# by `default`. The `gaussian` (:cite:`thornton:22`) initializer computes
 # Gaussian approximations of two point clouds and leverages the closed-form
 # solution of Optimal Transport problems between Gaussians, while the `sorting`
-# initializer (:cite:`thornton2022`) solves a simplified (sorting) Optimal Transport
+# initializer (:cite:`thornton:22`) solves a simplified (sorting) Optimal Transport
 # problem and uses its solution as initializer. See :mod:`ott.core.initializers`
 # for details.
 #
@@ -66,7 +66,7 @@ sp = sp.solve(epsilon=1e-3, inner_iterations=1, min_iterations=0, max_iterations
 # ~~~~~~~~~~~~~~~~~~~~~~~~
 # The low-rank algorithm requires more hyperparameters, i.e. `gamma`, the
 # a step size of the mirror descent algorithm and `gamma_rescale`, a flag
-# indicicating whether to rescale `gamma`. When tuning `gamma`, we recommend
+# indicating whether to rescale `gamma`. When tuning `gamma`, we recommend
 # trying orders of 10. If `gamma` is too small or too large, the algorithm
 # might not converge
 sp = sp.solve(epsilon=0, rank=3, initializer="random", max_iterations=30, gamma=1000)

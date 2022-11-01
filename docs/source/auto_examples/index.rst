@@ -177,3 +177,55 @@
 
     <div class="sphx-glr-clear"></div>
 
+
+
+.. _sphx_glr_auto_examples_solvers:
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Solving linear problems">
+
+.. only:: html
+
+ .. figure:: /auto_examples/solvers/images/thumb/sphx_glr_ex_linear_problems_advanced_thumb.png
+     :alt: Solving linear problems
+
+     :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_advanced.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/solvers/ex_linear_problems_advanced
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Solving linear problems">
+
+.. only:: html
+
+ .. figure:: /auto_examples/solvers/images/thumb/sphx_glr_ex_linear_problems_basic_thumb.png
+     :alt: Solving linear problems
+
+     :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_basic.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/solvers/ex_linear_problems_basic
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+

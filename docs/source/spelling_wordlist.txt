@@ -55,3 +55,7 @@ subpopulations
 transcriptomics
 unbalancedness
 Wasserstein
+Initializers
+Gaussians
+initializers
+hyperparameters

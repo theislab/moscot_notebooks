@@ -5,14 +5,14 @@ Examples using ``moscot.datasets.simulate_data``
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Passing lineage trees as cost">
+    <div class="sphx-glr-thumbcontainer" tooltip="Solving linear problems">
 
 .. only:: html
 
- .. figure:: /auto_examples/problems/images/thumb/sphx_glr_ex_use_leaf_distance_thumb.png
-     :alt: Passing lineage trees as cost
+ .. figure:: /auto_examples/solvers/images/thumb/sphx_glr_ex_linear_problems_advanced_thumb.png
+     :alt: Solving linear problems
 
-     :ref:`sphx_glr_auto_examples_problems_ex_use_leaf_distance.py`
+     :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_advanced.py`
 
 .. raw:: html
 
@@ -20,18 +20,18 @@ Examples using ``moscot.datasets.simulate_data``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_examples_problems_ex_use_leaf_distance.py`
+ * :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_advanced.py`
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Adding and removing problems">
+    <div class="sphx-glr-thumbcontainer" tooltip="Solving linear problems">
 
 .. only:: html
 
- .. figure:: /auto_examples/problems/images/thumb/sphx_glr_ex_adding_removing_problems_thumb.png
-     :alt: Adding and removing problems
+ .. figure:: /auto_examples/solvers/images/thumb/sphx_glr_ex_linear_problems_basic_thumb.png
+     :alt: Solving linear problems
 
-     :ref:`sphx_glr_auto_examples_problems_ex_adding_removing_problems.py`
+     :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_basic.py`
 
 .. raw:: html
 
@@ -39,23 +39,4 @@ Examples using ``moscot.datasets.simulate_data``
 
 .. only:: not html
 
- * :ref:`sphx_glr_auto_examples_problems_ex_adding_removing_problems.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Using different policies">
-
-.. only:: html
-
- .. figure:: /auto_examples/problems/images/thumb/sphx_glr_ex_different_policies_thumb.png
-     :alt: Using different policies
-
-     :ref:`sphx_glr_auto_examples_problems_ex_different_policies.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_examples_problems_ex_different_policies.py`
+ * :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_basic.py`

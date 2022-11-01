@@ -20,6 +20,7 @@ adata
 ###############################################################################
 # The :meth:`moscot.problems.time.TemporalProblem.solve` has numerous arguments,
 # a few of which will be discussed in the following.
+
 ###############################################################################
 # Basic parameters
 # ~~~~~~~~~~~~~~~~
@@ -27,7 +28,7 @@ adata
 # transport map. At the same time, the algorithm takes longer to converge. `tau_a`
 # and `tau_b` denote the unbalancedness parameters in the source and the target
 # distribution, respectively. `tau_a = 1` means the source marginals have to be fully
-# satisfied while `0 < tau_a < 1` relaxes this condition. Analgously, `tau_b` affects
+# satisfied while `0 < tau_a < 1` relaxes this condition. Analogously, `tau_b` affects
 # the marginals of the target distribution. We demonstrate the effect of `tau_a` and `tau_b`
 # with the :class:`moscot.problems.generic.SinkhornProblem`.
 # Whenever the prior marginals `a` and `b` of the source and the target distribution,
@@ -60,7 +61,7 @@ print(sp[0, 1].solution.a[:5], sp[0, 1].solution.b[:5])
 # (`tau_a = tau_b = 1`) is supported. The `rank` should be significantly
 # smaller than the number of cells in both source and target distribution.
 
-sp = sp.solve(epsilon=0, rank=3)
+sp = sp.solve(epsilon=0, rank=3, initializer="random")
 
 ###############################################################################
 # Scaling the cost
