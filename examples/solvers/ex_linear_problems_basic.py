@@ -9,11 +9,11 @@ Solving linear problems
 # :class:`moscot.problems.time.TemporalProblem` and the
 # :class:`moscot.problems.generic.SinkhornProblem`.
 
+import numpy as np
 from moscot.datasets import simulate_data
-from moscot.problems.time import TemporalProblem
 from moscot.problems.generic import SinkhornProblem
 
-adata = simulate_data(n_distributions=2, key="day", cells_per_distribution=5)
+adata = simulate_data(n_distributions=2, key="day")
 adata
 
 ###############################################################################
@@ -30,30 +30,56 @@ adata
 # respectively, are not passed (TODO link to marginals notebook), they are set to be uniform.
 
 sp = SinkhornProblem(adata)
-sp = sp.prepare(time_key="day")
-print(sp[0,1].a, sp[0,1].b)
+sp = sp.prepare(key="day")
+print(sp[0,1].a[:5], sp[0,1].b[:5])
 
 ###############################################################################
 # First, we solve the problem in a balanced manner, such that the posterior marginals of the
 # solution (the sum over the rows and the columns for the source marginals and the
-# target marginals, respectively) are equal to the prior marginals.
+# target marginals, respectively) are equal to the prior marginals up to small
+# errors (which define the convergence criterion in the balanced case).
 sp = sp.solve(epsilon=1e-2, tau_a=1, tau_b=1)
-print(sp[0,1].solution.a, sp[0,1].solution.b)
+print(sp[0,1].solution.a[:5], sp[0,1].solution.b[:5])
 
 
 ###############################################################################
 # If we solve an unbalanced problem, the posterior marginals will be different.
 sp = sp.solve(epsilon=1e-2, tau_a=0.9, tau_b=0.99)
-print(sp[0,1].solution.a, sp[0,1].solution.b)
+print(sp[0,1].solution.a[:5], sp[0,1].solution.b[:5])
 
 ###############################################################################
 # Whenever the dataset is very large, the computational complexity can be 
 # reduced by setting `rank` to a positive integer (:cite:`scetbon:21a`). In this 
 # case, `epsilon` can also be set to 0, while only the balanced case 
-# (`tau_a = tau_b = 1`) is supported.
+# (`tau_a = tau_b = 1`) is supported. The `rank` should be significantly
+# smaller than the number of cells in both source and target distribution. 
 
 ###############################################################################
-# Details
+# `scale_cost` scales the cost matrix which often helps the algorithm to converge.
+# While any number can be passed, it is also possible to scale the cost matrix 
+# by e.g. its mean, median, and maximum. We recommend using the `mean` as this
+# is possible without instantiating the cost matrix and hence reduces computational
+# complexity. Moreover, it is more stable w.r.t. outliers than for example scaling
+# by the maximum. Note that the solution of the Optimal Transport is not stable
+# across different scalings:
+sp = sp.solve(epsilon=1e-2, scale_cost="mean")
+tm_mean = sp[0,1].solution.transport_matrix
+print(tm_mean[:3, :3])
+
+###############################################################################
+sp = sp.solve(epsilon=1e-2, scale_cost="max_cost")
+tm_max = sp[0,1].solution.transport_matrix
+print(tm_max[:3, :3])
+
+###############################################################################
+# We can compute the correlation of the flattened transport matrix to get an
+# idea of the influence of different scalings. 
+correlation = np.corrcoef(tm_mean.flatten(), tm_max.flatten())[0,1]
+print(f"{correlation:.4f}")
+
+
+# Implementation details
+# ~~~~~~~~~~~~~~~~~~~~~~
 # Whenever the :meth:`moscot.problems.time.TemporalProblem.solve` is called,
 # a backend-specific linear solver is instantiated. Currently, :mod:`ott` is
 # supported, its corresponding linear solvers are :class:`ott.core.sinkhorn.Sinkhorn`,
