@@ -19,6 +19,9 @@ adata
 ###############################################################################
 # The :meth:`moscot.problems.time.TemporalProblem.solve` has numerous arguments,
 # a few of which will be discussed in the following.
+###############################################################################
+# Basic parameters
+# ~~~~~~~~~~~~~~~~
 # `epsilon` is the regularization parameter. The lower `epsilon`, the sparser the
 # transport map. At the same time, the algorithm takes longer to converge. `tau_a`
 # and `tau_b` denote the unbalancedness parameters in the source and the target
@@ -48,13 +51,19 @@ sp = sp.solve(epsilon=1e-2, tau_a=0.9, tau_b=0.99)
 print(sp[0,1].solution.a[:5], sp[0,1].solution.b[:5])
 
 ###############################################################################
+# Low-rank solutions
+# ~~~~~~~~~~~~~~~~~~
 # Whenever the dataset is very large, the computational complexity can be 
 # reduced by setting `rank` to a positive integer (:cite:`scetbon:21a`). In this 
 # case, `epsilon` can also be set to 0, while only the balanced case 
 # (`tau_a = tau_b = 1`) is supported. The `rank` should be significantly
 # smaller than the number of cells in both source and target distribution. 
 
+sp = sp.solve(epsilon=0, rank=3)
+
 ###############################################################################
+# Scaling the cost
+# ~~~~~~~~~~~~~~~~
 # `scale_cost` scales the cost matrix which often helps the algorithm to converge.
 # While any number can be passed, it is also possible to scale the cost matrix 
 # by e.g. its mean, median, and maximum. We recommend using the `mean` as this
@@ -77,15 +86,5 @@ print(tm_max[:3, :3])
 correlation = np.corrcoef(tm_mean.flatten(), tm_max.flatten())[0,1]
 print(f"{correlation:.4f}")
 
-
-# Implementation details
-# ~~~~~~~~~~~~~~~~~~~~~~
-# Whenever the :meth:`moscot.problems.time.TemporalProblem.solve` is called,
-# a backend-specific linear solver is instantiated. Currently, :mod:`ott` is
-# supported, its corresponding linear solvers are :class:`ott.core.sinkhorn.Sinkhorn`,
-# which is used whenever `rank = -1`, and :class:`ott.core.sinkhorn_lr.LRSinkhorn`,
-# its counterpart whenever `rank` is a positive integer. :mod:`moscot` wraps these 
-# classes in :class:`moscot.backends.ott.SinkhornSolver` which handles both full and
-# low rank.
-# 
+ ###############################################################################
 # TODO See other examples for ...
