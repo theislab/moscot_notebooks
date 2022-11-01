@@ -36,16 +36,16 @@ lp = lp.prepare(time_key="day", lineage_attr={"attr": "uns", "key": "trees", "co
 # Internally, cost matrices have been computed from the trees, according to the leaf
 # distance. Let us investigate the prepared problem. First, we print the first few
 # entries of the cost matrix computed from the first lineage tree.
-lp[0, 1].x.data[:3, :3]
+lp[0, 1].x.data_src[:3, :3]
 
 ###############################################################################
 # Similarly, we investigate parts of the cost matrix created from the second tree.
-lp[0, 1].y.data[:3, :3]
+lp[0, 1].y.data_src[:3, :3]
 
 ###############################################################################
 # Note that the gene expression term is still saved as two point clouds. The
 # cost matrix will be computed by the backend.
-lp[0, 1].xy.data.shape, lp[0, 1].xy.data_y.shape
+lp[0, 1].xy.data_src.shape, lp[0, 1].xy.data_tgt.shape
 
 ###############################################################################
 # TODO See other examples for ...
