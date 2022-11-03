@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
-Solving linear problems
------------------------
+Solving linear problems basic
+-----------------------------
 """
 
 ###############################################################################
@@ -17,9 +17,6 @@ import numpy as np
 adata = simulate_data(n_distributions=2, key="day")
 adata
 
-###############################################################################
-# The :meth:`moscot.problems.time.TemporalProblem.solve` has numerous arguments,
-# a few of which will be discussed in the following.
 ###############################################################################
 # Basic parameters
 # ~~~~~~~~~~~~~~~~

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
-Solving linear problems
------------------------
+Solving linear problems - advanced
+----------------------------------
 """
 
 ###############################################################################
@@ -77,7 +77,7 @@ sp = sp.solve(epsilon=0, rank=3, initializer="random", max_iterations=30, gamma=
 ###############################################################################
 # Keyword arguments & Implementation details
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Whenever the :meth:`moscot.problems.time.TemporalProblem.solve` is called,
+# Whenever a `solve` method of a linear problem is called,
 # a backend-specific linear solver is instantiated. Currently, :mod:`ott` is
 # supported, its corresponding linear solvers are :class:`ott.core.sinkhorn.Sinkhorn`,
 # which is used whenever `rank = -1`, and :class:`ott.core.sinkhorn_lr.LRSinkhorn`,
