@@ -18,23 +18,23 @@ Solving quadratic problems basic
 # the :class:`moscot.problems.spatio_temporal.SpatioTemporalProblem`,
 # the :class:`moscot.problems.space.MappingProblem`,
 # the :class:`moscot.problems.time.AlignmentProblem`,
-# the :class:`moscot.problems.generic.GWProblem`, 
+# the :class:`moscot.problems.generic.GWProblem`,
 # and the the :class:`moscot.problems.generic.FGWProblem`.
-
-import scanpy as sc
-import numpy as np
 
 from moscot.datasets import simulate_data
 from moscot.problems.generic import GWProblem, FGWProblem
+import scanpy as sc
+
+import numpy as np
 
 adata = simulate_data(n_distributions=2, key="batch", quad_cost_matrix="spatial")
 sc.pp.pca(adata)
 adata
 
 ###############################################################################
-# Basic parameters 
+# Basic parameters
 # ~~~~~~~~~~~~~~~~
-# There are some paraemeters in quadratic problems which play the same role as 
+# There are some parameters in quadratic problems which play the same role as
 # in linear problems. Hence, we refer to TODO for the role of `epsilon`, `tau_a`,
 # and `tau_b`. In fused quadratic problems (also referred to as Fused Gromov-
 # Wasserstein) there is an additional parameter `alpha` defining the convex
@@ -42,7 +42,7 @@ adata
 # considers the quadratic term, while `alpha -> 1` only considers the linear term.
 # While choosing `alpha=0` is possible in fused quadratic problems, and corresponds
 # to the pure quadratic problem, `alpha=0` is
-# not possible, and hence linear problems must be chosen. 
+# not possible, and hence linear problems must be chosen.
 
 gwp = GWProblem(adata)
 gwp = gwp.prepare(key="batch", GW_x="spatial", GW_y="spatial")
@@ -62,12 +62,11 @@ print(f"{max_difference:.6f}")
 # reduced by setting `rank` to a positive integer (:cite:`scetbon:21a`). In this
 # case, `epsilon` can also be set to 0, while only the balanced case
 # (`tau_a = tau_b = 1`) is supported. Moreover, the data has to be provided
-# as point clouds, i.e. no precomputed cost matrix can be passed. 
+# as point clouds, i.e. no precomputed cost matrix can be passed.
 gwp = gwp.solve(epsilon=1e-2, rank=3)
 
 ###############################################################################
 # Scaling the cost
 # ~~~~~~~~~~~~~~~~
 # `scale_cost` works the same way as for linear problems. Note that all cost
-# terms will be scaled by the same argument. 
-
+# terms will be scaled by the same argument.

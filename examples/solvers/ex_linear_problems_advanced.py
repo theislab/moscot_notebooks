@@ -74,7 +74,7 @@ sp = sp.solve(epsilon=1e-3, inner_iterations=1, min_iterations=0, max_iterations
 # ~~~~~~~~~~~~~~~~~~~~~~~~
 # The low-rank algorithm requires more hyperparameters, i.e. `gamma`, the
 # a step size of the mirror descent algorithm and `gamma_rescale`, a flag
-# indicicating whether to rescale `gamma`. When tuning `gamma`, we recommend
+# indicating whether to rescale `gamma`. When tuning `gamma`, we recommend
 # trying orders of 10. If `gamma` is too small or too large, the algorithm
 # might not converge
 sp = sp.solve(epsilon=0, rank=3, initializer="random", max_iterations=30, gamma=1000)

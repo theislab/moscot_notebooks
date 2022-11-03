@@ -31,7 +31,7 @@ adata
 # transport map. At the same time, the algorithm takes longer to converge. `tau_a`
 # and `tau_b` denote the unbalancedness parameters in the source and the target
 # distribution, respectively. `tau_a = 1` means the source marginals have to be fully
-# satisfied while `0 < tau_a < 1` relaxes this condition. Analgously, `tau_b` affects
+# satisfied while `0 < tau_a < 1` relaxes this condition. Analogously, `tau_b` affects
 # the marginals of the target distribution. We demonstrate the effect of `tau_a` and `tau_b`
 # with the :class:`moscot.problems.generic.SinkhornProblem`.
 # Whenever the prior marginals `a` and `b` of the source and the target distribution,

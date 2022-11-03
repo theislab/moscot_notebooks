@@ -12,20 +12,20 @@ Solving quadratic problems - advanced
     example how to solve linear problems.
 """
 
+from moscot.datasets import simulate_data
+from moscot.problems.generic import GWProblem
+
 ###############################################################################
 # This examples is a continuation of TODO reference and shows advanced examples
-# for how to solve quadratic problems, 
+# for how to solve quadratic problems,
 # e.g. the
 # :class:`moscot.problems.time.LineageProblem`,
 # the :class:`moscot.problems.spatio_temporal.SpatioTemporalProblem`,
 # the :class:`moscot.problems.space.MappingProblem`,
 # the :class:`moscot.problems.time.AlignmentProblem`,
-# the :class:`moscot.problems.generic.GWProblem`, 
+# the :class:`moscot.problems.generic.GWProblem`,
 # and the the :class:`moscot.problems.generic.FGWProblem`.
 import scanpy as sc
-
-from moscot.datasets import simulate_data
-from moscot.problems.generic import GWProblem
 
 adata = simulate_data(n_distributions=2, key="day", quad_cost_matrix="spatial")
 adata
@@ -55,7 +55,7 @@ gwp = gwp.prepare(key="batch", GW_x="spatial", GW_y="spatial")
 ###############################################################################
 # Number of iterations
 # ~~~~~~~~~~~~~~~~~~~~
-# To solve a quadratic Optimal Transport problem, a consecutively updated linearized 
+# To solve a quadratic Optimal Transport problem, a consecutively updated linearized
 # problem is solved `n_iterations` time. Here, `min_iterations` denotes a lower bound
 # for `n_iterations` and `max_iterations` an upper bound. If `max_iterations` is too
 # low, the model might not converge.
@@ -66,7 +66,7 @@ gwp = gwp.solve(alpha=0.5, epsilon=1e-1, min_iterations=0, max_iterations=1)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # As mentioned above, each outer loop step of the Gromov-Wasserstein algorithm
 # consists of solving a linear problem. Arguments for the linear solver can
-# be specified via `linear_solver_kwargs`, keyword arguments for 
+# be specified via `linear_solver_kwargs`, keyword arguments for
 # :class:`ott.core.sinkhorn.Sinkhorn` in the full-rank case or keyword arguments
 # for :class:`ott.core.sinkhorn_lr.LRSinkhorn`, respectively. This way, we can
 # also set the minimum and maximum number of iterations for the linear solver:
@@ -76,9 +76,9 @@ gwp = gwp.solve(alpha=0.5, epsilon=1e-1, linear_solver_kwargs=ls_kwargs)
 ###############################################################################
 # Low rank hyperparameters
 # ~~~~~~~~~~~~~~~~~~~~~~~~
-# The parameters `gamma` and `gamma_rescale` are the same as in the linear case, 
+# The parameters `gamma` and `gamma_rescale` are the same as in the linear case,
 # see example TODO.
-# It remains to consider `ranks` and `tolerances`. 
+# It remains to consider `ranks` and `tolerances`.
 
 
 ###############################################################################
