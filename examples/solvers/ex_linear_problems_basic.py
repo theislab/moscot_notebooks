@@ -5,7 +5,7 @@ Solving linear problems basic
 .. seealso::
     See :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_advanced.py` for an advanced
     example how to solve linear problems.
-    See :ref:`sphx_glr_auto_examples_solvers_ex_quuad_problems_basic.py` for an introduction
+    See :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_basic.py` for an introduction
     to solving quadratic problems.
     See :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_advanced.py` for an advanced
     example how to solve quadratic problems.

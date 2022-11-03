@@ -36,10 +36,10 @@ adata
 # ~~~~~~~~~~~~
 # Different Initializers can help to improve convergence. For the full-rank
 # case we can set the initializer to the trivial initializing method denoted
-# by `default`. The `gaussian` (:cite:`thornton2022`) initializer computes
+# by `default`. The `gaussian` (:cite:`thornton:22`) initializer computes
 # Gaussian approximations of two point clouds and leverages the closed-form
 # solution of Optimal Transport problems between Gaussians, while the `sorting`
-# initializer (:cite:`thornton2022`) solves a simplified (sorting) Optimal Transport
+# initializer (:cite:`thornton:22`) solves a simplified (sorting) Optimal Transport
 # problem and uses its solution as initializer. See :mod:`ott.core.initializers`
 # for details.
 #
