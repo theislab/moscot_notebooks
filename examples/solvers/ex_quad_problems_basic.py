@@ -27,9 +27,9 @@ import scanpy as sc
 
 import numpy as np
 
-adata = simulate_data(n_distributions=2, key="batch", quad_cost_matrix="spatial")
+adata = simulate_data(n_distributions=2, key="batch", quad_term="spatial")
 sc.pp.pca(adata)
-adata
+print(adata)
 
 ###############################################################################
 # Basic parameters
@@ -45,11 +45,11 @@ adata
 # not possible, and hence linear problems must be chosen.
 
 gwp = GWProblem(adata)
-gwp = gwp.prepare(key="batch", GW_x="spatial", GW_y="spatial")
+gwp = gwp.prepare(key="batch", GW_x={"attr": "obsm", "key": "spatial"}, GW_y={"attr": "obsm", "key": "spatial"})
 gwp = gwp.solve(alpha=0, epsilon=1e-1)
 
 fgwp = FGWProblem(adata)
-fgwp = fgwp.prepare(key="batch", GW_x="spatial", GW_y="spatial", joint_attr="X_pca")
+fgwp = fgwp.prepare(key="batch", GW_x={"attr": "obsm", "key": "spatial"}, GW_y={"attr": "obsm", "key": "spatial"}, joint_attr="X_pca")
 fgwp = fgwp.solve(epsilon=1e-1)
 
 max_difference = np.max(np.abs(gwp["0", "1"].solution.transport_matrix - fgwp["0", "1"].solution.transport_matrix))

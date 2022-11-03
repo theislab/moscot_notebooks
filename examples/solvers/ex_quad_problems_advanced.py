@@ -27,7 +27,10 @@ from moscot.problems.generic import GWProblem
 # and the the :class:`moscot.problems.generic.FGWProblem`.
 import scanpy as sc
 
-adata = simulate_data(n_distributions=2, key="day", quad_cost_matrix="spatial")
+adata = simulate_data(n_distributions=2, key="batch", quad_term="spatial")
+sc.pp.pca(adata)
+gwp = GWProblem(adata)
+gwp = gwp.prepare(key="batch", GW_x={"attr": "obsm", "key": "spatial"}, GW_y={"attr": "obsm", "key": "spatial"})
 adata
 
 ###############################################################################
@@ -37,10 +40,8 @@ adata
 # setting the `threshold` denotes the deviation between prior and posterior
 # marginals, while in the unbalanced setting the `threshold` corresponds to
 # a Cauchy sequence stopping criterion.
-adata = simulate_data(n_distributions=2, key="batch", quad_cost_matrix="spatial")
-sc.pp.pca(adata)
-gwp = GWProblem(adata)
-gwp = gwp.prepare(key="batch", GW_x="spatial", GW_y="spatial")
+
+
 
 ###############################################################################
 # Initializers
@@ -70,8 +71,8 @@ gwp = gwp.solve(alpha=0.5, epsilon=1e-1, min_iterations=0, max_iterations=1)
 # :class:`ott.core.sinkhorn.Sinkhorn` in the full-rank case or keyword arguments
 # for :class:`ott.core.sinkhorn_lr.LRSinkhorn`, respectively. This way, we can
 # also set the minimum and maximum number of iterations for the linear solver:
-ls_kwargs = {"min_iterations": 10, "max_iterations": 100}
-gwp = gwp.solve(alpha=0.5, epsilon=1e-1, linear_solver_kwargs=ls_kwargs)
+ls_kwargs = {"min_iterations": 10, "max_iterations": 1000, "threshold": 0.01}
+gwp = gwp.solve(alpha=0.5, epsilon=1e-1, threshold= 0.1, min_iterations=2, max_iterations=20, linear_solver_kwargs=ls_kwargs)
 
 ###############################################################################
 # Low rank hyperparameters
