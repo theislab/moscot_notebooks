@@ -1,0 +1,23 @@
+
+
+Examples using ``moscot.problems.time.LineageProblem``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Passing lineage trees as cost">
+
+.. only:: html
+
+ .. figure:: /auto_examples/problems/images/thumb/sphx_glr_ex_use_leaf_distance_thumb.png
+     :alt: Passing lineage trees as cost
+
+     :ref:`sphx_glr_auto_examples_problems_ex_use_leaf_distance.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_problems_ex_use_leaf_distance.py`

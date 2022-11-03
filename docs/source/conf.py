@@ -14,13 +14,9 @@ from sphinx.application import Sphinx
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-import sphinx_gallery.gen_rst
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parent.parent))
-
-from docs.source.monkeypatch import save_rst_example  # noqa: E402
 
 sys.path.insert(0, os.path.abspath("_ext"))
 needs_sphinx = "5.0"
@@ -40,18 +36,29 @@ release = "main"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "nbsphinx",
-    "sphinx.ext.intersphinx",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.viewcode",
     "sphinx_gallery.gen_gallery",
+    "sphinx_autodoc_typehints",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.autosummary",
+    "nbsphinx",
     "sphinxcontrib.bibtex",
-    "sphinx_copybutton",
+    "sphinx_last_updated_by_git",
     "edit_on_github",
 ]
-
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
+    "numpy": ("https://docs.scipy.org/doc/numpy/", None),
+    "scipy": ("https://docs.scipy.org/doc/scipy/reference/", None),
+    "matplotlib": ("https://matplotlib.org/stable/", None),
+    "jax": ("https://jax.readthedocs.io/en/latest/", None),
+    "ott": ("https://ott-jax.readthedocs.io/en/latest/", None),
+    "pandas": ("https://pandas.pydata.org/pandas-docs/stable/", None),
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
+    "moscot": ("https://moscot.readthedocs.io/en/latest/", None),
 }
 
 # Add any paths that contain templates here, relative to this directory.
@@ -136,13 +143,13 @@ sphinx_gallery_conf = {
             "--mathjax",
         ],
     },
-    # "default_thumb_file": "docs/source/_static/img/squidpy_vertical.png",
+    "default_thumb_file": "docs/source/_static/img/logo.png",
     "plot_gallery": "'True'",  # https://github.com/sphinx-gallery/sphinx-gallery/issues/913
 }
-# nbsphinx_thumbnails = {
-#    "auto_**": "_static/img/squidpy_vertical.png",
-#    "external_tutorials/**": "_static/img/squidpy_vertical.png",
-# }
+nbsphinx_thumbnails = {
+    "auto_examples/problems/**": "_static/img/logo.png",
+    "auto_examples/plotting/**": "_static/img/logo.png",
+}
 nbsphinx_execute_arguments = [
     "--InlineBackend.figure_formats={'png', 'pdf'}",  # correct figure resize
     "--InlineBackend.rc={'figure.dpi': 96}",
@@ -177,8 +184,6 @@ html_show_sphinx = False
 
 github_repo = "moscot"
 github_repo_nb = "moscot_notebooks"
-
-sphinx_gallery.gen_rst.save_rst_example = save_rst_example
 
 
 def setup(app: Sphinx) -> None:

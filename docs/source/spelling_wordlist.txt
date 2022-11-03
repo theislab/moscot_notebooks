@@ -32,8 +32,8 @@ OT
 PCA
 pre
 precomputed
-preprocessing
 preprocessed
+preprocessing
 Qaudratic
 rescale
 Sankey
@@ -55,3 +55,7 @@ subpopulations
 transcriptomics
 unbalancedness
 Wasserstein
+Initializers
+Gaussians
+initializers
+hyperparameters
