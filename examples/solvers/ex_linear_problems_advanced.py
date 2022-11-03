@@ -2,6 +2,14 @@
 """
 Solving linear problems - advanced
 ----------------------------------
+
+.. seealso::
+    See :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_basic.py` for an introduction
+    to solving linear problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_basic.py` for an introduction
+    to solving quadratic problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_advanced.py` for an advanced
+    example how to solve quadratic problems.
 """
 
 ###############################################################################
@@ -84,5 +92,3 @@ sp = sp.solve(epsilon=0, rank=3, initializer="random", max_iterations=30, gamma=
 # its counterpart whenever `rank` is a positive integer. :mod:`moscot` wraps these
 # classes in :class:`moscot.backends.ott.SinkhornSolver` which handles both full and
 # low rank.
-#
-# TODO See other examples for ...

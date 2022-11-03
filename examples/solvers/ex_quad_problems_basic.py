@@ -2,6 +2,14 @@
 """
 Solving quadratic problems basic
 --------------------------------
+
+.. seealso::
+    See :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_advanced.py` for an advanced
+    example how to solve quadratic problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_basic.py` for an introduction
+    to solving linear problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_advanced.py` for an advanced
+    example how to solve linear problems.
 """
 
 ###############################################################################
@@ -63,5 +71,3 @@ gwp = gwp.solve(epsilon=1e-2, rank=3)
 # `scale_cost` works the same way as for linear problems. Note that all cost
 # terms will be scaled by the same argument. 
 
-###############################################################################
-# TODO See other examples for ...

@@ -2,6 +2,13 @@
 """
 Solving linear problems basic
 -----------------------------
+.. seealso::
+    See :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_advanced.py` for an advanced
+    example how to solve linear problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_quuad_problems_basic.py` for an introduction
+    to solving quadratic problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_advanced.py` for an advanced
+    example how to solve quadratic problems.
 """
 
 ###############################################################################
@@ -83,6 +90,3 @@ print(tm_max[:3, :3])
 # idea of the influence of different scalings.
 correlation = np.corrcoef(tm_mean.flatten(), tm_max.flatten())[0, 1]
 print(f"{correlation:.4f}")
-
-###############################################################################
-# TODO See other examples for ...

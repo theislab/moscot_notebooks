@@ -2,6 +2,14 @@
 """
 Solving quadratic problems - advanced
 -------------------------------------
+
+.. seealso::
+    See :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_basic.py` for an introduction
+    to solving quadratic problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_basic.py` for an introduction
+    to solving linear problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_advanced.py` for an advanced
+    example how to solve linear problems.
 """
 
 ###############################################################################
@@ -82,5 +90,3 @@ gwp = gwp.solve(alpha=0.5, epsilon=1e-1, linear_solver_kwargs=ls_kwargs)
 # handling both the full-rank and the low-rank case. :mod:`moscot` wraps this
 # class in :class:`moscot.backends.ott.GWSolver` and :class:`moscot.backends.ott.FGWSolver`,
 # handling the purely quadratic and the fused quadratic problem, respectively.
-#
-# TODO See other examples for ...
