@@ -1,7 +1,14 @@
 #!/usr/bin/env python
 """
-Solving linear problems
------------------------
+Solving linear problems basic
+-----------------------------
+.. seealso::
+    See :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_advanced.py` for an advanced
+    example how to solve linear problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_basic.py` for an introduction
+    to solving quadratic problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_advanced.py` for an advanced
+    example how to solve quadratic problems.
 """
 
 ###############################################################################
@@ -16,10 +23,6 @@ import numpy as np
 
 adata = simulate_data(n_distributions=2, key="day")
 adata
-
-###############################################################################
-# The :meth:`moscot.problems.time.TemporalProblem.solve` has numerous arguments,
-# a few of which will be discussed in the following.
 
 ###############################################################################
 # Basic parameters
@@ -61,7 +64,7 @@ print(sp[0, 1].solution.a[:5], sp[0, 1].solution.b[:5])
 # (`tau_a = tau_b = 1`) is supported. The `rank` should be significantly
 # smaller than the number of cells in both source and target distribution.
 
-sp = sp.solve(epsilon=0, rank=3, initializer="random")
+sp = sp.solve(epsilon=0, rank=3)
 
 ###############################################################################
 # Scaling the cost
@@ -87,6 +90,3 @@ print(tm_max[:3, :3])
 # idea of the influence of different scalings.
 correlation = np.corrcoef(tm_mean.flatten(), tm_max.flatten())[0, 1]
 print(f"{correlation:.4f}")
-
-###############################################################################
-# TODO See other examples for ...

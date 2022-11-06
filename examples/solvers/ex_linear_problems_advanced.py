@@ -1,7 +1,15 @@
 #!/usr/bin/env python
 """
-Solving linear problems
------------------------
+Solving linear problems - advanced
+----------------------------------
+
+.. seealso::
+    See :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_basic.py` for an introduction
+    to solving linear problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_basic.py` for an introduction
+    to solving quadratic problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_advanced.py` for an advanced
+    example how to solve quadratic problems.
 """
 
 ###############################################################################
@@ -77,12 +85,10 @@ sp = sp.solve(epsilon=0, rank=3, initializer="random", max_iterations=30, gamma=
 ###############################################################################
 # Keyword arguments & Implementation details
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Whenever the :meth:`moscot.problems.time.TemporalProblem.solve` is called,
+# Whenever a `solve` method of a linear problem is called,
 # a backend-specific linear solver is instantiated. Currently, :mod:`ott` is
 # supported, its corresponding linear solvers are :class:`ott.core.sinkhorn.Sinkhorn`,
 # which is used whenever `rank = -1`, and :class:`ott.core.sinkhorn_lr.LRSinkhorn`,
 # its counterpart whenever `rank` is a positive integer. :mod:`moscot` wraps these
 # classes in :class:`moscot.backends.ott.SinkhornSolver` which handles both full and
 # low rank.
-#
-# TODO See other examples for ...
