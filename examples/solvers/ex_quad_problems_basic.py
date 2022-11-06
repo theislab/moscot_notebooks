@@ -49,7 +49,9 @@ gwp = gwp.prepare(key="batch", GW_x={"attr": "obsm", "key": "spatial"}, GW_y={"a
 gwp = gwp.solve(alpha=0, epsilon=1e-1)
 
 fgwp = FGWProblem(adata)
-fgwp = fgwp.prepare(key="batch", GW_x={"attr": "obsm", "key": "spatial"}, GW_y={"attr": "obsm", "key": "spatial"}, joint_attr="X_pca")
+fgwp = fgwp.prepare(
+    key="batch", GW_x={"attr": "obsm", "key": "spatial"}, GW_y={"attr": "obsm", "key": "spatial"}, joint_attr="X_pca"
+)
 fgwp = fgwp.solve(epsilon=1e-1)
 
 max_difference = np.max(np.abs(gwp["0", "1"].solution.transport_matrix - fgwp["0", "1"].solution.transport_matrix))
