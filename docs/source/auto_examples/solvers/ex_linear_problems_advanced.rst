@@ -18,17 +18,25 @@
 .. _sphx_glr_auto_examples_solvers_ex_linear_problems_advanced.py:
 
 
-Solving linear problems
------------------------
+Solving linear problems - advanced
+----------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-12
+.. seealso::
+    See :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_basic.py` for an introduction
+    to solving linear problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_basic.py` for an introduction
+    to solving quadratic problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_advanced.py` for an advanced
+    example how to solve quadratic problems.
+
+.. GENERATED FROM PYTHON SOURCE LINES 16-20
 
 This examples is a continuation of TODO reference and shows advanced examples
 for how to solve linear problems like the
 :class:`moscot.problems.time.TemporalProblem` and the
 :class:`moscot.problems.generic.SinkhornProblem`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-19
+.. GENERATED FROM PYTHON SOURCE LINES 20-27
 
 .. code-block:: default
 
@@ -51,37 +59,38 @@ for how to solve linear problems like the
 
     DEBUG:root:Initializing MLIR with module: _site_initialize_0
     DEBUG:root:Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/home/runner/work/moscot_notebooks/moscot_notebooks/.tox/docs/lib/python3.9/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0005290508270263672 sec
-    DEBUG:absl:Initializing backend 'interpreter'
-    DEBUG:absl:Backend 'interpreter' initialized
-    DEBUG:absl:Initializing backend 'cpu'
-    DEBUG:absl:Backend 'cpu' initialized
-    DEBUG:absl:Initializing backend 'tpu_driver'
-    INFO:absl:Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
-    DEBUG:absl:Initializing backend 'cuda'
-    INFO:absl:Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
-    DEBUG:absl:Initializing backend 'rocm'
-    INFO:absl:Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
-    DEBUG:absl:Initializing backend 'tpu'
-    INFO:absl:Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
-    DEBUG:absl:Initializing backend 'plugin'
-    INFO:absl:Unable to initialize backend 'plugin': xla_extension has no attributes named get_plugin_device_client. Compile TensorFlow with //tensorflow/compiler/xla/python:enable_plugin_device set to true (defaults to false) to enable this.
-    WARNING:absl:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.00048279762268066406 sec
-    DEBUG:absl:Compiling prim_fun (139830974134368 for args (ShapedArray(int32[]), ShapedArray(int32[])).
-    DEBUG:absl:Finished XLA compilation of shift_right_logical in 0.01733112335205078 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.000469207763671875 sec
-    DEBUG:absl:Compiling prim_fun (139830974134048 for args (ShapedArray(int32[]),).
-    DEBUG:absl:Finished XLA compilation of convert_element_type in 0.009042739868164062 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0005772113800048828 sec
-    DEBUG:absl:Compiling prim_fun (139830822523024 for args (ShapedArray(uint32[]),).
-    DEBUG:absl:Finished XLA compilation of reshape in 0.008977651596069336 sec
-    DEBUG:absl:Finished tracing + transforming <lambda> for jit in 0.0008494853973388672 sec
-    DEBUG:absl:Compiling <lambda> (139830338665584 for args (ShapedArray(int32[]), ShapedArray(uint32[])).
-    DEBUG:absl:Finished XLA compilation of <lambda> in 0.009655237197875977 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0003905296325683594 sec
-    DEBUG:absl:Compiling prim_fun (139830338665104 for args (ShapedArray(uint32[1]), ShapedArray(uint32[1])).
-    DEBUG:absl:Finished XLA compilation of concatenate in 0.009314537048339844 sec
+    DEBUG:jax._src.path:etils.epath was not found. Using pathlib for file I/O.
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.00037670135498046875 sec
+    DEBUG:jax._src.lib.xla_bridge:Initializing backend 'interpreter'
+    DEBUG:jax._src.lib.xla_bridge:Backend 'interpreter' initialized
+    DEBUG:jax._src.lib.xla_bridge:Initializing backend 'cpu'
+    DEBUG:jax._src.lib.xla_bridge:Backend 'cpu' initialized
+    DEBUG:jax._src.lib.xla_bridge:Initializing backend 'tpu_driver'
+    INFO:jax._src.lib.xla_bridge:Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+    DEBUG:jax._src.lib.xla_bridge:Initializing backend 'cuda'
+    INFO:jax._src.lib.xla_bridge:Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+    DEBUG:jax._src.lib.xla_bridge:Initializing backend 'rocm'
+    INFO:jax._src.lib.xla_bridge:Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+    DEBUG:jax._src.lib.xla_bridge:Initializing backend 'tpu'
+    INFO:jax._src.lib.xla_bridge:Unable to initialize backend 'tpu': INVALID_ARGUMENT: TpuPlatform is not available.
+    DEBUG:jax._src.lib.xla_bridge:Initializing backend 'plugin'
+    INFO:jax._src.lib.xla_bridge:Unable to initialize backend 'plugin': xla_extension has no attributes named get_plugin_device_client. Compile TensorFlow with //tensorflow/compiler/xla/python:enable_plugin_device set to true (defaults to false) to enable this.
+    WARNING:jax._src.lib.xla_bridge:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0004787445068359375 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139653229606688 for args (ShapedArray(int32[]), ShapedArray(int32[])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of shift_right_logical in 0.011959552764892578 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.00030040740966796875 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139653229606848 for args (ShapedArray(int32[]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of convert_element_type in 0.006446123123168945 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0004258155822753906 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139653229607328 for args (ShapedArray(uint32[]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of reshape in 0.00629425048828125 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming <lambda> for jit in 0.0006310939788818359 sec
+    DEBUG:jax._src.dispatch:Compiling <lambda> (139653229731568 for args (ShapedArray(int32[]), ShapedArray(uint32[])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of <lambda> in 0.006840944290161133 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003895759582519531 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139653229731168 for args (ShapedArray(uint32[1]), ShapedArray(uint32[1])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of concatenate in 0.006691694259643555 sec
     /home/runner/work/moscot_notebooks/moscot_notebooks/.tox/docs/lib/python3.9/site-packages/moscot/datasets/_datasets.py:251: FutureWarning: X.dtype being converted to np.float32 from float64. In the next version of anndata (0.9) conversion will not be automatic. Pass dtype explicitly to avoid this warning. Pass `AnnData(X, dtype=X.dtype, ...)` to get the future behavour.
       AnnData(
     /home/runner/work/moscot_notebooks/moscot_notebooks/.tox/docs/lib/python3.9/site-packages/anndata/_core/anndata.py:1785: FutureWarning: X.dtype being converted to np.float32 from float64. In the next version of anndata (0.9) conversion will not be automatic. Pass dtype explicitly to avoid this warning. Pass `AnnData(X, dtype=X.dtype, ...)` to get the future behavour.
@@ -92,7 +101,7 @@ for how to solve linear problems like the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-45
+.. GENERATED FROM PYTHON SOURCE LINES 28-53
 
 Threshold
 ~~~~~~~~~
@@ -120,7 +129,7 @@ e.g. `min_iterations`
 and `max_iterations` can be provided for the k-means algorithm used by
 the `k-means` initializer.
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-52
+.. GENERATED FROM PYTHON SOURCE LINES 53-60
 
 .. code-block:: default
 
@@ -897,7 +906,7 @@ the `k-means` initializer.
         return $274return_value.3                ['$274return_value.3']
 
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8680f10>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368dbdbe0>
     DEBUG:numba.core.ssa:on stmt: data = arg(0, name=data)
     DEBUG:numba.core.ssa:on stmt: indices = arg(1, name=indices)
     DEBUG:numba.core.ssa:on stmt: major_len = arg(2, name=major_len)
@@ -923,14 +932,14 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $phi64.0 = $62get_iter.26
     DEBUG:numba.core.ssa:on stmt: jump 64
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 64
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8680f10>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368dbdbe0>
     DEBUG:numba.core.ssa:on stmt: $64for_iter.1 = iternext(value=$phi64.0)
     DEBUG:numba.core.ssa:on stmt: $64for_iter.2 = pair_first(value=$64for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $64for_iter.3 = pair_second(value=$64for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi66.1 = $64for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $64for_iter.3, 66, 98
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 66
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8680f10>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368dbdbe0>
     DEBUG:numba.core.ssa:on stmt: i = $phi66.1
     DEBUG:numba.core.ssa:on stmt: col_ind = getitem(value=indices, index=i, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:on stmt: $82binary_subscr.9 = getitem(value=means, index=col_ind, fn=<built-in function getitem>)
@@ -939,42 +948,42 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: means[col_ind] = $90inplace_add.13
     DEBUG:numba.core.ssa:on stmt: jump 64
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 98
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8680f10>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368dbdbe0>
     DEBUG:numba.core.ssa:on stmt: $98load_global.0 = global(range: <class 'range'>)
     DEBUG:numba.core.ssa:on stmt: $102call_function.2 = call $98load_global.0(minor_len, func=$98load_global.0, args=[Var(minor_len, _utils.py:53)], kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: $104get_iter.3 = getiter(value=$102call_function.2)
     DEBUG:numba.core.ssa:on stmt: $phi106.0 = $104get_iter.3
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 106
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8680f10>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368dbdbe0>
     DEBUG:numba.core.ssa:on stmt: $106for_iter.1 = iternext(value=$phi106.0)
     DEBUG:numba.core.ssa:on stmt: $106for_iter.2 = pair_first(value=$106for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $106for_iter.3 = pair_second(value=$106for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi108.1 = $106for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $106for_iter.3, 108, 128
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 108
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8680f10>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368dbdbe0>
     DEBUG:numba.core.ssa:on stmt: i = $phi108.1
     DEBUG:numba.core.ssa:on stmt: $116binary_subscr.6 = getitem(value=means, index=i, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:on stmt: $120inplace_true_divide.8 = inplace_binop(fn=<built-in function itruediv>, immutable_fn=<built-in function truediv>, lhs=$116binary_subscr.6, rhs=major_len, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:on stmt: means[i] = $120inplace_true_divide.8
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 128
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8680f10>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368dbdbe0>
     DEBUG:numba.core.ssa:on stmt: $128load_global.0 = global(range: <class 'range'>)
     DEBUG:numba.core.ssa:on stmt: $132call_function.2 = call $128load_global.0(non_zero, func=$128load_global.0, args=[Var(non_zero, _utils.py:53)], kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: $134get_iter.3 = getiter(value=$132call_function.2)
     DEBUG:numba.core.ssa:on stmt: $phi136.0 = $134get_iter.3
     DEBUG:numba.core.ssa:on stmt: jump 136
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 136
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8680f10>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368dbdbe0>
     DEBUG:numba.core.ssa:on stmt: $136for_iter.1 = iternext(value=$phi136.0)
     DEBUG:numba.core.ssa:on stmt: $136for_iter.2 = pair_first(value=$136for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $136for_iter.3 = pair_second(value=$136for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi138.1 = $136for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $136for_iter.3, 138, 202
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 138
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8680f10>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368dbdbe0>
     DEBUG:numba.core.ssa:on stmt: i = $phi138.1
     DEBUG:numba.core.ssa:on stmt: col_ind = getitem(value=indices, index=i, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:on stmt: $152binary_subscr.7 = getitem(value=data, index=i, fn=<built-in function getitem>)
@@ -990,21 +999,21 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: counts[col_ind] = $194inplace_add.27
     DEBUG:numba.core.ssa:on stmt: jump 136
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 202
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8680f10>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368dbdbe0>
     DEBUG:numba.core.ssa:on stmt: $202load_global.0 = global(range: <class 'range'>)
     DEBUG:numba.core.ssa:on stmt: $206call_function.2 = call $202load_global.0(minor_len, func=$202load_global.0, args=[Var(minor_len, _utils.py:53)], kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: $208get_iter.3 = getiter(value=$206call_function.2)
     DEBUG:numba.core.ssa:on stmt: $phi210.0 = $208get_iter.3
     DEBUG:numba.core.ssa:on stmt: jump 210
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 210
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8680f10>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368dbdbe0>
     DEBUG:numba.core.ssa:on stmt: $210for_iter.1 = iternext(value=$phi210.0)
     DEBUG:numba.core.ssa:on stmt: $210for_iter.2 = pair_first(value=$210for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $210for_iter.3 = pair_second(value=$210for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi212.1 = $210for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $210for_iter.3, 212, 268
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 212
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8680f10>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368dbdbe0>
     DEBUG:numba.core.ssa:on stmt: i = $phi212.1
     DEBUG:numba.core.ssa:on stmt: $220binary_subscr.6 = getitem(value=variances, index=i, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:on stmt: $228binary_subscr.10 = getitem(value=counts, index=i, fn=<built-in function getitem>)
@@ -1020,98 +1029,98 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: variances[i] = $260inplace_true_divide.25
     DEBUG:numba.core.ssa:on stmt: jump 210
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 268
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8680f10>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368dbdbe0>
     DEBUG:numba.core.ssa:on stmt: $272build_tuple.2 = build_tuple(items=[Var(means, _utils.py:55), Var(variances, _utils.py:56)])
     DEBUG:numba.core.ssa:on stmt: $274return_value.3 = cast(value=$272build_tuple.2)
     DEBUG:numba.core.ssa:on stmt: return $274return_value.3
     DEBUG:numba.core.ssa:defs defaultdict(<class 'list'>,
-                {'$102call_function.2': [<numba.core.ir.Assign object at 0x7f2cb866eb50>],
-                 '$104get_iter.3': [<numba.core.ir.Assign object at 0x7f2cb866ec70>],
-                 '$106for_iter.1': [<numba.core.ir.Assign object at 0x7f2cb866efa0>],
-                 '$106for_iter.2': [<numba.core.ir.Assign object at 0x7f2cb866f100>],
-                 '$106for_iter.3': [<numba.core.ir.Assign object at 0x7f2cb866f220>],
-                 '$116binary_subscr.6': [<numba.core.ir.Assign object at 0x7f2cb866fa60>],
-                 '$120inplace_true_divide.8': [<numba.core.ir.Assign object at 0x7f2cb866fd00>],
-                 '$128load_global.0': [<numba.core.ir.Assign object at 0x7f2cb866fbe0>],
-                 '$12load_global.4': [<numba.core.ir.Assign object at 0x7f2cb86a8f70>],
-                 '$132call_function.2': [<numba.core.ir.Assign object at 0x7f2cb86721f0>],
-                 '$134get_iter.3': [<numba.core.ir.Assign object at 0x7f2cb8672310>],
-                 '$136for_iter.1': [<numba.core.ir.Assign object at 0x7f2cb8672640>],
-                 '$136for_iter.2': [<numba.core.ir.Assign object at 0x7f2cb8672760>],
-                 '$136for_iter.3': [<numba.core.ir.Assign object at 0x7f2cb8672880>],
-                 '$14load_attr.5': [<numba.core.ir.Assign object at 0x7f2cb8664130>],
-                 '$152binary_subscr.7': [<numba.core.ir.Assign object at 0x7f2cb86753a0>],
-                 '$158binary_subscr.10': [<numba.core.ir.Assign object at 0x7f2cb8675760>],
-                 '$170binary_subscr.16': [<numba.core.ir.Assign object at 0x7f2cb8675fa0>],
-                 '$176binary_multiply.19': [<numba.core.ir.Assign object at 0x7f2cb867a3a0>],
-                 '$178inplace_add.20': [<numba.core.ir.Assign object at 0x7f2cb867a520>],
-                 '$190binary_subscr.25': [<numba.core.ir.Assign object at 0x7f2cb867ab80>],
-                 '$194inplace_add.27': [<numba.core.ir.Assign object at 0x7f2cb867ae80>],
-                 '$202load_global.0': [<numba.core.ir.Assign object at 0x7f2cb8675b80>],
-                 '$206call_function.2': [<numba.core.ir.Assign object at 0x7f2cb867aa00>],
-                 '$208get_iter.3': [<numba.core.ir.Assign object at 0x7f2cb8672ca0>],
-                 '$210for_iter.1': [<numba.core.ir.Assign object at 0x7f2cb867c280>],
-                 '$210for_iter.2': [<numba.core.ir.Assign object at 0x7f2cb867c3a0>],
-                 '$210for_iter.3': [<numba.core.ir.Assign object at 0x7f2cb867c4c0>],
-                 '$220binary_subscr.6': [<numba.core.ir.Assign object at 0x7f2cb867cd00>],
-                 '$228binary_subscr.10': [<numba.core.ir.Assign object at 0x7f2cb867f220>],
-                 '$230binary_subtract.11': [<numba.core.ir.Assign object at 0x7f2cb867f3a0>],
-                 '$236binary_subscr.14': [<numba.core.ir.Assign object at 0x7f2cb867f760>],
-                 '$240binary_power.16': [<numba.core.ir.Assign object at 0x7f2cb867fa60>],
-                 '$242binary_multiply.17': [<numba.core.ir.Assign object at 0x7f2cb867fbe0>],
-                 '$244inplace_add.18': [<numba.core.ir.Assign object at 0x7f2cb867fd60>],
-                 '$256binary_subscr.23': [<numba.core.ir.Assign object at 0x7f2cb8680400>],
-                 '$260inplace_true_divide.25': [<numba.core.ir.Assign object at 0x7f2cb86806a0>],
-                 '$26load_global.10': [<numba.core.ir.Assign object at 0x7f2cb8664970>],
-                 '$272build_tuple.2': [<numba.core.ir.Assign object at 0x7f2cb86801f0>],
-                 '$274return_value.3': [<numba.core.ir.Assign object at 0x7f2cb86808b0>],
-                 '$28load_attr.11': [<numba.core.ir.Assign object at 0x7f2cb8664af0>],
-                 '$40load_global.16': [<numba.core.ir.Assign object at 0x7f2cb8669370>],
-                 '$42load_attr.17': [<numba.core.ir.Assign object at 0x7f2cb86694f0>],
-                 '$46load_global.19': [<numba.core.ir.Assign object at 0x7f2cb8669790>],
-                 '$48load_attr.20': [<numba.core.ir.Assign object at 0x7f2cb8669910>],
-                 '$4load_attr.1': [<numba.core.ir.Assign object at 0x7f2cb86a89d0>],
-                 '$56load_global.23': [<numba.core.ir.Assign object at 0x7f2cb8669f10>],
-                 '$60call_function.25': [<numba.core.ir.Assign object at 0x7f2cb866b250>],
-                 '$62get_iter.26': [<numba.core.ir.Assign object at 0x7f2cb866b370>],
-                 '$64for_iter.1': [<numba.core.ir.Assign object at 0x7f2cb8669df0>],
-                 '$64for_iter.2': [<numba.core.ir.Assign object at 0x7f2cb866b3d0>],
-                 '$64for_iter.3': [<numba.core.ir.Assign object at 0x7f2cb866b520>],
-                 '$82binary_subscr.9': [<numba.core.ir.Assign object at 0x7f2cb866e2e0>],
-                 '$88binary_subscr.12': [<numba.core.ir.Assign object at 0x7f2cb866e6a0>],
-                 '$90inplace_add.13': [<numba.core.ir.Assign object at 0x7f2cb866e820>],
-                 '$98load_global.0': [<numba.core.ir.Assign object at 0x7f2cb8664c10>],
-                 '$const192.26': [<numba.core.ir.Assign object at 0x7f2cb867acd0>],
-                 '$const238.15': [<numba.core.ir.Assign object at 0x7f2cb867f8b0>],
-                 '$const6.2': [<numba.core.ir.Assign object at 0x7f2cb86a8b50>],
-                 '$phi106.0': [<numba.core.ir.Assign object at 0x7f2cb866e460>],
-                 '$phi108.1': [<numba.core.ir.Assign object at 0x7f2cb866eee0>],
-                 '$phi136.0': [<numba.core.ir.Assign object at 0x7f2cb866f430>],
-                 '$phi138.1': [<numba.core.ir.Assign object at 0x7f2cb8672580>],
-                 '$phi210.0': [<numba.core.ir.Assign object at 0x7f2cb8675ee0>],
-                 '$phi212.1': [<numba.core.ir.Assign object at 0x7f2cb867c1c0>],
-                 '$phi64.0': [<numba.core.ir.Assign object at 0x7f2cb86a88e0>],
-                 '$phi66.1': [<numba.core.ir.Assign object at 0x7f2cb8669250>],
-                 'col_ind': [<numba.core.ir.Assign object at 0x7f2cb866bbe0>,
-                             <numba.core.ir.Assign object at 0x7f2cb8672ee0>],
-                 'counts': [<numba.core.ir.Assign object at 0x7f2cb8669d90>],
-                 'data': [<numba.core.ir.Assign object at 0x7f2cb86a3430>],
-                 'diff': [<numba.core.ir.Assign object at 0x7f2cb86758e0>],
-                 'dtype': [<numba.core.ir.Assign object at 0x7f2cb86a8730>],
-                 'i': [<numba.core.ir.Assign object at 0x7f2cb866b7f0>,
-                       <numba.core.ir.Assign object at 0x7f2cb866f4c0>,
-                       <numba.core.ir.Assign object at 0x7f2cb8672b20>,
-                       <numba.core.ir.Assign object at 0x7f2cb867c760>],
-                 'indices': [<numba.core.ir.Assign object at 0x7f2cb86a8310>],
-                 'major_len': [<numba.core.ir.Assign object at 0x7f2cb86a80d0>],
-                 'means': [<numba.core.ir.Assign object at 0x7f2cb86647f0>],
-                 'minor_len': [<numba.core.ir.Assign object at 0x7f2cb86a8610>],
-                 'non_zero': [<numba.core.ir.Assign object at 0x7f2cb8680e20>],
-                 'variances': [<numba.core.ir.Assign object at 0x7f2cb86691f0>]})
+                {'$102call_function.2': [<numba.core.ir.Assign object at 0x7f0368e2e250>],
+                 '$104get_iter.3': [<numba.core.ir.Assign object at 0x7f0368e2e370>],
+                 '$106for_iter.1': [<numba.core.ir.Assign object at 0x7f0368e2e6a0>],
+                 '$106for_iter.2': [<numba.core.ir.Assign object at 0x7f0368e2e7c0>],
+                 '$106for_iter.3': [<numba.core.ir.Assign object at 0x7f0368e2e8e0>],
+                 '$116binary_subscr.6': [<numba.core.ir.Assign object at 0x7f0368e2f160>],
+                 '$120inplace_true_divide.8': [<numba.core.ir.Assign object at 0x7f0368e2f400>],
+                 '$128load_global.0': [<numba.core.ir.Assign object at 0x7f0368e2f2e0>],
+                 '$12load_global.4': [<numba.core.ir.Assign object at 0x7f0368e22670>],
+                 '$132call_function.2': [<numba.core.ir.Assign object at 0x7f0368e2f8b0>],
+                 '$134get_iter.3': [<numba.core.ir.Assign object at 0x7f0368e2f9d0>],
+                 '$136for_iter.1': [<numba.core.ir.Assign object at 0x7f0368e2fd00>],
+                 '$136for_iter.2': [<numba.core.ir.Assign object at 0x7f0368e2fe20>],
+                 '$136for_iter.3': [<numba.core.ir.Assign object at 0x7f0368e2ff40>],
+                 '$14load_attr.5': [<numba.core.ir.Assign object at 0x7f0368e227f0>],
+                 '$152binary_subscr.7': [<numba.core.ir.Assign object at 0x7f0368e30a60>],
+                 '$158binary_subscr.10': [<numba.core.ir.Assign object at 0x7f0368e30e20>],
+                 '$170binary_subscr.16': [<numba.core.ir.Assign object at 0x7f0368e346a0>],
+                 '$176binary_multiply.19': [<numba.core.ir.Assign object at 0x7f0368e34a60>],
+                 '$178inplace_add.20': [<numba.core.ir.Assign object at 0x7f0368e34be0>],
+                 '$190binary_subscr.25': [<numba.core.ir.Assign object at 0x7f0368e36280>],
+                 '$194inplace_add.27': [<numba.core.ir.Assign object at 0x7f0368e36580>],
+                 '$202load_global.0': [<numba.core.ir.Assign object at 0x7f0368e308b0>],
+                 '$206call_function.2': [<numba.core.ir.Assign object at 0x7f0368e34790>],
+                 '$208get_iter.3': [<numba.core.ir.Assign object at 0x7f0368e34eb0>],
+                 '$210for_iter.1': [<numba.core.ir.Assign object at 0x7f0368e36940>],
+                 '$210for_iter.2': [<numba.core.ir.Assign object at 0x7f0368e36a60>],
+                 '$210for_iter.3': [<numba.core.ir.Assign object at 0x7f0368e36b80>],
+                 '$220binary_subscr.6': [<numba.core.ir.Assign object at 0x7f0368e38400>],
+                 '$228binary_subscr.10': [<numba.core.ir.Assign object at 0x7f0368e388e0>],
+                 '$230binary_subtract.11': [<numba.core.ir.Assign object at 0x7f0368e38a60>],
+                 '$236binary_subscr.14': [<numba.core.ir.Assign object at 0x7f0368e38e20>],
+                 '$240binary_power.16': [<numba.core.ir.Assign object at 0x7f0368e3a160>],
+                 '$242binary_multiply.17': [<numba.core.ir.Assign object at 0x7f0368e3a2e0>],
+                 '$244inplace_add.18': [<numba.core.ir.Assign object at 0x7f0368e3a460>],
+                 '$256binary_subscr.23': [<numba.core.ir.Assign object at 0x7f0368e3aac0>],
+                 '$260inplace_true_divide.25': [<numba.core.ir.Assign object at 0x7f0368e3ad60>],
+                 '$26load_global.10': [<numba.core.ir.Assign object at 0x7f0368e25070>],
+                 '$272build_tuple.2': [<numba.core.ir.Assign object at 0x7f0368e3a8b0>],
+                 '$274return_value.3': [<numba.core.ir.Assign object at 0x7f0368e3af70>],
+                 '$28load_attr.11': [<numba.core.ir.Assign object at 0x7f0368e251f0>],
+                 '$40load_global.16': [<numba.core.ir.Assign object at 0x7f0368e25a30>],
+                 '$42load_attr.17': [<numba.core.ir.Assign object at 0x7f0368e25bb0>],
+                 '$46load_global.19': [<numba.core.ir.Assign object at 0x7f0368e25e50>],
+                 '$48load_attr.20': [<numba.core.ir.Assign object at 0x7f0368e25fd0>],
+                 '$4load_attr.1': [<numba.core.ir.Assign object at 0x7f0368e220d0>],
+                 '$56load_global.23': [<numba.core.ir.Assign object at 0x7f0368e29610>],
+                 '$60call_function.25': [<numba.core.ir.Assign object at 0x7f0368e29910>],
+                 '$62get_iter.26': [<numba.core.ir.Assign object at 0x7f0368e29a30>],
+                 '$64for_iter.1': [<numba.core.ir.Assign object at 0x7f0368e63fa0>],
+                 '$64for_iter.2': [<numba.core.ir.Assign object at 0x7f0368e29a90>],
+                 '$64for_iter.3': [<numba.core.ir.Assign object at 0x7f0368e29be0>],
+                 '$82binary_subscr.9': [<numba.core.ir.Assign object at 0x7f0368e2c9a0>],
+                 '$88binary_subscr.12': [<numba.core.ir.Assign object at 0x7f0368e2cd60>],
+                 '$90inplace_add.13': [<numba.core.ir.Assign object at 0x7f0368e2cee0>],
+                 '$98load_global.0': [<numba.core.ir.Assign object at 0x7f0368e2c790>],
+                 '$const192.26': [<numba.core.ir.Assign object at 0x7f0368e363d0>],
+                 '$const238.15': [<numba.core.ir.Assign object at 0x7f0368e38f70>],
+                 '$const6.2': [<numba.core.ir.Assign object at 0x7f0368e22250>],
+                 '$phi106.0': [<numba.core.ir.Assign object at 0x7f0368e29df0>],
+                 '$phi108.1': [<numba.core.ir.Assign object at 0x7f0368e2e5e0>],
+                 '$phi136.0': [<numba.core.ir.Assign object at 0x7f0368e2f6d0>],
+                 '$phi138.1': [<numba.core.ir.Assign object at 0x7f0368e2fc40>],
+                 '$phi210.0': [<numba.core.ir.Assign object at 0x7f0368e34280>],
+                 '$phi212.1': [<numba.core.ir.Assign object at 0x7f0368e36880>],
+                 '$phi64.0': [<numba.core.ir.Assign object at 0x7f0368e22580>],
+                 '$phi66.1': [<numba.core.ir.Assign object at 0x7f0368e25d60>],
+                 'col_ind': [<numba.core.ir.Assign object at 0x7f0368e2c2e0>,
+                             <numba.core.ir.Assign object at 0x7f0368e305e0>],
+                 'counts': [<numba.core.ir.Assign object at 0x7f0368e29490>],
+                 'data': [<numba.core.ir.Assign object at 0x7f0368e63880>],
+                 'diff': [<numba.core.ir.Assign object at 0x7f0368e30fa0>],
+                 'dtype': [<numba.core.ir.Assign object at 0x7f0368e63df0>],
+                 'i': [<numba.core.ir.Assign object at 0x7f0368e29eb0>,
+                       <numba.core.ir.Assign object at 0x7f0368e2eb80>,
+                       <numba.core.ir.Assign object at 0x7f0368e30220>,
+                       <numba.core.ir.Assign object at 0x7f0368e36e20>],
+                 'indices': [<numba.core.ir.Assign object at 0x7f0368e63a90>],
+                 'major_len': [<numba.core.ir.Assign object at 0x7f0368e63bb0>],
+                 'means': [<numba.core.ir.Assign object at 0x7f0368e22eb0>],
+                 'minor_len': [<numba.core.ir.Assign object at 0x7f0368e63cd0>],
+                 'non_zero': [<numba.core.ir.Assign object at 0x7f0368dbdc40>],
+                 'variances': [<numba.core.ir.Assign object at 0x7f0368e258b0>]})
     DEBUG:numba.core.ssa:SSA violators {'i', 'col_ind'}
     DEBUG:numba.core.ssa:Fix SSA violator on var i
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: data = arg(0, name=data)
     DEBUG:numba.core.ssa:on stmt: indices = arg(1, name=indices)
     DEBUG:numba.core.ssa:on stmt: major_len = arg(2, name=major_len)
@@ -1137,14 +1146,14 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $phi64.0 = $62get_iter.26
     DEBUG:numba.core.ssa:on stmt: jump 64
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 64
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $64for_iter.1 = iternext(value=$phi64.0)
     DEBUG:numba.core.ssa:on stmt: $64for_iter.2 = pair_first(value=$64for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $64for_iter.3 = pair_second(value=$64for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi66.1 = $64for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $64for_iter.3, 66, 98
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 66
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: i = $phi66.1
     DEBUG:numba.core.ssa:first assign: i
     DEBUG:numba.core.ssa:replaced with: i = $phi66.1
@@ -1155,21 +1164,21 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: means[col_ind] = $90inplace_add.13
     DEBUG:numba.core.ssa:on stmt: jump 64
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 98
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $98load_global.0 = global(range: <class 'range'>)
     DEBUG:numba.core.ssa:on stmt: $102call_function.2 = call $98load_global.0(minor_len, func=$98load_global.0, args=[Var(minor_len, _utils.py:53)], kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: $104get_iter.3 = getiter(value=$102call_function.2)
     DEBUG:numba.core.ssa:on stmt: $phi106.0 = $104get_iter.3
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 106
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $106for_iter.1 = iternext(value=$phi106.0)
     DEBUG:numba.core.ssa:on stmt: $106for_iter.2 = pair_first(value=$106for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $106for_iter.3 = pair_second(value=$106for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi108.1 = $106for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $106for_iter.3, 108, 128
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 108
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: i = $phi108.1
     DEBUG:numba.core.ssa:replaced with: i.1 = $phi108.1
     DEBUG:numba.core.ssa:on stmt: $116binary_subscr.6 = getitem(value=means, index=i, fn=<built-in function getitem>)
@@ -1177,21 +1186,21 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: means[i] = $120inplace_true_divide.8
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 128
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $128load_global.0 = global(range: <class 'range'>)
     DEBUG:numba.core.ssa:on stmt: $132call_function.2 = call $128load_global.0(non_zero, func=$128load_global.0, args=[Var(non_zero, _utils.py:53)], kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: $134get_iter.3 = getiter(value=$132call_function.2)
     DEBUG:numba.core.ssa:on stmt: $phi136.0 = $134get_iter.3
     DEBUG:numba.core.ssa:on stmt: jump 136
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 136
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $136for_iter.1 = iternext(value=$phi136.0)
     DEBUG:numba.core.ssa:on stmt: $136for_iter.2 = pair_first(value=$136for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $136for_iter.3 = pair_second(value=$136for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi138.1 = $136for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $136for_iter.3, 138, 202
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 138
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: i = $phi138.1
     DEBUG:numba.core.ssa:replaced with: i.2 = $phi138.1
     DEBUG:numba.core.ssa:on stmt: col_ind = getitem(value=indices, index=i, fn=<built-in function getitem>)
@@ -1208,21 +1217,21 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: counts[col_ind] = $194inplace_add.27
     DEBUG:numba.core.ssa:on stmt: jump 136
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 202
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $202load_global.0 = global(range: <class 'range'>)
     DEBUG:numba.core.ssa:on stmt: $206call_function.2 = call $202load_global.0(minor_len, func=$202load_global.0, args=[Var(minor_len, _utils.py:53)], kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: $208get_iter.3 = getiter(value=$206call_function.2)
     DEBUG:numba.core.ssa:on stmt: $phi210.0 = $208get_iter.3
     DEBUG:numba.core.ssa:on stmt: jump 210
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 210
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $210for_iter.1 = iternext(value=$phi210.0)
     DEBUG:numba.core.ssa:on stmt: $210for_iter.2 = pair_first(value=$210for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $210for_iter.3 = pair_second(value=$210for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi212.1 = $210for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $210for_iter.3, 212, 268
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 212
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: i = $phi212.1
     DEBUG:numba.core.ssa:replaced with: i.3 = $phi212.1
     DEBUG:numba.core.ssa:on stmt: $220binary_subscr.6 = getitem(value=variances, index=i, fn=<built-in function getitem>)
@@ -1239,17 +1248,17 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: variances[i] = $260inplace_true_divide.25
     DEBUG:numba.core.ssa:on stmt: jump 210
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 268
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $272build_tuple.2 = build_tuple(items=[Var(means, _utils.py:55), Var(variances, _utils.py:56)])
     DEBUG:numba.core.ssa:on stmt: $274return_value.3 = cast(value=$272build_tuple.2)
     DEBUG:numba.core.ssa:on stmt: return $274return_value.3
     DEBUG:numba.core.ssa:Replaced assignments: defaultdict(<class 'list'>,
-                {66: [<numba.core.ir.Assign object at 0x7f2cb8680e80>],
-                 108: [<numba.core.ir.Assign object at 0x7f2cb86a3550>],
-                 138: [<numba.core.ir.Assign object at 0x7f2cb8625580>],
-                 212: [<numba.core.ir.Assign object at 0x7f2cb86255b0>]})
+                {66: [<numba.core.ir.Assign object at 0x7f0368e538e0>],
+                 108: [<numba.core.ir.Assign object at 0x7f0368dbdbe0>],
+                 138: [<numba.core.ir.Assign object at 0x7f0368dbd700>],
+                 212: [<numba.core.ir.Assign object at 0x7f0368dbd4c0>]})
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: data = arg(0, name=data)
     DEBUG:numba.core.ssa:on stmt: indices = arg(1, name=indices)
     DEBUG:numba.core.ssa:on stmt: major_len = arg(2, name=major_len)
@@ -1275,14 +1284,14 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $phi64.0 = $62get_iter.26
     DEBUG:numba.core.ssa:on stmt: jump 64
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 64
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $64for_iter.1 = iternext(value=$phi64.0)
     DEBUG:numba.core.ssa:on stmt: $64for_iter.2 = pair_first(value=$64for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $64for_iter.3 = pair_second(value=$64for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi66.1 = $64for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $64for_iter.3, 66, 98
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 66
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: i = $phi66.1
     DEBUG:numba.core.ssa:on stmt: col_ind = getitem(value=indices, index=i, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:find_def var='i' stmt=col_ind = getitem(value=indices, index=i, fn=<built-in function getitem>)
@@ -1293,21 +1302,21 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: means[col_ind] = $90inplace_add.13
     DEBUG:numba.core.ssa:on stmt: jump 64
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 98
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $98load_global.0 = global(range: <class 'range'>)
     DEBUG:numba.core.ssa:on stmt: $102call_function.2 = call $98load_global.0(minor_len, func=$98load_global.0, args=[Var(minor_len, _utils.py:53)], kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: $104get_iter.3 = getiter(value=$102call_function.2)
     DEBUG:numba.core.ssa:on stmt: $phi106.0 = $104get_iter.3
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 106
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $106for_iter.1 = iternext(value=$phi106.0)
     DEBUG:numba.core.ssa:on stmt: $106for_iter.2 = pair_first(value=$106for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $106for_iter.3 = pair_second(value=$106for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi108.1 = $106for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $106for_iter.3, 108, 128
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 108
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: i.1 = $phi108.1
     DEBUG:numba.core.ssa:on stmt: $116binary_subscr.6 = getitem(value=means, index=i, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:find_def var='i' stmt=$116binary_subscr.6 = getitem(value=means, index=i, fn=<built-in function getitem>)
@@ -1318,21 +1327,21 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:replaced with: means[i.1] = $120inplace_true_divide.8
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 128
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $128load_global.0 = global(range: <class 'range'>)
     DEBUG:numba.core.ssa:on stmt: $132call_function.2 = call $128load_global.0(non_zero, func=$128load_global.0, args=[Var(non_zero, _utils.py:53)], kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: $134get_iter.3 = getiter(value=$132call_function.2)
     DEBUG:numba.core.ssa:on stmt: $phi136.0 = $134get_iter.3
     DEBUG:numba.core.ssa:on stmt: jump 136
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 136
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $136for_iter.1 = iternext(value=$phi136.0)
     DEBUG:numba.core.ssa:on stmt: $136for_iter.2 = pair_first(value=$136for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $136for_iter.3 = pair_second(value=$136for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi138.1 = $136for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $136for_iter.3, 138, 202
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 138
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: i.2 = $phi138.1
     DEBUG:numba.core.ssa:on stmt: col_ind = getitem(value=indices, index=i, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:find_def var='i' stmt=col_ind = getitem(value=indices, index=i, fn=<built-in function getitem>)
@@ -1352,21 +1361,21 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: counts[col_ind] = $194inplace_add.27
     DEBUG:numba.core.ssa:on stmt: jump 136
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 202
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $202load_global.0 = global(range: <class 'range'>)
     DEBUG:numba.core.ssa:on stmt: $206call_function.2 = call $202load_global.0(minor_len, func=$202load_global.0, args=[Var(minor_len, _utils.py:53)], kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: $208get_iter.3 = getiter(value=$206call_function.2)
     DEBUG:numba.core.ssa:on stmt: $phi210.0 = $208get_iter.3
     DEBUG:numba.core.ssa:on stmt: jump 210
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 210
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $210for_iter.1 = iternext(value=$phi210.0)
     DEBUG:numba.core.ssa:on stmt: $210for_iter.2 = pair_first(value=$210for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $210for_iter.3 = pair_second(value=$210for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi212.1 = $210for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $210for_iter.3, 212, 268
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 212
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: i.3 = $phi212.1
     DEBUG:numba.core.ssa:on stmt: $220binary_subscr.6 = getitem(value=variances, index=i, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:find_def var='i' stmt=$220binary_subscr.6 = getitem(value=variances, index=i, fn=<built-in function getitem>)
@@ -1394,13 +1403,13 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:replaced with: variances[i.3] = $260inplace_true_divide.25
     DEBUG:numba.core.ssa:on stmt: jump 210
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 268
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368e53e20>
     DEBUG:numba.core.ssa:on stmt: $272build_tuple.2 = build_tuple(items=[Var(means, _utils.py:55), Var(variances, _utils.py:56)])
     DEBUG:numba.core.ssa:on stmt: $274return_value.3 = cast(value=$272build_tuple.2)
     DEBUG:numba.core.ssa:on stmt: return $274return_value.3
     DEBUG:numba.core.ssa:Fix SSA violator on var col_ind
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb86a3a00>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53be0>
     DEBUG:numba.core.ssa:on stmt: data = arg(0, name=data)
     DEBUG:numba.core.ssa:on stmt: indices = arg(1, name=indices)
     DEBUG:numba.core.ssa:on stmt: major_len = arg(2, name=major_len)
@@ -1426,14 +1435,14 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $phi64.0 = $62get_iter.26
     DEBUG:numba.core.ssa:on stmt: jump 64
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 64
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb86a3a00>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53be0>
     DEBUG:numba.core.ssa:on stmt: $64for_iter.1 = iternext(value=$phi64.0)
     DEBUG:numba.core.ssa:on stmt: $64for_iter.2 = pair_first(value=$64for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $64for_iter.3 = pair_second(value=$64for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi66.1 = $64for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $64for_iter.3, 66, 98
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 66
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb86a3a00>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53be0>
     DEBUG:numba.core.ssa:on stmt: i = $phi66.1
     DEBUG:numba.core.ssa:on stmt: col_ind = getitem(value=indices, index=i, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:first assign: col_ind
@@ -1444,42 +1453,42 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: means[col_ind] = $90inplace_add.13
     DEBUG:numba.core.ssa:on stmt: jump 64
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 98
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb86a3a00>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53be0>
     DEBUG:numba.core.ssa:on stmt: $98load_global.0 = global(range: <class 'range'>)
     DEBUG:numba.core.ssa:on stmt: $102call_function.2 = call $98load_global.0(minor_len, func=$98load_global.0, args=[Var(minor_len, _utils.py:53)], kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: $104get_iter.3 = getiter(value=$102call_function.2)
     DEBUG:numba.core.ssa:on stmt: $phi106.0 = $104get_iter.3
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 106
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb86a3a00>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53be0>
     DEBUG:numba.core.ssa:on stmt: $106for_iter.1 = iternext(value=$phi106.0)
     DEBUG:numba.core.ssa:on stmt: $106for_iter.2 = pair_first(value=$106for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $106for_iter.3 = pair_second(value=$106for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi108.1 = $106for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $106for_iter.3, 108, 128
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 108
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb86a3a00>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53be0>
     DEBUG:numba.core.ssa:on stmt: i.1 = $phi108.1
     DEBUG:numba.core.ssa:on stmt: $116binary_subscr.6 = getitem(value=means, index=i.1, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:on stmt: $120inplace_true_divide.8 = inplace_binop(fn=<built-in function itruediv>, immutable_fn=<built-in function truediv>, lhs=$116binary_subscr.6, rhs=major_len, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:on stmt: means[i.1] = $120inplace_true_divide.8
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 128
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb86a3a00>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53be0>
     DEBUG:numba.core.ssa:on stmt: $128load_global.0 = global(range: <class 'range'>)
     DEBUG:numba.core.ssa:on stmt: $132call_function.2 = call $128load_global.0(non_zero, func=$128load_global.0, args=[Var(non_zero, _utils.py:53)], kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: $134get_iter.3 = getiter(value=$132call_function.2)
     DEBUG:numba.core.ssa:on stmt: $phi136.0 = $134get_iter.3
     DEBUG:numba.core.ssa:on stmt: jump 136
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 136
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb86a3a00>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53be0>
     DEBUG:numba.core.ssa:on stmt: $136for_iter.1 = iternext(value=$phi136.0)
     DEBUG:numba.core.ssa:on stmt: $136for_iter.2 = pair_first(value=$136for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $136for_iter.3 = pair_second(value=$136for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi138.1 = $136for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $136for_iter.3, 138, 202
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 138
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb86a3a00>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53be0>
     DEBUG:numba.core.ssa:on stmt: i.2 = $phi138.1
     DEBUG:numba.core.ssa:on stmt: col_ind = getitem(value=indices, index=i.2, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:replaced with: col_ind.1 = getitem(value=indices, index=i.2, fn=<built-in function getitem>)
@@ -1496,21 +1505,21 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: counts[col_ind] = $194inplace_add.27
     DEBUG:numba.core.ssa:on stmt: jump 136
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 202
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb86a3a00>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53be0>
     DEBUG:numba.core.ssa:on stmt: $202load_global.0 = global(range: <class 'range'>)
     DEBUG:numba.core.ssa:on stmt: $206call_function.2 = call $202load_global.0(minor_len, func=$202load_global.0, args=[Var(minor_len, _utils.py:53)], kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: $208get_iter.3 = getiter(value=$206call_function.2)
     DEBUG:numba.core.ssa:on stmt: $phi210.0 = $208get_iter.3
     DEBUG:numba.core.ssa:on stmt: jump 210
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 210
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb86a3a00>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53be0>
     DEBUG:numba.core.ssa:on stmt: $210for_iter.1 = iternext(value=$phi210.0)
     DEBUG:numba.core.ssa:on stmt: $210for_iter.2 = pair_first(value=$210for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $210for_iter.3 = pair_second(value=$210for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi212.1 = $210for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $210for_iter.3, 212, 268
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 212
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb86a3a00>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53be0>
     DEBUG:numba.core.ssa:on stmt: i.3 = $phi212.1
     DEBUG:numba.core.ssa:on stmt: $220binary_subscr.6 = getitem(value=variances, index=i.3, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:on stmt: $228binary_subscr.10 = getitem(value=counts, index=i.3, fn=<built-in function getitem>)
@@ -1526,15 +1535,15 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: variances[i.3] = $260inplace_true_divide.25
     DEBUG:numba.core.ssa:on stmt: jump 210
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 268
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb86a3a00>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368e53be0>
     DEBUG:numba.core.ssa:on stmt: $272build_tuple.2 = build_tuple(items=[Var(means, _utils.py:55), Var(variances, _utils.py:56)])
     DEBUG:numba.core.ssa:on stmt: $274return_value.3 = cast(value=$272build_tuple.2)
     DEBUG:numba.core.ssa:on stmt: return $274return_value.3
     DEBUG:numba.core.ssa:Replaced assignments: defaultdict(<class 'list'>,
-                {66: [<numba.core.ir.Assign object at 0x7f2cb8680bb0>],
-                 138: [<numba.core.ir.Assign object at 0x7f2cb8625f10>]})
+                {66: [<numba.core.ir.Assign object at 0x7f0368dbd460>],
+                 138: [<numba.core.ir.Assign object at 0x7f0368dbd400>]})
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368dbd670>
     DEBUG:numba.core.ssa:on stmt: data = arg(0, name=data)
     DEBUG:numba.core.ssa:on stmt: indices = arg(1, name=indices)
     DEBUG:numba.core.ssa:on stmt: major_len = arg(2, name=major_len)
@@ -1560,14 +1569,14 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $phi64.0 = $62get_iter.26
     DEBUG:numba.core.ssa:on stmt: jump 64
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 64
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368dbd670>
     DEBUG:numba.core.ssa:on stmt: $64for_iter.1 = iternext(value=$phi64.0)
     DEBUG:numba.core.ssa:on stmt: $64for_iter.2 = pair_first(value=$64for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $64for_iter.3 = pair_second(value=$64for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi66.1 = $64for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $64for_iter.3, 66, 98
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 66
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368dbd670>
     DEBUG:numba.core.ssa:on stmt: i = $phi66.1
     DEBUG:numba.core.ssa:on stmt: col_ind = getitem(value=indices, index=i, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:on stmt: $82binary_subscr.9 = getitem(value=means, index=col_ind, fn=<built-in function getitem>)
@@ -1578,42 +1587,42 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:find_def var='col_ind' stmt=means[col_ind] = $90inplace_add.13
     DEBUG:numba.core.ssa:on stmt: jump 64
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 98
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368dbd670>
     DEBUG:numba.core.ssa:on stmt: $98load_global.0 = global(range: <class 'range'>)
     DEBUG:numba.core.ssa:on stmt: $102call_function.2 = call $98load_global.0(minor_len, func=$98load_global.0, args=[Var(minor_len, _utils.py:53)], kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: $104get_iter.3 = getiter(value=$102call_function.2)
     DEBUG:numba.core.ssa:on stmt: $phi106.0 = $104get_iter.3
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 106
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368dbd670>
     DEBUG:numba.core.ssa:on stmt: $106for_iter.1 = iternext(value=$phi106.0)
     DEBUG:numba.core.ssa:on stmt: $106for_iter.2 = pair_first(value=$106for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $106for_iter.3 = pair_second(value=$106for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi108.1 = $106for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $106for_iter.3, 108, 128
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 108
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368dbd670>
     DEBUG:numba.core.ssa:on stmt: i.1 = $phi108.1
     DEBUG:numba.core.ssa:on stmt: $116binary_subscr.6 = getitem(value=means, index=i.1, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:on stmt: $120inplace_true_divide.8 = inplace_binop(fn=<built-in function itruediv>, immutable_fn=<built-in function truediv>, lhs=$116binary_subscr.6, rhs=major_len, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:on stmt: means[i.1] = $120inplace_true_divide.8
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 128
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368dbd670>
     DEBUG:numba.core.ssa:on stmt: $128load_global.0 = global(range: <class 'range'>)
     DEBUG:numba.core.ssa:on stmt: $132call_function.2 = call $128load_global.0(non_zero, func=$128load_global.0, args=[Var(non_zero, _utils.py:53)], kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: $134get_iter.3 = getiter(value=$132call_function.2)
     DEBUG:numba.core.ssa:on stmt: $phi136.0 = $134get_iter.3
     DEBUG:numba.core.ssa:on stmt: jump 136
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 136
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368dbd670>
     DEBUG:numba.core.ssa:on stmt: $136for_iter.1 = iternext(value=$phi136.0)
     DEBUG:numba.core.ssa:on stmt: $136for_iter.2 = pair_first(value=$136for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $136for_iter.3 = pair_second(value=$136for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi138.1 = $136for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $136for_iter.3, 138, 202
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 138
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368dbd670>
     DEBUG:numba.core.ssa:on stmt: i.2 = $phi138.1
     DEBUG:numba.core.ssa:on stmt: col_ind.1 = getitem(value=indices, index=i.2, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:on stmt: $152binary_subscr.7 = getitem(value=data, index=i.2, fn=<built-in function getitem>)
@@ -1639,21 +1648,21 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:replaced with: counts[col_ind.1] = $194inplace_add.27
     DEBUG:numba.core.ssa:on stmt: jump 136
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 202
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368dbd670>
     DEBUG:numba.core.ssa:on stmt: $202load_global.0 = global(range: <class 'range'>)
     DEBUG:numba.core.ssa:on stmt: $206call_function.2 = call $202load_global.0(minor_len, func=$202load_global.0, args=[Var(minor_len, _utils.py:53)], kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: $208get_iter.3 = getiter(value=$206call_function.2)
     DEBUG:numba.core.ssa:on stmt: $phi210.0 = $208get_iter.3
     DEBUG:numba.core.ssa:on stmt: jump 210
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 210
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368dbd670>
     DEBUG:numba.core.ssa:on stmt: $210for_iter.1 = iternext(value=$phi210.0)
     DEBUG:numba.core.ssa:on stmt: $210for_iter.2 = pair_first(value=$210for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $210for_iter.3 = pair_second(value=$210for_iter.1)
     DEBUG:numba.core.ssa:on stmt: $phi212.1 = $210for_iter.2
     DEBUG:numba.core.ssa:on stmt: branch $210for_iter.3, 212, 268
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 212
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368dbd670>
     DEBUG:numba.core.ssa:on stmt: i.3 = $phi212.1
     DEBUG:numba.core.ssa:on stmt: $220binary_subscr.6 = getitem(value=variances, index=i.3, fn=<built-in function getitem>)
     DEBUG:numba.core.ssa:on stmt: $228binary_subscr.10 = getitem(value=counts, index=i.3, fn=<built-in function getitem>)
@@ -1669,7 +1678,7 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: variances[i.3] = $260inplace_true_divide.25
     DEBUG:numba.core.ssa:on stmt: jump 210
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 268
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8680dc0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368dbd670>
     DEBUG:numba.core.ssa:on stmt: $272build_tuple.2 = build_tuple(items=[Var(means, _utils.py:55), Var(variances, _utils.py:56)])
     DEBUG:numba.core.ssa:on stmt: $274return_value.3 = cast(value=$272build_tuple.2)
     DEBUG:numba.core.ssa:on stmt: return $274return_value.3
@@ -1741,7 +1750,7 @@ the `k-means` initializer.
         return $26return_value.10                ['$26return_value.10']
 
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb85c48b0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368d01a00>
     DEBUG:numba.core.ssa:on stmt: shape = arg(0, name=shape)
     DEBUG:numba.core.ssa:on stmt: dtype = arg(1, name=dtype)
     DEBUG:numba.core.ssa:on stmt: $2load_global.0 = global(np: <module 'numpy' from '/home/runner/work/moscot_notebooks/moscot_notebooks/.tox/docs/lib/python3.9/site-packages/numpy/__init__.py'>)
@@ -1752,14 +1761,14 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $26return_value.10 = cast(value=arr)
     DEBUG:numba.core.ssa:on stmt: return $26return_value.10
     DEBUG:numba.core.ssa:defs defaultdict(<class 'list'>,
-                {'$18load_method.7': [<numba.core.ir.Assign object at 0x7f2cb85c42e0>],
-                 '$20call_method.8': [<numba.core.ir.Assign object at 0x7f2cb85c44f0>],
-                 '$26return_value.10': [<numba.core.ir.Assign object at 0x7f2cb85c4700>],
-                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f2cb85bf7c0>],
-                 '$4load_attr.1': [<numba.core.ir.Assign object at 0x7f2cb85bf940>],
-                 'arr': [<numba.core.ir.Assign object at 0x7f2cb85c4040>],
-                 'dtype': [<numba.core.ir.Assign object at 0x7f2cb85bf640>],
-                 'shape': [<numba.core.ir.Assign object at 0x7f2cb85bf520>]})
+                {'$18load_method.7': [<numba.core.ir.Assign object at 0x7f0368cfdaf0>],
+                 '$20call_method.8': [<numba.core.ir.Assign object at 0x7f0368cfdd00>],
+                 '$26return_value.10': [<numba.core.ir.Assign object at 0x7f0368cfdf10>],
+                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f0368d78fd0>],
+                 '$4load_attr.1': [<numba.core.ir.Assign object at 0x7f0368cfd190>],
+                 'arr': [<numba.core.ir.Assign object at 0x7f0368cfd850>],
+                 'dtype': [<numba.core.ir.Assign object at 0x7f0368d78e50>],
+                 'shape': [<numba.core.ir.Assign object at 0x7f0368d78d30>]})
     DEBUG:numba.core.ssa:SSA violators set()
     DEBUG:numba.core.byteflow:bytecode dump:
     >          0    NOP(arg=None, lineno=4101)
@@ -1806,7 +1815,7 @@ the `k-means` initializer.
         return $12return_value.5                 ['$12return_value.5']
 
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb85a5df0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368c848b0>
     DEBUG:numba.core.ssa:on stmt: shape = arg(0, name=shape)
     DEBUG:numba.core.ssa:on stmt: dtype = arg(1, name=dtype)
     DEBUG:numba.core.ssa:on stmt: $2load_global.0 = global(numpy_empty_nd: <intrinsic numpy_empty_nd>)
@@ -1815,12 +1824,12 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $12return_value.5 = cast(value=$10call_function.4)
     DEBUG:numba.core.ssa:on stmt: return $12return_value.5
     DEBUG:numba.core.ssa:defs defaultdict(<class 'list'>,
-                {'$10call_function.4': [<numba.core.ir.Assign object at 0x7f2cb84d3070>],
-                 '$12return_value.5': [<numba.core.ir.Assign object at 0x7f2cb84d3190>],
-                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f2cb8549a90>],
-                 '$8load_deref.3': [<numba.core.ir.Assign object at 0x7f2cb8549e50>],
-                 'dtype': [<numba.core.ir.Assign object at 0x7f2cb8549910>],
-                 'shape': [<numba.core.ir.Assign object at 0x7f2cb8549430>]})
+                {'$10call_function.4': [<numba.core.ir.Assign object at 0x7f0368c8d850>],
+                 '$12return_value.5': [<numba.core.ir.Assign object at 0x7f0368c8d970>],
+                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f0368c8d2b0>],
+                 '$8load_deref.3': [<numba.core.ir.Assign object at 0x7f0368c8d670>],
+                 'dtype': [<numba.core.ir.Assign object at 0x7f0368c8d130>],
+                 'shape': [<numba.core.ir.Assign object at 0x7f0368d78ac0>]})
     DEBUG:numba.core.ssa:SSA violators set()
     DEBUG:numba.core.byteflow:bytecode dump:
     >          0    NOP(arg=None, lineno=3979)
@@ -1867,7 +1876,7 @@ the `k-means` initializer.
         return $12return_value.5                 ['$12return_value.5']
 
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb849b6a0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368c5b9d0>
     DEBUG:numba.core.ssa:on stmt: arrtype = arg(0, name=arrtype)
     DEBUG:numba.core.ssa:on stmt: size = arg(1, name=size)
     DEBUG:numba.core.ssa:on stmt: align = arg(2, name=align)
@@ -1876,12 +1885,12 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $12return_value.5 = cast(value=$10call_method.4)
     DEBUG:numba.core.ssa:on stmt: return $12return_value.5
     DEBUG:numba.core.ssa:defs defaultdict(<class 'list'>,
-                {'$10call_method.4': [<numba.core.ir.Assign object at 0x7f2cb84a2bb0>],
-                 '$12return_value.5': [<numba.core.ir.Assign object at 0x7f2cb84a2ca0>],
-                 '$4load_method.1': [<numba.core.ir.Assign object at 0x7f2cb84a2760>],
-                 'align': [<numba.core.ir.Assign object at 0x7f2cb84a24c0>],
-                 'arrtype': [<numba.core.ir.Assign object at 0x7f2cb849baf0>],
-                 'size': [<numba.core.ir.Assign object at 0x7f2cb84a23a0>]})
+                {'$10call_method.4': [<numba.core.ir.Assign object at 0x7f0368c63400>],
+                 '$12return_value.5': [<numba.core.ir.Assign object at 0x7f0368c634f0>],
+                 '$4load_method.1': [<numba.core.ir.Assign object at 0x7f0368c5bf70>],
+                 'align': [<numba.core.ir.Assign object at 0x7f0368c5bcd0>],
+                 'arrtype': [<numba.core.ir.Assign object at 0x7f0368c5b670>],
+                 'size': [<numba.core.ir.Assign object at 0x7f0368c5bbb0>]})
     DEBUG:numba.core.ssa:SSA violators set()
     DEBUG:numba.core.byteflow:bytecode dump:
     >          0    NOP(arg=None, lineno=3972)
@@ -1925,7 +1934,7 @@ the `k-means` initializer.
         return $10return_value.4                 ['$10return_value.4']
 
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb84bd0a0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368c73760>
     DEBUG:numba.core.ssa:on stmt: cls = arg(0, name=cls)
     DEBUG:numba.core.ssa:on stmt: allocsize = arg(1, name=allocsize)
     DEBUG:numba.core.ssa:on stmt: align = arg(2, name=align)
@@ -1934,12 +1943,12 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $10return_value.4 = cast(value=$8call_function.3)
     DEBUG:numba.core.ssa:on stmt: return $10return_value.4
     DEBUG:numba.core.ssa:defs defaultdict(<class 'list'>,
-                {'$10return_value.4': [<numba.core.ir.Assign object at 0x7f2cb84c2640>],
-                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f2cb84c2100>],
-                 '$8call_function.3': [<numba.core.ir.Assign object at 0x7f2cb84c2520>],
-                 'align': [<numba.core.ir.Assign object at 0x7f2cb84bdf40>],
-                 'allocsize': [<numba.core.ir.Assign object at 0x7f2cb84bde20>],
-                 'cls': [<numba.core.ir.Assign object at 0x7f2cb84bd820>]})
+                {'$10return_value.4': [<numba.core.ir.Assign object at 0x7f0368c78e20>],
+                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f0368c788e0>],
+                 '$8call_function.3': [<numba.core.ir.Assign object at 0x7f0368c78d00>],
+                 'align': [<numba.core.ir.Assign object at 0x7f0368c78760>],
+                 'allocsize': [<numba.core.ir.Assign object at 0x7f0368c78640>],
+                 'cls': [<numba.core.ir.Assign object at 0x7f0368c780d0>]})
     DEBUG:numba.core.ssa:SSA violators set()
     DEBUG:numba.core.byteflow:bytecode dump:
     >          0    NOP(arg=None, lineno=4160)
@@ -1985,7 +1994,7 @@ the `k-means` initializer.
         return $12return_value.4                 ['$12return_value.4']
 
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8443520>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368bfcdc0>
     DEBUG:numba.core.ssa:on stmt: self = arg(0, name=self)
     DEBUG:numba.core.ssa:on stmt: $2load_global.0 = global(_zero_fill_array_method: <intrinsic _zero_fill_array_method>)
     DEBUG:numba.core.ssa:on stmt: $6call_function.2 = call $2load_global.0(self, func=$2load_global.0, args=[Var(self, arrayobj.py:4160)], kws=(), vararg=None, varkwarg=None, target=None)
@@ -1993,11 +2002,11 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $12return_value.4 = cast(value=$const10.3)
     DEBUG:numba.core.ssa:on stmt: return $12return_value.4
     DEBUG:numba.core.ssa:defs defaultdict(<class 'list'>,
-                {'$12return_value.4': [<numba.core.ir.Assign object at 0x7f2cb844a040>],
-                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f2cb8443a60>],
-                 '$6call_function.2': [<numba.core.ir.Assign object at 0x7f2cb8443d60>],
-                 '$const10.3': [<numba.core.ir.Assign object at 0x7f2cb8443e80>],
-                 'self': [<numba.core.ir.Assign object at 0x7f2cb8443580>]})
+                {'$12return_value.4': [<numba.core.ir.Assign object at 0x7f0368b83820>],
+                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f0368b83280>],
+                 '$6call_function.2': [<numba.core.ir.Assign object at 0x7f0368b83580>],
+                 '$const10.3': [<numba.core.ir.Assign object at 0x7f0368b836a0>],
+                 'self': [<numba.core.ir.Assign object at 0x7f0368bfc970>]})
     DEBUG:numba.core.ssa:SSA violators set()
     DEBUG:numba.core.byteflow:bytecode dump:
     >          0    NOP(arg=None, lineno=4181)
@@ -2067,7 +2076,7 @@ the `k-means` initializer.
         return $26return_value.10                ['$26return_value.10']
 
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb846cb20>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368b7bd00>
     DEBUG:numba.core.ssa:on stmt: a = arg(0, name=a)
     DEBUG:numba.core.ssa:on stmt: dtype = arg(1, name=dtype)
     DEBUG:numba.core.ssa:on stmt: $2load_global.0 = global(np: <module 'numpy' from '/home/runner/work/moscot_notebooks/moscot_notebooks/.tox/docs/lib/python3.9/site-packages/numpy/__init__.py'>)
@@ -2078,14 +2087,14 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $26return_value.10 = cast(value=arr)
     DEBUG:numba.core.ssa:on stmt: return $26return_value.10
     DEBUG:numba.core.ssa:defs defaultdict(<class 'list'>,
-                {'$18load_method.7': [<numba.core.ir.Assign object at 0x7f2cb846c4c0>],
-                 '$20call_method.8': [<numba.core.ir.Assign object at 0x7f2cb846c6d0>],
-                 '$26return_value.10': [<numba.core.ir.Assign object at 0x7f2cb846c8e0>],
-                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f2cb84589a0>],
-                 '$4load_attr.1': [<numba.core.ir.Assign object at 0x7f2cb8458b20>],
-                 'a': [<numba.core.ir.Assign object at 0x7f2cb8458340>],
-                 'arr': [<numba.core.ir.Assign object at 0x7f2cb846c220>],
-                 'dtype': [<numba.core.ir.Assign object at 0x7f2cb8458820>]})
+                {'$18load_method.7': [<numba.core.ir.Assign object at 0x7f0368b77dc0>],
+                 '$20call_method.8': [<numba.core.ir.Assign object at 0x7f0368b77fd0>],
+                 '$26return_value.10': [<numba.core.ir.Assign object at 0x7f0368b7b220>],
+                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f0368b772e0>],
+                 '$4load_attr.1': [<numba.core.ir.Assign object at 0x7f0368b77460>],
+                 'a': [<numba.core.ir.Assign object at 0x7f0368b6f8b0>],
+                 'arr': [<numba.core.ir.Assign object at 0x7f0368b77b20>],
+                 'dtype': [<numba.core.ir.Assign object at 0x7f0368b77160>]})
     DEBUG:numba.core.ssa:SSA violators set()
     DEBUG:numba.core.byteflow:bytecode dump:
     >          0    NOP(arg=None, lineno=4141)
@@ -2132,7 +2141,7 @@ the `k-means` initializer.
         return $12return_value.5                 ['$12return_value.5']
 
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb846deb0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368b593a0>
     DEBUG:numba.core.ssa:on stmt: arr = arg(0, name=arr)
     DEBUG:numba.core.ssa:on stmt: dtype = arg(1, name=dtype)
     DEBUG:numba.core.ssa:on stmt: $2load_global.0 = global(numpy_empty_like_nd: <intrinsic numpy_empty_like_nd>)
@@ -2141,12 +2150,12 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $12return_value.5 = cast(value=$10call_function.4)
     DEBUG:numba.core.ssa:on stmt: return $12return_value.5
     DEBUG:numba.core.ssa:defs defaultdict(<class 'list'>,
-                {'$10call_function.4': [<numba.core.ir.Assign object at 0x7f2cb8462fa0>],
-                 '$12return_value.5': [<numba.core.ir.Assign object at 0x7f2cb8415a00>],
-                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f2cb8462a00>],
-                 '$8load_deref.3': [<numba.core.ir.Assign object at 0x7f2cb8462dc0>],
-                 'arr': [<numba.core.ir.Assign object at 0x7f2cb8462400>],
-                 'dtype': [<numba.core.ir.Assign object at 0x7f2cb8462880>]})
+                {'$10call_function.4': [<numba.core.ir.Assign object at 0x7f0368d01a60>],
+                 '$12return_value.5': [<numba.core.ir.Assign object at 0x7f0368d01100>],
+                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f0368b68430>],
+                 '$8load_deref.3': [<numba.core.ir.Assign object at 0x7f0368d01550>],
+                 'arr': [<numba.core.ir.Assign object at 0x7f0368b68550>],
+                 'dtype': [<numba.core.ir.Assign object at 0x7f0368b68f70>]})
     DEBUG:numba.core.ssa:SSA violators set()
     DEBUG:numba.core.byteflow:bytecode dump:
     >          0    NOP(arg=None, lineno=4169)
@@ -2216,7 +2225,7 @@ the `k-means` initializer.
         return $26return_value.10                ['$26return_value.10']
 
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb834e220>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368ba92e0>
     DEBUG:numba.core.ssa:on stmt: shape = arg(0, name=shape)
     DEBUG:numba.core.ssa:on stmt: dtype = arg(1, name=dtype)
     DEBUG:numba.core.ssa:on stmt: $2load_global.0 = global(np: <module 'numpy' from '/home/runner/work/moscot_notebooks/moscot_notebooks/.tox/docs/lib/python3.9/site-packages/numpy/__init__.py'>)
@@ -2227,14 +2236,14 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $26return_value.10 = cast(value=arr)
     DEBUG:numba.core.ssa:on stmt: return $26return_value.10
     DEBUG:numba.core.ssa:defs defaultdict(<class 'list'>,
-                {'$18load_method.7': [<numba.core.ir.Assign object at 0x7f2cb8363100>],
-                 '$20call_method.8': [<numba.core.ir.Assign object at 0x7f2cb834ef40>],
-                 '$26return_value.10': [<numba.core.ir.Assign object at 0x7f2cb834e280>],
-                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f2cb836e580>],
-                 '$4load_attr.1': [<numba.core.ir.Assign object at 0x7f2cb836e700>],
-                 'arr': [<numba.core.ir.Assign object at 0x7f2cb83631f0>],
-                 'dtype': [<numba.core.ir.Assign object at 0x7f2cb836e400>],
-                 'shape': [<numba.core.ir.Assign object at 0x7f2cb8363af0>]})
+                {'$18load_method.7': [<numba.core.ir.Assign object at 0x7f0368baee20>],
+                 '$20call_method.8': [<numba.core.ir.Assign object at 0x7f0368ba9fd0>],
+                 '$26return_value.10': [<numba.core.ir.Assign object at 0x7f0368ba9b20>],
+                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f0368bae3d0>],
+                 '$4load_attr.1': [<numba.core.ir.Assign object at 0x7f0368bae4c0>],
+                 'arr': [<numba.core.ir.Assign object at 0x7f0368baeb80>],
+                 'dtype': [<numba.core.ir.Assign object at 0x7f0368bae1c0>],
+                 'shape': [<numba.core.ir.Assign object at 0x7f0368bae2b0>]})
     DEBUG:numba.core.ssa:SSA violators set()
     DEBUG:numba.core.byteflow:bytecode dump:
     >          0    NOP(arg=None, lineno=4101)
@@ -2281,7 +2290,7 @@ the `k-means` initializer.
         return $12return_value.5                 ['$12return_value.5']
 
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8458e50>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368b9ac40>
     DEBUG:numba.core.ssa:on stmt: shape = arg(0, name=shape)
     DEBUG:numba.core.ssa:on stmt: dtype = arg(1, name=dtype)
     DEBUG:numba.core.ssa:on stmt: $2load_global.0 = global(numpy_empty_nd: <intrinsic numpy_empty_nd>)
@@ -2290,12 +2299,12 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $12return_value.5 = cast(value=$10call_function.4)
     DEBUG:numba.core.ssa:on stmt: return $12return_value.5
     DEBUG:numba.core.ssa:defs defaultdict(<class 'list'>,
-                {'$10call_function.4': [<numba.core.ir.Assign object at 0x7f2cb8349700>],
-                 '$12return_value.5': [<numba.core.ir.Assign object at 0x7f2cb8349820>],
-                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f2cb8349bb0>],
-                 '$8load_deref.3': [<numba.core.ir.Assign object at 0x7f2cb83492b0>],
-                 'dtype': [<numba.core.ir.Assign object at 0x7f2cb8349f10>],
-                 'shape': [<numba.core.ir.Assign object at 0x7f2cb835e340>]})
+                {'$10call_function.4': [<numba.core.ir.Assign object at 0x7f0368b98490>],
+                 '$12return_value.5': [<numba.core.ir.Assign object at 0x7f0368b98370>],
+                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f0368b98760>],
+                 '$8load_deref.3': [<numba.core.ir.Assign object at 0x7f0368b98bb0>],
+                 'dtype': [<numba.core.ir.Assign object at 0x7f0368b988e0>],
+                 'shape': [<numba.core.ir.Assign object at 0x7f0368b98ac0>]})
     DEBUG:numba.core.ssa:SSA violators set()
     DEBUG:numba.core.byteflow:bytecode dump:
     >          0    NOP(arg=None, lineno=4160)
@@ -2341,7 +2350,7 @@ the `k-means` initializer.
         return $12return_value.4                 ['$12return_value.4']
 
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb84afd60>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368b7bee0>
     DEBUG:numba.core.ssa:on stmt: self = arg(0, name=self)
     DEBUG:numba.core.ssa:on stmt: $2load_global.0 = global(_zero_fill_array_method: <intrinsic _zero_fill_array_method>)
     DEBUG:numba.core.ssa:on stmt: $6call_function.2 = call $2load_global.0(self, func=$2load_global.0, args=[Var(self, arrayobj.py:4160)], kws=(), vararg=None, varkwarg=None, target=None)
@@ -2349,11 +2358,11 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $12return_value.4 = cast(value=$const10.3)
     DEBUG:numba.core.ssa:on stmt: return $12return_value.4
     DEBUG:numba.core.ssa:defs defaultdict(<class 'list'>,
-                {'$12return_value.4': [<numba.core.ir.Assign object at 0x7f2cb849bb80>],
-                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f2cb849b220>],
-                 '$6call_function.2': [<numba.core.ir.Assign object at 0x7f2cb849b7f0>],
-                 '$const10.3': [<numba.core.ir.Assign object at 0x7f2cb849bc10>],
-                 'self': [<numba.core.ir.Assign object at 0x7f2cb85a5c10>]})
+                {'$12return_value.4': [<numba.core.ir.Assign object at 0x7f0368b64460>],
+                 '$2load_global.0': [<numba.core.ir.Assign object at 0x7f0368b648e0>],
+                 '$6call_function.2': [<numba.core.ir.Assign object at 0x7f0368b64be0>],
+                 '$const10.3': [<numba.core.ir.Assign object at 0x7f0368b64d00>],
+                 'self': [<numba.core.ir.Assign object at 0x7f0368b644c0>]})
     DEBUG:numba.core.ssa:SSA violators set()
     DEBUG:numba.core.byteflow:bytecode dump:
     >          0    NOP(arg=None, lineno=216)
@@ -2895,7 +2904,7 @@ the `k-means` initializer.
         return $186return_value.1                ['$186return_value.1']
 
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8285d30>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368a0ea00>
     DEBUG:numba.core.ssa:on stmt: a = arg(0, name=a)
     DEBUG:numba.core.ssa:on stmt: b = arg(1, name=b)
     DEBUG:numba.core.ssa:on stmt: $2load_deref.0 = freevar(tp: float64)
@@ -2909,7 +2918,7 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $24pred = call bool24($22compare_op.8, func=bool24, args=(Var($22compare_op.8, numbers.py:218),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $24pred, 26, 98
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 26
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8285d30>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368a0ea00>
     DEBUG:numba.core.ssa:on stmt: invert = const(bool, True)
     DEBUG:numba.core.ssa:on stmt: exp = unary(fn=<built-in function neg>, value=b)
     DEBUG:numba.core.ssa:on stmt: $const38.4 = const(int, 0)
@@ -2918,29 +2927,29 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $42pred = call bool42($40compare_op.5, func=bool42, args=(Var($40compare_op.5, numbers.py:221),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $42pred, 44, 48
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 44
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8285d30>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368a0ea00>
     DEBUG:numba.core.ssa:on stmt: $44load_global.0 = global(OverflowError: <class 'OverflowError'>)
     DEBUG:numba.core.ssa:on stmt: <static> raise <class 'OverflowError'>
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 48
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8285d30>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368a0ea00>
     DEBUG:numba.core.ssa:on stmt: $48load_deref.0 = freevar(is_integer: False)
     DEBUG:numba.core.ssa:on stmt: bool50 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $50pred = call bool50($48load_deref.0, func=bool50, args=(Var($48load_deref.0, numbers.py:223),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 98
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8285d30>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368a0ea00>
     DEBUG:numba.core.ssa:on stmt: invert = const(bool, False)
     DEBUG:numba.core.ssa:on stmt: exp = b
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 106
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8285d30>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368a0ea00>
     DEBUG:numba.core.ssa:on stmt: $const108.1 = const(int, 65536)
     DEBUG:numba.core.ssa:on stmt: $110compare_op.2 = exp > $const108.1
     DEBUG:numba.core.ssa:on stmt: bool112 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $112pred = call bool112($110compare_op.2, func=bool112, args=(Var($110compare_op.2, numbers.py:234),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $112pred, 114, 130
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 114
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8285d30>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368a0ea00>
     DEBUG:numba.core.ssa:on stmt: $114load_global.0 = global(math: <module 'math' from '/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/lib-dynload/math.cpython-39-x86_64-linux-gnu.so'>)
     DEBUG:numba.core.ssa:on stmt: $116load_method.1 = getattr(value=$114load_global.0, attr=pow)
     DEBUG:numba.core.ssa:on stmt: $120load_global.3 = global(float: <class 'float'>)
@@ -2949,26 +2958,26 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $128return_value.7 = cast(value=$126call_method.6)
     DEBUG:numba.core.ssa:on stmt: return $128return_value.7
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 130
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8285d30>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368a0ea00>
     DEBUG:numba.core.ssa:on stmt: $const132.1 = const(int, 0)
     DEBUG:numba.core.ssa:on stmt: $134compare_op.2 = exp != $const132.1
     DEBUG:numba.core.ssa:on stmt: bool136 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $136pred = call bool136($134compare_op.2, func=bool136, args=(Var($134compare_op.2, numbers.py:237),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $136pred, 138, 172
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 138
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8285d30>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368a0ea00>
     DEBUG:numba.core.ssa:on stmt: $const140.1 = const(int, 1)
     DEBUG:numba.core.ssa:on stmt: $142binary_and.2 = exp & $const140.1
     DEBUG:numba.core.ssa:on stmt: bool144 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $144pred = call bool144($142binary_and.2, func=bool144, args=(Var($142binary_and.2, numbers.py:238),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $144pred, 146, 154
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 146
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8285d30>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368a0ea00>
     DEBUG:numba.core.ssa:on stmt: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:on stmt: r = $150inplace_multiply.2
     DEBUG:numba.core.ssa:on stmt: jump 154
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 154
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8285d30>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368a0ea00>
     DEBUG:numba.core.ssa:on stmt: $const156.1 = const(int, 1)
     DEBUG:numba.core.ssa:on stmt: $158inplace_rshift.2 = inplace_binop(fn=<built-in function irshift>, immutable_fn=<built-in function rshift>, lhs=exp, rhs=$const156.1, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:on stmt: exp = $158inplace_rshift.2
@@ -2976,310 +2985,79 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: a.1 = $166inplace_multiply.5
     DEBUG:numba.core.ssa:on stmt: jump 130
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 172
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8285d30>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368a0ea00>
     DEBUG:numba.core.ssa:on stmt: bool174 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $174pred = call bool174(invert, func=bool174, args=(Var(invert, numbers.py:219),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $174pred, 176, 184
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 176
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8285d30>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368a0ea00>
     DEBUG:numba.core.ssa:on stmt: $const176.0 = const(float, 1.0)
     DEBUG:numba.core.ssa:on stmt: $180binary_true_divide.2 = $const176.0 / r
     DEBUG:numba.core.ssa:on stmt: $182return_value.3 = cast(value=$180binary_true_divide.2)
     DEBUG:numba.core.ssa:on stmt: return $182return_value.3
     DEBUG:numba.core.ssa:==== SSA block analysis pass on 184
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f2cb8285d30>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._GatherDefsHandler object at 0x7f0368a0ea00>
     DEBUG:numba.core.ssa:on stmt: $186return_value.1 = cast(value=r)
     DEBUG:numba.core.ssa:on stmt: return $186return_value.1
     DEBUG:numba.core.ssa:defs defaultdict(<class 'list'>,
-                {'$10load_deref.3': [<numba.core.ir.Assign object at 0x7f2cb82d8dc0>],
-                 '$110compare_op.2': [<numba.core.ir.Assign object at 0x7f2cb82fd040>],
-                 '$112pred': [<numba.core.ir.Assign object at 0x7f2cb82fd2b0>],
-                 '$114load_global.0': [<numba.core.ir.Assign object at 0x7f2cb82fd4f0>],
-                 '$116load_method.1': [<numba.core.ir.Assign object at 0x7f2cb82fd670>],
-                 '$120load_global.3': [<numba.core.ir.Assign object at 0x7f2cb82fd910>],
-                 '$124call_function.5': [<numba.core.ir.Assign object at 0x7f2cb82fdc10>],
-                 '$126call_method.6': [<numba.core.ir.Assign object at 0x7f2cb82fddc0>],
-                 '$128return_value.7': [<numba.core.ir.Assign object at 0x7f2cb82fdeb0>],
-                 '$134compare_op.2': [<numba.core.ir.Assign object at 0x7f2cb83003a0>],
-                 '$136pred': [<numba.core.ir.Assign object at 0x7f2cb8300610>],
-                 '$142binary_and.2': [<numba.core.ir.Assign object at 0x7f2cb8300b20>],
-                 '$144pred': [<numba.core.ir.Assign object at 0x7f2cb8300d90>],
-                 '$150inplace_multiply.2': [<numba.core.ir.Assign object at 0x7f2cb8282280>],
-                 '$158inplace_rshift.2': [<numba.core.ir.Assign object at 0x7f2cb82827c0>],
-                 '$166inplace_multiply.5': [<numba.core.ir.Assign object at 0x7f2cb8282c40>],
-                 '$174pred': [<numba.core.ir.Assign object at 0x7f2cb8285130>],
-                 '$180binary_true_divide.2': [<numba.core.ir.Assign object at 0x7f2cb8285640>],
-                 '$182return_value.3': [<numba.core.ir.Assign object at 0x7f2cb8285790>],
-                 '$186return_value.1': [<numba.core.ir.Assign object at 0x7f2cb8285af0>],
-                 '$22compare_op.8': [<numba.core.ir.Assign object at 0x7f2cb82f4610>],
-                 '$24pred': [<numba.core.ir.Assign object at 0x7f2cb82f4880>],
-                 '$2load_deref.0': [<numba.core.ir.Assign object at 0x7f2cb82d8820>],
-                 '$40compare_op.5': [<numba.core.ir.Assign object at 0x7f2cb82f5310>],
-                 '$42pred': [<numba.core.ir.Assign object at 0x7f2cb82f54f0>],
-                 '$44load_global.0': [<numba.core.ir.Assign object at 0x7f2cb82f5610>],
-                 '$48load_deref.0': [<numba.core.ir.Assign object at 0x7f2cb82f5910>],
-                 '$50pred': [<numba.core.ir.Assign object at 0x7f2cb82f5bb0>],
-                 '$const108.1': [<numba.core.ir.Assign object at 0x7f2cb82fbe50>],
-                 '$const132.1': [<numba.core.ir.Assign object at 0x7f2cb83001f0>],
-                 '$const140.1': [<numba.core.ir.Assign object at 0x7f2cb8300970>],
-                 '$const156.1': [<numba.core.ir.Assign object at 0x7f2cb8282610>],
-                 '$const176.0': [<numba.core.ir.Assign object at 0x7f2cb8285370>],
-                 '$const20.7': [<numba.core.ir.Assign object at 0x7f2cb82f4460>],
-                 '$const38.4': [<numba.core.ir.Assign object at 0x7f2cb82f5160>],
-                 '$const4.1': [<numba.core.ir.Assign object at 0x7f2cb82d89a0>],
-                 'a': [<numba.core.ir.Assign object at 0x7f2cb82d8790>],
-                 'a.1': [<numba.core.ir.Assign object at 0x7f2cb82f4100>,
-                         <numba.core.ir.Assign object at 0x7f2cb8282d00>],
-                 'b': [<numba.core.ir.Assign object at 0x7f2cb82d8490>],
-                 'bool112': [<numba.core.ir.Assign object at 0x7f2cb82fd190>],
-                 'bool136': [<numba.core.ir.Assign object at 0x7f2cb83004f0>],
-                 'bool144': [<numba.core.ir.Assign object at 0x7f2cb8300c70>],
-                 'bool174': [<numba.core.ir.Assign object at 0x7f2cb8282fd0>],
-                 'bool24': [<numba.core.ir.Assign object at 0x7f2cb82f4760>],
-                 'bool42': [<numba.core.ir.Assign object at 0x7f2cb82d4820>],
-                 'bool50': [<numba.core.ir.Assign object at 0x7f2cb82f5a90>],
-                 'exp': [<numba.core.ir.Assign object at 0x7f2cb82f4d60>,
-                         <numba.core.ir.Assign object at 0x7f2cb82fbbe0>,
-                         <numba.core.ir.Assign object at 0x7f2cb8282880>],
-                 'invert': [<numba.core.ir.Assign object at 0x7f2cb82f49a0>,
-                            <numba.core.ir.Assign object at 0x7f2cb82fb910>],
-                 'r': [<numba.core.ir.Assign object at 0x7f2cb82d8b80>,
-                       <numba.core.ir.Assign object at 0x7f2cb8282340>]})
-    DEBUG:numba.core.ssa:SSA violators {'a.1', 'r', 'exp', 'invert'}
-    DEBUG:numba.core.ssa:Fix SSA violator on var a.1
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: a = arg(0, name=a)
-    DEBUG:numba.core.ssa:on stmt: b = arg(1, name=b)
-    DEBUG:numba.core.ssa:on stmt: $2load_deref.0 = freevar(tp: float64)
-    DEBUG:numba.core.ssa:on stmt: $const4.1 = const(int, 1)
-    DEBUG:numba.core.ssa:on stmt: r = call $2load_deref.0($const4.1, func=$2load_deref.0, args=[Var($const4.1, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: $10load_deref.3 = freevar(tp: float64)
-    DEBUG:numba.core.ssa:on stmt: a.1 = call $10load_deref.3(a, func=$10load_deref.3, args=[Var(a, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:first assign: a.1
-    DEBUG:numba.core.ssa:replaced with: a.1 = call $10load_deref.3(a, func=$10load_deref.3, args=[Var(a, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: $const20.7 = const(int, 0)
-    DEBUG:numba.core.ssa:on stmt: $22compare_op.8 = b < $const20.7
-    DEBUG:numba.core.ssa:on stmt: bool24 = global(bool: <class 'bool'>)
-    DEBUG:numba.core.ssa:on stmt: $24pred = call bool24($22compare_op.8, func=bool24, args=(Var($22compare_op.8, numbers.py:218),), kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: branch $24pred, 26, 98
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 26
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: invert = const(bool, True)
-    DEBUG:numba.core.ssa:on stmt: exp = unary(fn=<built-in function neg>, value=b)
-    DEBUG:numba.core.ssa:on stmt: $const38.4 = const(int, 0)
-    DEBUG:numba.core.ssa:on stmt: $40compare_op.5 = exp < $const38.4
-    DEBUG:numba.core.ssa:on stmt: bool42 = global(bool: <class 'bool'>)
-    DEBUG:numba.core.ssa:on stmt: $42pred = call bool42($40compare_op.5, func=bool42, args=(Var($40compare_op.5, numbers.py:221),), kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: branch $42pred, 44, 48
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 44
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $44load_global.0 = global(OverflowError: <class 'OverflowError'>)
-    DEBUG:numba.core.ssa:on stmt: <static> raise <class 'OverflowError'>
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 48
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $48load_deref.0 = freevar(is_integer: False)
-    DEBUG:numba.core.ssa:on stmt: bool50 = global(bool: <class 'bool'>)
-    DEBUG:numba.core.ssa:on stmt: $50pred = call bool50($48load_deref.0, func=bool50, args=(Var($48load_deref.0, numbers.py:223),), kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: jump 106
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 98
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: invert = const(bool, False)
-    DEBUG:numba.core.ssa:on stmt: exp = b
-    DEBUG:numba.core.ssa:on stmt: jump 106
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 106
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $const108.1 = const(int, 65536)
-    DEBUG:numba.core.ssa:on stmt: $110compare_op.2 = exp > $const108.1
-    DEBUG:numba.core.ssa:on stmt: bool112 = global(bool: <class 'bool'>)
-    DEBUG:numba.core.ssa:on stmt: $112pred = call bool112($110compare_op.2, func=bool112, args=(Var($110compare_op.2, numbers.py:234),), kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: branch $112pred, 114, 130
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 114
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $114load_global.0 = global(math: <module 'math' from '/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/lib-dynload/math.cpython-39-x86_64-linux-gnu.so'>)
-    DEBUG:numba.core.ssa:on stmt: $116load_method.1 = getattr(value=$114load_global.0, attr=pow)
-    DEBUG:numba.core.ssa:on stmt: $120load_global.3 = global(float: <class 'float'>)
-    DEBUG:numba.core.ssa:on stmt: $124call_function.5 = call $120load_global.3(b, func=$120load_global.3, args=[Var(b, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: $126call_method.6 = call $116load_method.1(a.1, $124call_function.5, func=$116load_method.1, args=[Var(a.1, numbers.py:217), Var($124call_function.5, numbers.py:236)], kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: $128return_value.7 = cast(value=$126call_method.6)
-    DEBUG:numba.core.ssa:on stmt: return $128return_value.7
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 130
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $const132.1 = const(int, 0)
-    DEBUG:numba.core.ssa:on stmt: $134compare_op.2 = exp != $const132.1
-    DEBUG:numba.core.ssa:on stmt: bool136 = global(bool: <class 'bool'>)
-    DEBUG:numba.core.ssa:on stmt: $136pred = call bool136($134compare_op.2, func=bool136, args=(Var($134compare_op.2, numbers.py:237),), kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: branch $136pred, 138, 172
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 138
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $const140.1 = const(int, 1)
-    DEBUG:numba.core.ssa:on stmt: $142binary_and.2 = exp & $const140.1
-    DEBUG:numba.core.ssa:on stmt: bool144 = global(bool: <class 'bool'>)
-    DEBUG:numba.core.ssa:on stmt: $144pred = call bool144($142binary_and.2, func=bool144, args=(Var($142binary_and.2, numbers.py:238),), kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: branch $144pred, 146, 154
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 146
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
-    DEBUG:numba.core.ssa:on stmt: r = $150inplace_multiply.2
-    DEBUG:numba.core.ssa:on stmt: jump 154
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 154
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $const156.1 = const(int, 1)
-    DEBUG:numba.core.ssa:on stmt: $158inplace_rshift.2 = inplace_binop(fn=<built-in function irshift>, immutable_fn=<built-in function rshift>, lhs=exp, rhs=$const156.1, static_lhs=Undefined, static_rhs=Undefined)
-    DEBUG:numba.core.ssa:on stmt: exp = $158inplace_rshift.2
-    DEBUG:numba.core.ssa:on stmt: $166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
-    DEBUG:numba.core.ssa:on stmt: a.1 = $166inplace_multiply.5
-    DEBUG:numba.core.ssa:replaced with: a.1.1 = $166inplace_multiply.5
-    DEBUG:numba.core.ssa:on stmt: jump 130
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 172
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: bool174 = global(bool: <class 'bool'>)
-    DEBUG:numba.core.ssa:on stmt: $174pred = call bool174(invert, func=bool174, args=(Var(invert, numbers.py:219),), kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: branch $174pred, 176, 184
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 176
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $const176.0 = const(float, 1.0)
-    DEBUG:numba.core.ssa:on stmt: $180binary_true_divide.2 = $const176.0 / r
-    DEBUG:numba.core.ssa:on stmt: $182return_value.3 = cast(value=$180binary_true_divide.2)
-    DEBUG:numba.core.ssa:on stmt: return $182return_value.3
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 184
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $186return_value.1 = cast(value=r)
-    DEBUG:numba.core.ssa:on stmt: return $186return_value.1
-    DEBUG:numba.core.ssa:Replaced assignments: defaultdict(<class 'list'>,
-                {0: [<numba.core.ir.Assign object at 0x7f2cb8285f40>],
-                 154: [<numba.core.ir.Assign object at 0x7f2cb82d47f0>]})
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: a = arg(0, name=a)
-    DEBUG:numba.core.ssa:on stmt: b = arg(1, name=b)
-    DEBUG:numba.core.ssa:on stmt: $2load_deref.0 = freevar(tp: float64)
-    DEBUG:numba.core.ssa:on stmt: $const4.1 = const(int, 1)
-    DEBUG:numba.core.ssa:on stmt: r = call $2load_deref.0($const4.1, func=$2load_deref.0, args=[Var($const4.1, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: $10load_deref.3 = freevar(tp: float64)
-    DEBUG:numba.core.ssa:on stmt: a.1 = call $10load_deref.3(a, func=$10load_deref.3, args=[Var(a, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: $const20.7 = const(int, 0)
-    DEBUG:numba.core.ssa:on stmt: $22compare_op.8 = b < $const20.7
-    DEBUG:numba.core.ssa:on stmt: bool24 = global(bool: <class 'bool'>)
-    DEBUG:numba.core.ssa:on stmt: $24pred = call bool24($22compare_op.8, func=bool24, args=(Var($22compare_op.8, numbers.py:218),), kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: branch $24pred, 26, 98
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 26
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: invert = const(bool, True)
-    DEBUG:numba.core.ssa:on stmt: exp = unary(fn=<built-in function neg>, value=b)
-    DEBUG:numba.core.ssa:on stmt: $const38.4 = const(int, 0)
-    DEBUG:numba.core.ssa:on stmt: $40compare_op.5 = exp < $const38.4
-    DEBUG:numba.core.ssa:on stmt: bool42 = global(bool: <class 'bool'>)
-    DEBUG:numba.core.ssa:on stmt: $42pred = call bool42($40compare_op.5, func=bool42, args=(Var($40compare_op.5, numbers.py:221),), kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: branch $42pred, 44, 48
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 44
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $44load_global.0 = global(OverflowError: <class 'OverflowError'>)
-    DEBUG:numba.core.ssa:on stmt: <static> raise <class 'OverflowError'>
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 48
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $48load_deref.0 = freevar(is_integer: False)
-    DEBUG:numba.core.ssa:on stmt: bool50 = global(bool: <class 'bool'>)
-    DEBUG:numba.core.ssa:on stmt: $50pred = call bool50($48load_deref.0, func=bool50, args=(Var($48load_deref.0, numbers.py:223),), kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: jump 106
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 98
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: invert = const(bool, False)
-    DEBUG:numba.core.ssa:on stmt: exp = b
-    DEBUG:numba.core.ssa:on stmt: jump 106
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 106
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $const108.1 = const(int, 65536)
-    DEBUG:numba.core.ssa:on stmt: $110compare_op.2 = exp > $const108.1
-    DEBUG:numba.core.ssa:on stmt: bool112 = global(bool: <class 'bool'>)
-    DEBUG:numba.core.ssa:on stmt: $112pred = call bool112($110compare_op.2, func=bool112, args=(Var($110compare_op.2, numbers.py:234),), kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: branch $112pred, 114, 130
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 114
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $114load_global.0 = global(math: <module 'math' from '/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/lib-dynload/math.cpython-39-x86_64-linux-gnu.so'>)
-    DEBUG:numba.core.ssa:on stmt: $116load_method.1 = getattr(value=$114load_global.0, attr=pow)
-    DEBUG:numba.core.ssa:on stmt: $120load_global.3 = global(float: <class 'float'>)
-    DEBUG:numba.core.ssa:on stmt: $124call_function.5 = call $120load_global.3(b, func=$120load_global.3, args=[Var(b, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: $126call_method.6 = call $116load_method.1(a.1, $124call_function.5, func=$116load_method.1, args=[Var(a.1, numbers.py:217), Var($124call_function.5, numbers.py:236)], kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:find_def var='a.1' stmt=$126call_method.6 = call $116load_method.1(a.1, $124call_function.5, func=$116load_method.1, args=[Var(a.1, numbers.py:217), Var($124call_function.5, numbers.py:236)], kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:find_def_from_top label 114
-    DEBUG:numba.core.ssa:idom 106 from label 114
-    DEBUG:numba.core.ssa:find_def_from_bottom label 106
-    DEBUG:numba.core.ssa:find_def_from_top label 106
-    DEBUG:numba.core.ssa:idom 0 from label 106
-    DEBUG:numba.core.ssa:find_def_from_bottom label 0
-    DEBUG:numba.core.ssa:on stmt: $128return_value.7 = cast(value=$126call_method.6)
-    DEBUG:numba.core.ssa:on stmt: return $128return_value.7
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 130
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $const132.1 = const(int, 0)
-    DEBUG:numba.core.ssa:on stmt: $134compare_op.2 = exp != $const132.1
-    DEBUG:numba.core.ssa:on stmt: bool136 = global(bool: <class 'bool'>)
-    DEBUG:numba.core.ssa:on stmt: $136pred = call bool136($134compare_op.2, func=bool136, args=(Var($134compare_op.2, numbers.py:237),), kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: branch $136pred, 138, 172
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 138
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $const140.1 = const(int, 1)
-    DEBUG:numba.core.ssa:on stmt: $142binary_and.2 = exp & $const140.1
-    DEBUG:numba.core.ssa:on stmt: bool144 = global(bool: <class 'bool'>)
-    DEBUG:numba.core.ssa:on stmt: $144pred = call bool144($142binary_and.2, func=bool144, args=(Var($142binary_and.2, numbers.py:238),), kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: branch $144pred, 146, 154
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 146
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
-    DEBUG:numba.core.ssa:find_def var='a.1' stmt=$150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
-    DEBUG:numba.core.ssa:find_def_from_top label 146
-    DEBUG:numba.core.ssa:idom 138 from label 146
-    DEBUG:numba.core.ssa:find_def_from_bottom label 138
-    DEBUG:numba.core.ssa:find_def_from_top label 138
-    DEBUG:numba.core.ssa:idom 130 from label 138
-    DEBUG:numba.core.ssa:find_def_from_bottom label 130
-    DEBUG:numba.core.ssa:find_def_from_top label 130
-    DEBUG:numba.core.ssa:insert phi node a.1.2 = phi(incoming_values=[], incoming_blocks=[]) at 130
-    DEBUG:numba.core.ssa:find_def_from_bottom label 106
-    DEBUG:numba.core.ssa:find_def_from_top label 106
-    DEBUG:numba.core.ssa:idom 0 from label 106
-    DEBUG:numba.core.ssa:find_def_from_bottom label 0
-    DEBUG:numba.core.ssa:incoming_def a.1 = call $10load_deref.3(a, func=$10load_deref.3, args=[Var(a, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:find_def_from_bottom label 154
-    DEBUG:numba.core.ssa:incoming_def a.1.1 = $166inplace_multiply.5
-    DEBUG:numba.core.ssa:replaced with: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
-    DEBUG:numba.core.ssa:on stmt: r = $150inplace_multiply.2
-    DEBUG:numba.core.ssa:on stmt: jump 154
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 154
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $const156.1 = const(int, 1)
-    DEBUG:numba.core.ssa:on stmt: $158inplace_rshift.2 = inplace_binop(fn=<built-in function irshift>, immutable_fn=<built-in function rshift>, lhs=exp, rhs=$const156.1, static_lhs=Undefined, static_rhs=Undefined)
-    DEBUG:numba.core.ssa:on stmt: exp = $158inplace_rshift.2
-    DEBUG:numba.core.ssa:on stmt: $166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
-    DEBUG:numba.core.ssa:find_def var='a.1' stmt=$166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
-    DEBUG:numba.core.ssa:find_def_from_top label 154
-    DEBUG:numba.core.ssa:idom 138 from label 154
-    DEBUG:numba.core.ssa:find_def_from_bottom label 138
-    DEBUG:numba.core.ssa:find_def_from_top label 138
-    DEBUG:numba.core.ssa:idom 130 from label 138
-    DEBUG:numba.core.ssa:find_def_from_bottom label 130
-    DEBUG:numba.core.ssa:replaced with: $166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1.2, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
-    DEBUG:numba.core.ssa:on stmt: a.1.1 = $166inplace_multiply.5
-    DEBUG:numba.core.ssa:on stmt: jump 130
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 172
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: bool174 = global(bool: <class 'bool'>)
-    DEBUG:numba.core.ssa:on stmt: $174pred = call bool174(invert, func=bool174, args=(Var(invert, numbers.py:219),), kws=(), vararg=None, varkwarg=None, target=None)
-    DEBUG:numba.core.ssa:on stmt: branch $174pred, 176, 184
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 176
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $const176.0 = const(float, 1.0)
-    DEBUG:numba.core.ssa:on stmt: $180binary_true_divide.2 = $const176.0 / r
-    DEBUG:numba.core.ssa:on stmt: $182return_value.3 = cast(value=$180binary_true_divide.2)
-    DEBUG:numba.core.ssa:on stmt: return $182return_value.3
-    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 184
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $186return_value.1 = cast(value=r)
-    DEBUG:numba.core.ssa:on stmt: return $186return_value.1
+                {'$10load_deref.3': [<numba.core.ir.Assign object at 0x7f0368a63700>],
+                 '$110compare_op.2': [<numba.core.ir.Assign object at 0x7f0368a04bb0>],
+                 '$112pred': [<numba.core.ir.Assign object at 0x7f0368a04e20>],
+                 '$114load_global.0': [<numba.core.ir.Assign object at 0x7f0368a060a0>],
+                 '$116load_method.1': [<numba.core.ir.Assign object at 0x7f0368a06220>],
+                 '$120load_global.3': [<numba.core.ir.Assign object at 0x7f0368a064c0>],
+                 '$124call_function.5': [<numba.core.ir.Assign object at 0x7f0368a067c0>],
+                 '$126call_method.6': [<numba.core.ir.Assign object at 0x7f0368a06970>],
+                 '$128return_value.7': [<numba.core.ir.Assign object at 0x7f0368a06a60>],
+                 '$134compare_op.2': [<numba.core.ir.Assign object at 0x7f0368a06f10>],
+                 '$136pred': [<numba.core.ir.Assign object at 0x7f0368a091c0>],
+                 '$142binary_and.2': [<numba.core.ir.Assign object at 0x7f0368a096d0>],
+                 '$144pred': [<numba.core.ir.Assign object at 0x7f0368a09940>],
+                 '$150inplace_multiply.2': [<numba.core.ir.Assign object at 0x7f0368a09df0>],
+                 '$158inplace_rshift.2': [<numba.core.ir.Assign object at 0x7f0368a0c370>],
+                 '$166inplace_multiply.5': [<numba.core.ir.Assign object at 0x7f0368a0c7f0>],
+                 '$174pred': [<numba.core.ir.Assign object at 0x7f0368a0cca0>],
+                 '$180binary_true_divide.2': [<numba.core.ir.Assign object at 0x7f0368a0e1f0>],
+                 '$182return_value.3': [<numba.core.ir.Assign object at 0x7f0368a0e340>],
+                 '$186return_value.1': [<numba.core.ir.Assign object at 0x7f0368a0e6a0>],
+                 '$22compare_op.8': [<numba.core.ir.Assign object at 0x7f0368a7c130>],
+                 '$24pred': [<numba.core.ir.Assign object at 0x7f0368a7c3a0>],
+                 '$2load_deref.0': [<numba.core.ir.Assign object at 0x7f0368a632b0>],
+                 '$40compare_op.5': [<numba.core.ir.Assign object at 0x7f0368a7cdf0>],
+                 '$42pred': [<numba.core.ir.Assign object at 0x7f03689fe0a0>],
+                 '$44load_global.0': [<numba.core.ir.Assign object at 0x7f03689fe1c0>],
+                 '$48load_deref.0': [<numba.core.ir.Assign object at 0x7f03689fe4c0>],
+                 '$50pred': [<numba.core.ir.Assign object at 0x7f03689fe760>],
+                 '$const108.1': [<numba.core.ir.Assign object at 0x7f0368a04a00>],
+                 '$const132.1': [<numba.core.ir.Assign object at 0x7f0368a06d60>],
+                 '$const140.1': [<numba.core.ir.Assign object at 0x7f0368a09520>],
+                 '$const156.1': [<numba.core.ir.Assign object at 0x7f0368a0c1c0>],
+                 '$const176.0': [<numba.core.ir.Assign object at 0x7f0368a0cee0>],
+                 '$const20.7': [<numba.core.ir.Assign object at 0x7f0368a63f40>],
+                 '$const38.4': [<numba.core.ir.Assign object at 0x7f0368a7cc40>],
+                 '$const4.1': [<numba.core.ir.Assign object at 0x7f0368a633a0>],
+                 'a': [<numba.core.ir.Assign object at 0x7f0368a63430>],
+                 'a.1': [<numba.core.ir.Assign object at 0x7f0368a63be0>,
+                         <numba.core.ir.Assign object at 0x7f0368a0c8b0>],
+                 'b': [<numba.core.ir.Assign object at 0x7f0368a63520>],
+                 'bool112': [<numba.core.ir.Assign object at 0x7f0368a04d00>],
+                 'bool136': [<numba.core.ir.Assign object at 0x7f0368a090a0>],
+                 'bool144': [<numba.core.ir.Assign object at 0x7f0368a09820>],
+                 'bool174': [<numba.core.ir.Assign object at 0x7f0368a0cb80>],
+                 'bool24': [<numba.core.ir.Assign object at 0x7f0368a7c280>],
+                 'bool42': [<numba.core.ir.Assign object at 0x7f0368a7cf40>],
+                 'bool50': [<numba.core.ir.Assign object at 0x7f03689fe640>],
+                 'exp': [<numba.core.ir.Assign object at 0x7f0368a7c880>,
+                         <numba.core.ir.Assign object at 0x7f0368a04790>,
+                         <numba.core.ir.Assign object at 0x7f0368a0c430>],
+                 'invert': [<numba.core.ir.Assign object at 0x7f0368a7c4c0>,
+                            <numba.core.ir.Assign object at 0x7f0368a044c0>],
+                 'r': [<numba.core.ir.Assign object at 0x7f0368a63940>,
+                       <numba.core.ir.Assign object at 0x7f0368a09eb0>]})
+    DEBUG:numba.core.ssa:SSA violators {'r', 'exp', 'a.1', 'invert'}
     DEBUG:numba.core.ssa:Fix SSA violator on var r
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: a = arg(0, name=a)
     DEBUG:numba.core.ssa:on stmt: b = arg(1, name=b)
     DEBUG:numba.core.ssa:on stmt: $2load_deref.0 = freevar(tp: float64)
@@ -3295,7 +3073,7 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $24pred = call bool24($22compare_op.8, func=bool24, args=(Var($22compare_op.8, numbers.py:218),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $24pred, 26, 98
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 26
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: invert = const(bool, True)
     DEBUG:numba.core.ssa:on stmt: exp = unary(fn=<built-in function neg>, value=b)
     DEBUG:numba.core.ssa:on stmt: $const38.4 = const(int, 0)
@@ -3304,29 +3082,29 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $42pred = call bool42($40compare_op.5, func=bool42, args=(Var($40compare_op.5, numbers.py:221),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $42pred, 44, 48
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 44
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $44load_global.0 = global(OverflowError: <class 'OverflowError'>)
     DEBUG:numba.core.ssa:on stmt: <static> raise <class 'OverflowError'>
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 48
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $48load_deref.0 = freevar(is_integer: False)
     DEBUG:numba.core.ssa:on stmt: bool50 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $50pred = call bool50($48load_deref.0, func=bool50, args=(Var($48load_deref.0, numbers.py:223),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 98
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: invert = const(bool, False)
     DEBUG:numba.core.ssa:on stmt: exp = b
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 106
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $const108.1 = const(int, 65536)
     DEBUG:numba.core.ssa:on stmt: $110compare_op.2 = exp > $const108.1
     DEBUG:numba.core.ssa:on stmt: bool112 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $112pred = call bool112($110compare_op.2, func=bool112, args=(Var($110compare_op.2, numbers.py:234),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $112pred, 114, 130
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 114
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $114load_global.0 = global(math: <module 'math' from '/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/lib-dynload/math.cpython-39-x86_64-linux-gnu.so'>)
     DEBUG:numba.core.ssa:on stmt: $116load_method.1 = getattr(value=$114load_global.0, attr=pow)
     DEBUG:numba.core.ssa:on stmt: $120load_global.3 = global(float: <class 'float'>)
@@ -3335,54 +3113,53 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $128return_value.7 = cast(value=$126call_method.6)
     DEBUG:numba.core.ssa:on stmt: return $128return_value.7
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 130
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82d4c40>
-    DEBUG:numba.core.ssa:on stmt: a.1.2 = phi(incoming_values=[Var(a.1, numbers.py:217), Var(a.1.1, numbers.py:241)], incoming_blocks=[106, 154])
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $const132.1 = const(int, 0)
     DEBUG:numba.core.ssa:on stmt: $134compare_op.2 = exp != $const132.1
     DEBUG:numba.core.ssa:on stmt: bool136 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $136pred = call bool136($134compare_op.2, func=bool136, args=(Var($134compare_op.2, numbers.py:237),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $136pred, 138, 172
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 138
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $const140.1 = const(int, 1)
     DEBUG:numba.core.ssa:on stmt: $142binary_and.2 = exp & $const140.1
     DEBUG:numba.core.ssa:on stmt: bool144 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $144pred = call bool144($142binary_and.2, func=bool144, args=(Var($142binary_and.2, numbers.py:238),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $144pred, 146, 154
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 146
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82d4c40>
-    DEBUG:numba.core.ssa:on stmt: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368aa9130>
+    DEBUG:numba.core.ssa:on stmt: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:on stmt: r = $150inplace_multiply.2
     DEBUG:numba.core.ssa:replaced with: r.1 = $150inplace_multiply.2
     DEBUG:numba.core.ssa:on stmt: jump 154
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 154
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $const156.1 = const(int, 1)
     DEBUG:numba.core.ssa:on stmt: $158inplace_rshift.2 = inplace_binop(fn=<built-in function irshift>, immutable_fn=<built-in function rshift>, lhs=exp, rhs=$const156.1, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:on stmt: exp = $158inplace_rshift.2
-    DEBUG:numba.core.ssa:on stmt: $166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1.2, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
-    DEBUG:numba.core.ssa:on stmt: a.1.1 = $166inplace_multiply.5
+    DEBUG:numba.core.ssa:on stmt: $166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:on stmt: a.1 = $166inplace_multiply.5
     DEBUG:numba.core.ssa:on stmt: jump 130
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 172
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: bool174 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $174pred = call bool174(invert, func=bool174, args=(Var(invert, numbers.py:219),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $174pred, 176, 184
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 176
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $const176.0 = const(float, 1.0)
     DEBUG:numba.core.ssa:on stmt: $180binary_true_divide.2 = $const176.0 / r
     DEBUG:numba.core.ssa:on stmt: $182return_value.3 = cast(value=$180binary_true_divide.2)
     DEBUG:numba.core.ssa:on stmt: return $182return_value.3
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 184
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $186return_value.1 = cast(value=r)
     DEBUG:numba.core.ssa:on stmt: return $186return_value.1
     DEBUG:numba.core.ssa:Replaced assignments: defaultdict(<class 'list'>,
-                {0: [<numba.core.ir.Assign object at 0x7f2cb82d4ca0>],
-                 146: [<numba.core.ir.Assign object at 0x7f2cb8285c10>]})
+                {0: [<numba.core.ir.Assign object at 0x7f0368a4a880>],
+                 146: [<numba.core.ir.Assign object at 0x7f0368a5da00>]})
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: a = arg(0, name=a)
     DEBUG:numba.core.ssa:on stmt: b = arg(1, name=b)
     DEBUG:numba.core.ssa:on stmt: $2load_deref.0 = freevar(tp: float64)
@@ -3396,7 +3173,7 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $24pred = call bool24($22compare_op.8, func=bool24, args=(Var($22compare_op.8, numbers.py:218),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $24pred, 26, 98
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 26
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: invert = const(bool, True)
     DEBUG:numba.core.ssa:on stmt: exp = unary(fn=<built-in function neg>, value=b)
     DEBUG:numba.core.ssa:on stmt: $const38.4 = const(int, 0)
@@ -3405,29 +3182,29 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $42pred = call bool42($40compare_op.5, func=bool42, args=(Var($40compare_op.5, numbers.py:221),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $42pred, 44, 48
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 44
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $44load_global.0 = global(OverflowError: <class 'OverflowError'>)
     DEBUG:numba.core.ssa:on stmt: <static> raise <class 'OverflowError'>
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 48
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $48load_deref.0 = freevar(is_integer: False)
     DEBUG:numba.core.ssa:on stmt: bool50 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $50pred = call bool50($48load_deref.0, func=bool50, args=(Var($48load_deref.0, numbers.py:223),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 98
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: invert = const(bool, False)
     DEBUG:numba.core.ssa:on stmt: exp = b
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 106
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $const108.1 = const(int, 65536)
     DEBUG:numba.core.ssa:on stmt: $110compare_op.2 = exp > $const108.1
     DEBUG:numba.core.ssa:on stmt: bool112 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $112pred = call bool112($110compare_op.2, func=bool112, args=(Var($110compare_op.2, numbers.py:234),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $112pred, 114, 130
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 114
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $114load_global.0 = global(math: <module 'math' from '/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/lib-dynload/math.cpython-39-x86_64-linux-gnu.so'>)
     DEBUG:numba.core.ssa:on stmt: $116load_method.1 = getattr(value=$114load_global.0, attr=pow)
     DEBUG:numba.core.ssa:on stmt: $120load_global.3 = global(float: <class 'float'>)
@@ -3436,24 +3213,23 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $128return_value.7 = cast(value=$126call_method.6)
     DEBUG:numba.core.ssa:on stmt: return $128return_value.7
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 130
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: a.1.2 = phi(incoming_values=[Var(a.1, numbers.py:217), Var(a.1.1, numbers.py:241)], incoming_blocks=[106, 154])
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $const132.1 = const(int, 0)
     DEBUG:numba.core.ssa:on stmt: $134compare_op.2 = exp != $const132.1
     DEBUG:numba.core.ssa:on stmt: bool136 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $136pred = call bool136($134compare_op.2, func=bool136, args=(Var($134compare_op.2, numbers.py:237),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $136pred, 138, 172
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 138
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $const140.1 = const(int, 1)
     DEBUG:numba.core.ssa:on stmt: $142binary_and.2 = exp & $const140.1
     DEBUG:numba.core.ssa:on stmt: bool144 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $144pred = call bool144($142binary_and.2, func=bool144, args=(Var($142binary_and.2, numbers.py:238),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $144pred, 146, 154
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 146
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
-    DEBUG:numba.core.ssa:on stmt: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
-    DEBUG:numba.core.ssa:find_def var='r' stmt=$150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
+    DEBUG:numba.core.ssa:on stmt: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:find_def var='r' stmt=$150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:find_def_from_top label 146
     DEBUG:numba.core.ssa:idom 138 from label 146
     DEBUG:numba.core.ssa:find_def_from_bottom label 138
@@ -3478,24 +3254,24 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:find_def_from_bottom label 146
     DEBUG:numba.core.ssa:incoming_def r.1 = $150inplace_multiply.2
     DEBUG:numba.core.ssa:incoming_def r.3 = phi(incoming_values=[Var(r.2, numbers.py:239), Var(r.1, numbers.py:239)], incoming_blocks=[138, 146])
-    DEBUG:numba.core.ssa:replaced with: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r.2, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:replaced with: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r.2, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:on stmt: r.1 = $150inplace_multiply.2
     DEBUG:numba.core.ssa:on stmt: jump 154
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 154
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $const156.1 = const(int, 1)
     DEBUG:numba.core.ssa:on stmt: $158inplace_rshift.2 = inplace_binop(fn=<built-in function irshift>, immutable_fn=<built-in function rshift>, lhs=exp, rhs=$const156.1, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:on stmt: exp = $158inplace_rshift.2
-    DEBUG:numba.core.ssa:on stmt: $166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1.2, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
-    DEBUG:numba.core.ssa:on stmt: a.1.1 = $166inplace_multiply.5
+    DEBUG:numba.core.ssa:on stmt: $166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:on stmt: a.1 = $166inplace_multiply.5
     DEBUG:numba.core.ssa:on stmt: jump 130
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 172
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: bool174 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $174pred = call bool174(invert, func=bool174, args=(Var(invert, numbers.py:219),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $174pred, 176, 184
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 176
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $const176.0 = const(float, 1.0)
     DEBUG:numba.core.ssa:on stmt: $180binary_true_divide.2 = $const176.0 / r
     DEBUG:numba.core.ssa:find_def var='r' stmt=$180binary_true_divide.2 = $const176.0 / r
@@ -3509,7 +3285,7 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $182return_value.3 = cast(value=$180binary_true_divide.2)
     DEBUG:numba.core.ssa:on stmt: return $182return_value.3
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 184
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb8285e50>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $186return_value.1 = cast(value=r)
     DEBUG:numba.core.ssa:find_def var='r' stmt=$186return_value.1 = cast(value=r)
     DEBUG:numba.core.ssa:find_def_from_top label 184
@@ -3522,7 +3298,7 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: return $186return_value.1
     DEBUG:numba.core.ssa:Fix SSA violator on var exp
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285df0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a4a8e0>
     DEBUG:numba.core.ssa:on stmt: a = arg(0, name=a)
     DEBUG:numba.core.ssa:on stmt: b = arg(1, name=b)
     DEBUG:numba.core.ssa:on stmt: $2load_deref.0 = freevar(tp: float64)
@@ -3536,7 +3312,7 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $24pred = call bool24($22compare_op.8, func=bool24, args=(Var($22compare_op.8, numbers.py:218),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $24pred, 26, 98
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 26
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285df0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a4a8e0>
     DEBUG:numba.core.ssa:on stmt: invert = const(bool, True)
     DEBUG:numba.core.ssa:on stmt: exp = unary(fn=<built-in function neg>, value=b)
     DEBUG:numba.core.ssa:first assign: exp
@@ -3547,30 +3323,30 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $42pred = call bool42($40compare_op.5, func=bool42, args=(Var($40compare_op.5, numbers.py:221),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $42pred, 44, 48
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 44
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285df0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a4a8e0>
     DEBUG:numba.core.ssa:on stmt: $44load_global.0 = global(OverflowError: <class 'OverflowError'>)
     DEBUG:numba.core.ssa:on stmt: <static> raise <class 'OverflowError'>
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 48
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285df0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a4a8e0>
     DEBUG:numba.core.ssa:on stmt: $48load_deref.0 = freevar(is_integer: False)
     DEBUG:numba.core.ssa:on stmt: bool50 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $50pred = call bool50($48load_deref.0, func=bool50, args=(Var($48load_deref.0, numbers.py:223),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 98
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285df0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a4a8e0>
     DEBUG:numba.core.ssa:on stmt: invert = const(bool, False)
     DEBUG:numba.core.ssa:on stmt: exp = b
     DEBUG:numba.core.ssa:replaced with: exp.1 = b
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 106
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285df0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a4a8e0>
     DEBUG:numba.core.ssa:on stmt: $const108.1 = const(int, 65536)
     DEBUG:numba.core.ssa:on stmt: $110compare_op.2 = exp > $const108.1
     DEBUG:numba.core.ssa:on stmt: bool112 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $112pred = call bool112($110compare_op.2, func=bool112, args=(Var($110compare_op.2, numbers.py:234),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $112pred, 114, 130
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 114
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285df0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a4a8e0>
     DEBUG:numba.core.ssa:on stmt: $114load_global.0 = global(math: <module 'math' from '/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/lib-dynload/math.cpython-39-x86_64-linux-gnu.so'>)
     DEBUG:numba.core.ssa:on stmt: $116load_method.1 = getattr(value=$114load_global.0, attr=pow)
     DEBUG:numba.core.ssa:on stmt: $120load_global.3 = global(float: <class 'float'>)
@@ -3579,57 +3355,56 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $128return_value.7 = cast(value=$126call_method.6)
     DEBUG:numba.core.ssa:on stmt: return $128return_value.7
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 130
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285df0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a4a8e0>
     DEBUG:numba.core.ssa:on stmt: r.2 = phi(incoming_values=[Var(r, numbers.py:216), Var(r.3, numbers.py:239)], incoming_blocks=[106, 154])
-    DEBUG:numba.core.ssa:on stmt: a.1.2 = phi(incoming_values=[Var(a.1, numbers.py:217), Var(a.1.1, numbers.py:241)], incoming_blocks=[106, 154])
     DEBUG:numba.core.ssa:on stmt: $const132.1 = const(int, 0)
     DEBUG:numba.core.ssa:on stmt: $134compare_op.2 = exp != $const132.1
     DEBUG:numba.core.ssa:on stmt: bool136 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $136pred = call bool136($134compare_op.2, func=bool136, args=(Var($134compare_op.2, numbers.py:237),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $136pred, 138, 172
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 138
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285df0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a4a8e0>
     DEBUG:numba.core.ssa:on stmt: $const140.1 = const(int, 1)
     DEBUG:numba.core.ssa:on stmt: $142binary_and.2 = exp & $const140.1
     DEBUG:numba.core.ssa:on stmt: bool144 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $144pred = call bool144($142binary_and.2, func=bool144, args=(Var($142binary_and.2, numbers.py:238),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $144pred, 146, 154
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 146
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285df0>
-    DEBUG:numba.core.ssa:on stmt: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r.2, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a4a8e0>
+    DEBUG:numba.core.ssa:on stmt: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r.2, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:on stmt: r.1 = $150inplace_multiply.2
     DEBUG:numba.core.ssa:on stmt: jump 154
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 154
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285df0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a4a8e0>
     DEBUG:numba.core.ssa:on stmt: r.3 = phi(incoming_values=[Var(r.2, numbers.py:239), Var(r.1, numbers.py:239)], incoming_blocks=[138, 146])
     DEBUG:numba.core.ssa:on stmt: $const156.1 = const(int, 1)
     DEBUG:numba.core.ssa:on stmt: $158inplace_rshift.2 = inplace_binop(fn=<built-in function irshift>, immutable_fn=<built-in function rshift>, lhs=exp, rhs=$const156.1, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:on stmt: exp = $158inplace_rshift.2
     DEBUG:numba.core.ssa:replaced with: exp.2 = $158inplace_rshift.2
-    DEBUG:numba.core.ssa:on stmt: $166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1.2, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
-    DEBUG:numba.core.ssa:on stmt: a.1.1 = $166inplace_multiply.5
+    DEBUG:numba.core.ssa:on stmt: $166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:on stmt: a.1 = $166inplace_multiply.5
     DEBUG:numba.core.ssa:on stmt: jump 130
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 172
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285df0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a4a8e0>
     DEBUG:numba.core.ssa:on stmt: bool174 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $174pred = call bool174(invert, func=bool174, args=(Var(invert, numbers.py:219),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $174pred, 176, 184
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 176
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285df0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a4a8e0>
     DEBUG:numba.core.ssa:on stmt: $const176.0 = const(float, 1.0)
     DEBUG:numba.core.ssa:on stmt: $180binary_true_divide.2 = $const176.0 / r.2
     DEBUG:numba.core.ssa:on stmt: $182return_value.3 = cast(value=$180binary_true_divide.2)
     DEBUG:numba.core.ssa:on stmt: return $182return_value.3
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 184
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb8285df0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a4a8e0>
     DEBUG:numba.core.ssa:on stmt: $186return_value.1 = cast(value=r.2)
     DEBUG:numba.core.ssa:on stmt: return $186return_value.1
     DEBUG:numba.core.ssa:Replaced assignments: defaultdict(<class 'list'>,
-                {26: [<numba.core.ir.Assign object at 0x7f2cb82d4850>],
-                 98: [<numba.core.ir.Assign object at 0x7f2cb82d4cd0>],
-                 154: [<numba.core.ir.Assign object at 0x7f2cb82b33a0>]})
+                {26: [<numba.core.ir.Assign object at 0x7f0368a5dd00>],
+                 98: [<numba.core.ir.Assign object at 0x7f0368a5d820>],
+                 154: [<numba.core.ir.Assign object at 0x7f03689c1130>]})
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a0ef40>
     DEBUG:numba.core.ssa:on stmt: a = arg(0, name=a)
     DEBUG:numba.core.ssa:on stmt: b = arg(1, name=b)
     DEBUG:numba.core.ssa:on stmt: $2load_deref.0 = freevar(tp: float64)
@@ -3643,7 +3418,7 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $24pred = call bool24($22compare_op.8, func=bool24, args=(Var($22compare_op.8, numbers.py:218),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $24pred, 26, 98
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 26
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a0ef40>
     DEBUG:numba.core.ssa:on stmt: invert = const(bool, True)
     DEBUG:numba.core.ssa:on stmt: exp = unary(fn=<built-in function neg>, value=b)
     DEBUG:numba.core.ssa:on stmt: $const38.4 = const(int, 0)
@@ -3653,22 +3428,22 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $42pred = call bool42($40compare_op.5, func=bool42, args=(Var($40compare_op.5, numbers.py:221),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $42pred, 44, 48
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 44
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a0ef40>
     DEBUG:numba.core.ssa:on stmt: $44load_global.0 = global(OverflowError: <class 'OverflowError'>)
     DEBUG:numba.core.ssa:on stmt: <static> raise <class 'OverflowError'>
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 48
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a0ef40>
     DEBUG:numba.core.ssa:on stmt: $48load_deref.0 = freevar(is_integer: False)
     DEBUG:numba.core.ssa:on stmt: bool50 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $50pred = call bool50($48load_deref.0, func=bool50, args=(Var($48load_deref.0, numbers.py:223),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 98
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a0ef40>
     DEBUG:numba.core.ssa:on stmt: invert = const(bool, False)
     DEBUG:numba.core.ssa:on stmt: exp.1 = b
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 106
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a0ef40>
     DEBUG:numba.core.ssa:on stmt: $const108.1 = const(int, 65536)
     DEBUG:numba.core.ssa:on stmt: $110compare_op.2 = exp > $const108.1
     DEBUG:numba.core.ssa:find_def var='exp' stmt=$110compare_op.2 = exp > $const108.1
@@ -3686,7 +3461,7 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $112pred = call bool112($110compare_op.2, func=bool112, args=(Var($110compare_op.2, numbers.py:234),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $112pred, 114, 130
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 114
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a0ef40>
     DEBUG:numba.core.ssa:on stmt: $114load_global.0 = global(math: <module 'math' from '/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/lib-dynload/math.cpython-39-x86_64-linux-gnu.so'>)
     DEBUG:numba.core.ssa:on stmt: $116load_method.1 = getattr(value=$114load_global.0, attr=pow)
     DEBUG:numba.core.ssa:on stmt: $120load_global.3 = global(float: <class 'float'>)
@@ -3695,9 +3470,8 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $128return_value.7 = cast(value=$126call_method.6)
     DEBUG:numba.core.ssa:on stmt: return $128return_value.7
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 130
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a0ef40>
     DEBUG:numba.core.ssa:on stmt: r.2 = phi(incoming_values=[Var(r, numbers.py:216), Var(r.3, numbers.py:239)], incoming_blocks=[106, 154])
-    DEBUG:numba.core.ssa:on stmt: a.1.2 = phi(incoming_values=[Var(a.1, numbers.py:217), Var(a.1.1, numbers.py:241)], incoming_blocks=[106, 154])
     DEBUG:numba.core.ssa:on stmt: $const132.1 = const(int, 0)
     DEBUG:numba.core.ssa:on stmt: $134compare_op.2 = exp != $const132.1
     DEBUG:numba.core.ssa:find_def var='exp' stmt=$134compare_op.2 = exp != $const132.1
@@ -3712,7 +3486,7 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $136pred = call bool136($134compare_op.2, func=bool136, args=(Var($134compare_op.2, numbers.py:237),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $136pred, 138, 172
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 138
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a0ef40>
     DEBUG:numba.core.ssa:on stmt: $const140.1 = const(int, 1)
     DEBUG:numba.core.ssa:on stmt: $142binary_and.2 = exp & $const140.1
     DEBUG:numba.core.ssa:find_def var='exp' stmt=$142binary_and.2 = exp & $const140.1
@@ -3724,12 +3498,12 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $144pred = call bool144($142binary_and.2, func=bool144, args=(Var($142binary_and.2, numbers.py:238),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $144pred, 146, 154
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 146
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d4c40>
-    DEBUG:numba.core.ssa:on stmt: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r.2, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a0ef40>
+    DEBUG:numba.core.ssa:on stmt: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r.2, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:on stmt: r.1 = $150inplace_multiply.2
     DEBUG:numba.core.ssa:on stmt: jump 154
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 154
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a0ef40>
     DEBUG:numba.core.ssa:on stmt: r.3 = phi(incoming_values=[Var(r.2, numbers.py:239), Var(r.1, numbers.py:239)], incoming_blocks=[138, 146])
     DEBUG:numba.core.ssa:on stmt: $const156.1 = const(int, 1)
     DEBUG:numba.core.ssa:on stmt: $158inplace_rshift.2 = inplace_binop(fn=<built-in function irshift>, immutable_fn=<built-in function rshift>, lhs=exp, rhs=$const156.1, static_lhs=Undefined, static_rhs=Undefined)
@@ -3742,27 +3516,133 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:find_def_from_bottom label 130
     DEBUG:numba.core.ssa:replaced with: $158inplace_rshift.2 = inplace_binop(fn=<built-in function irshift>, immutable_fn=<built-in function rshift>, lhs=exp.4, rhs=$const156.1, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:on stmt: exp.2 = $158inplace_rshift.2
-    DEBUG:numba.core.ssa:on stmt: $166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1.2, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
-    DEBUG:numba.core.ssa:on stmt: a.1.1 = $166inplace_multiply.5
+    DEBUG:numba.core.ssa:on stmt: $166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:on stmt: a.1 = $166inplace_multiply.5
     DEBUG:numba.core.ssa:on stmt: jump 130
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 172
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a0ef40>
     DEBUG:numba.core.ssa:on stmt: bool174 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $174pred = call bool174(invert, func=bool174, args=(Var(invert, numbers.py:219),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $174pred, 176, 184
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 176
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a0ef40>
     DEBUG:numba.core.ssa:on stmt: $const176.0 = const(float, 1.0)
     DEBUG:numba.core.ssa:on stmt: $180binary_true_divide.2 = $const176.0 / r.2
     DEBUG:numba.core.ssa:on stmt: $182return_value.3 = cast(value=$180binary_true_divide.2)
     DEBUG:numba.core.ssa:on stmt: return $182return_value.3
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 184
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d4c40>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a0ef40>
     DEBUG:numba.core.ssa:on stmt: $186return_value.1 = cast(value=r.2)
     DEBUG:numba.core.ssa:on stmt: return $186return_value.1
-    DEBUG:numba.core.ssa:Fix SSA violator on var invert
+    DEBUG:numba.core.ssa:Fix SSA violator on var a.1
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82b3eb0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0ec40>
+    DEBUG:numba.core.ssa:on stmt: a = arg(0, name=a)
+    DEBUG:numba.core.ssa:on stmt: b = arg(1, name=b)
+    DEBUG:numba.core.ssa:on stmt: $2load_deref.0 = freevar(tp: float64)
+    DEBUG:numba.core.ssa:on stmt: $const4.1 = const(int, 1)
+    DEBUG:numba.core.ssa:on stmt: r = call $2load_deref.0($const4.1, func=$2load_deref.0, args=[Var($const4.1, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: $10load_deref.3 = freevar(tp: float64)
+    DEBUG:numba.core.ssa:on stmt: a.1 = call $10load_deref.3(a, func=$10load_deref.3, args=[Var(a, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:first assign: a.1
+    DEBUG:numba.core.ssa:replaced with: a.1 = call $10load_deref.3(a, func=$10load_deref.3, args=[Var(a, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: $const20.7 = const(int, 0)
+    DEBUG:numba.core.ssa:on stmt: $22compare_op.8 = b < $const20.7
+    DEBUG:numba.core.ssa:on stmt: bool24 = global(bool: <class 'bool'>)
+    DEBUG:numba.core.ssa:on stmt: $24pred = call bool24($22compare_op.8, func=bool24, args=(Var($22compare_op.8, numbers.py:218),), kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: branch $24pred, 26, 98
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 26
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0ec40>
+    DEBUG:numba.core.ssa:on stmt: invert = const(bool, True)
+    DEBUG:numba.core.ssa:on stmt: exp = unary(fn=<built-in function neg>, value=b)
+    DEBUG:numba.core.ssa:on stmt: $const38.4 = const(int, 0)
+    DEBUG:numba.core.ssa:on stmt: $40compare_op.5 = exp < $const38.4
+    DEBUG:numba.core.ssa:on stmt: bool42 = global(bool: <class 'bool'>)
+    DEBUG:numba.core.ssa:on stmt: $42pred = call bool42($40compare_op.5, func=bool42, args=(Var($40compare_op.5, numbers.py:221),), kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: branch $42pred, 44, 48
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 44
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0ec40>
+    DEBUG:numba.core.ssa:on stmt: $44load_global.0 = global(OverflowError: <class 'OverflowError'>)
+    DEBUG:numba.core.ssa:on stmt: <static> raise <class 'OverflowError'>
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 48
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0ec40>
+    DEBUG:numba.core.ssa:on stmt: $48load_deref.0 = freevar(is_integer: False)
+    DEBUG:numba.core.ssa:on stmt: bool50 = global(bool: <class 'bool'>)
+    DEBUG:numba.core.ssa:on stmt: $50pred = call bool50($48load_deref.0, func=bool50, args=(Var($48load_deref.0, numbers.py:223),), kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: jump 106
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 98
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0ec40>
+    DEBUG:numba.core.ssa:on stmt: invert = const(bool, False)
+    DEBUG:numba.core.ssa:on stmt: exp.1 = b
+    DEBUG:numba.core.ssa:on stmt: jump 106
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 106
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0ec40>
+    DEBUG:numba.core.ssa:on stmt: exp.3 = phi(incoming_values=[Var(exp, numbers.py:220), Var(exp.1, numbers.py:233)], incoming_blocks=[48, 98])
+    DEBUG:numba.core.ssa:on stmt: $const108.1 = const(int, 65536)
+    DEBUG:numba.core.ssa:on stmt: $110compare_op.2 = exp.3 > $const108.1
+    DEBUG:numba.core.ssa:on stmt: bool112 = global(bool: <class 'bool'>)
+    DEBUG:numba.core.ssa:on stmt: $112pred = call bool112($110compare_op.2, func=bool112, args=(Var($110compare_op.2, numbers.py:234),), kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: branch $112pred, 114, 130
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 114
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0ec40>
+    DEBUG:numba.core.ssa:on stmt: $114load_global.0 = global(math: <module 'math' from '/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/lib-dynload/math.cpython-39-x86_64-linux-gnu.so'>)
+    DEBUG:numba.core.ssa:on stmt: $116load_method.1 = getattr(value=$114load_global.0, attr=pow)
+    DEBUG:numba.core.ssa:on stmt: $120load_global.3 = global(float: <class 'float'>)
+    DEBUG:numba.core.ssa:on stmt: $124call_function.5 = call $120load_global.3(b, func=$120load_global.3, args=[Var(b, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: $126call_method.6 = call $116load_method.1(a.1, $124call_function.5, func=$116load_method.1, args=[Var(a.1, numbers.py:217), Var($124call_function.5, numbers.py:236)], kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: $128return_value.7 = cast(value=$126call_method.6)
+    DEBUG:numba.core.ssa:on stmt: return $128return_value.7
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 130
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0ec40>
+    DEBUG:numba.core.ssa:on stmt: exp.4 = phi(incoming_values=[Var(exp.3, numbers.py:234), Var(exp.2, numbers.py:240)], incoming_blocks=[106, 154])
+    DEBUG:numba.core.ssa:on stmt: r.2 = phi(incoming_values=[Var(r, numbers.py:216), Var(r.3, numbers.py:239)], incoming_blocks=[106, 154])
+    DEBUG:numba.core.ssa:on stmt: $const132.1 = const(int, 0)
+    DEBUG:numba.core.ssa:on stmt: $134compare_op.2 = exp.4 != $const132.1
+    DEBUG:numba.core.ssa:on stmt: bool136 = global(bool: <class 'bool'>)
+    DEBUG:numba.core.ssa:on stmt: $136pred = call bool136($134compare_op.2, func=bool136, args=(Var($134compare_op.2, numbers.py:237),), kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: branch $136pred, 138, 172
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 138
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0ec40>
+    DEBUG:numba.core.ssa:on stmt: $const140.1 = const(int, 1)
+    DEBUG:numba.core.ssa:on stmt: $142binary_and.2 = exp.4 & $const140.1
+    DEBUG:numba.core.ssa:on stmt: bool144 = global(bool: <class 'bool'>)
+    DEBUG:numba.core.ssa:on stmt: $144pred = call bool144($142binary_and.2, func=bool144, args=(Var($142binary_and.2, numbers.py:238),), kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: branch $144pred, 146, 154
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 146
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0ec40>
+    DEBUG:numba.core.ssa:on stmt: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r.2, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:on stmt: r.1 = $150inplace_multiply.2
+    DEBUG:numba.core.ssa:on stmt: jump 154
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 154
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0ec40>
+    DEBUG:numba.core.ssa:on stmt: r.3 = phi(incoming_values=[Var(r.2, numbers.py:239), Var(r.1, numbers.py:239)], incoming_blocks=[138, 146])
+    DEBUG:numba.core.ssa:on stmt: $const156.1 = const(int, 1)
+    DEBUG:numba.core.ssa:on stmt: $158inplace_rshift.2 = inplace_binop(fn=<built-in function irshift>, immutable_fn=<built-in function rshift>, lhs=exp.4, rhs=$const156.1, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:on stmt: exp.2 = $158inplace_rshift.2
+    DEBUG:numba.core.ssa:on stmt: $166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:on stmt: a.1 = $166inplace_multiply.5
+    DEBUG:numba.core.ssa:replaced with: a.1.1 = $166inplace_multiply.5
+    DEBUG:numba.core.ssa:on stmt: jump 130
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 172
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0ec40>
+    DEBUG:numba.core.ssa:on stmt: bool174 = global(bool: <class 'bool'>)
+    DEBUG:numba.core.ssa:on stmt: $174pred = call bool174(invert, func=bool174, args=(Var(invert, numbers.py:219),), kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: branch $174pred, 176, 184
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 176
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0ec40>
+    DEBUG:numba.core.ssa:on stmt: $const176.0 = const(float, 1.0)
+    DEBUG:numba.core.ssa:on stmt: $180binary_true_divide.2 = $const176.0 / r.2
+    DEBUG:numba.core.ssa:on stmt: $182return_value.3 = cast(value=$180binary_true_divide.2)
+    DEBUG:numba.core.ssa:on stmt: return $182return_value.3
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 184
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0ec40>
+    DEBUG:numba.core.ssa:on stmt: $186return_value.1 = cast(value=r.2)
+    DEBUG:numba.core.ssa:on stmt: return $186return_value.1
+    DEBUG:numba.core.ssa:Replaced assignments: defaultdict(<class 'list'>,
+                {0: [<numba.core.ir.Assign object at 0x7f0368a5ddf0>],
+                 154: [<numba.core.ir.Assign object at 0x7f03689c1220>]})
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 0
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a4a8e0>
     DEBUG:numba.core.ssa:on stmt: a = arg(0, name=a)
     DEBUG:numba.core.ssa:on stmt: b = arg(1, name=b)
     DEBUG:numba.core.ssa:on stmt: $2load_deref.0 = freevar(tp: float64)
@@ -3776,7 +3656,140 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $24pred = call bool24($22compare_op.8, func=bool24, args=(Var($22compare_op.8, numbers.py:218),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $24pred, 26, 98
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 26
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82b3eb0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a4a8e0>
+    DEBUG:numba.core.ssa:on stmt: invert = const(bool, True)
+    DEBUG:numba.core.ssa:on stmt: exp = unary(fn=<built-in function neg>, value=b)
+    DEBUG:numba.core.ssa:on stmt: $const38.4 = const(int, 0)
+    DEBUG:numba.core.ssa:on stmt: $40compare_op.5 = exp < $const38.4
+    DEBUG:numba.core.ssa:on stmt: bool42 = global(bool: <class 'bool'>)
+    DEBUG:numba.core.ssa:on stmt: $42pred = call bool42($40compare_op.5, func=bool42, args=(Var($40compare_op.5, numbers.py:221),), kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: branch $42pred, 44, 48
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 44
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a4a8e0>
+    DEBUG:numba.core.ssa:on stmt: $44load_global.0 = global(OverflowError: <class 'OverflowError'>)
+    DEBUG:numba.core.ssa:on stmt: <static> raise <class 'OverflowError'>
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 48
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a4a8e0>
+    DEBUG:numba.core.ssa:on stmt: $48load_deref.0 = freevar(is_integer: False)
+    DEBUG:numba.core.ssa:on stmt: bool50 = global(bool: <class 'bool'>)
+    DEBUG:numba.core.ssa:on stmt: $50pred = call bool50($48load_deref.0, func=bool50, args=(Var($48load_deref.0, numbers.py:223),), kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: jump 106
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 98
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a4a8e0>
+    DEBUG:numba.core.ssa:on stmt: invert = const(bool, False)
+    DEBUG:numba.core.ssa:on stmt: exp.1 = b
+    DEBUG:numba.core.ssa:on stmt: jump 106
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 106
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a4a8e0>
+    DEBUG:numba.core.ssa:on stmt: exp.3 = phi(incoming_values=[Var(exp, numbers.py:220), Var(exp.1, numbers.py:233)], incoming_blocks=[48, 98])
+    DEBUG:numba.core.ssa:on stmt: $const108.1 = const(int, 65536)
+    DEBUG:numba.core.ssa:on stmt: $110compare_op.2 = exp.3 > $const108.1
+    DEBUG:numba.core.ssa:on stmt: bool112 = global(bool: <class 'bool'>)
+    DEBUG:numba.core.ssa:on stmt: $112pred = call bool112($110compare_op.2, func=bool112, args=(Var($110compare_op.2, numbers.py:234),), kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: branch $112pred, 114, 130
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 114
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a4a8e0>
+    DEBUG:numba.core.ssa:on stmt: $114load_global.0 = global(math: <module 'math' from '/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/lib-dynload/math.cpython-39-x86_64-linux-gnu.so'>)
+    DEBUG:numba.core.ssa:on stmt: $116load_method.1 = getattr(value=$114load_global.0, attr=pow)
+    DEBUG:numba.core.ssa:on stmt: $120load_global.3 = global(float: <class 'float'>)
+    DEBUG:numba.core.ssa:on stmt: $124call_function.5 = call $120load_global.3(b, func=$120load_global.3, args=[Var(b, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: $126call_method.6 = call $116load_method.1(a.1, $124call_function.5, func=$116load_method.1, args=[Var(a.1, numbers.py:217), Var($124call_function.5, numbers.py:236)], kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:find_def var='a.1' stmt=$126call_method.6 = call $116load_method.1(a.1, $124call_function.5, func=$116load_method.1, args=[Var(a.1, numbers.py:217), Var($124call_function.5, numbers.py:236)], kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:find_def_from_top label 114
+    DEBUG:numba.core.ssa:idom 106 from label 114
+    DEBUG:numba.core.ssa:find_def_from_bottom label 106
+    DEBUG:numba.core.ssa:find_def_from_top label 106
+    DEBUG:numba.core.ssa:idom 0 from label 106
+    DEBUG:numba.core.ssa:find_def_from_bottom label 0
+    DEBUG:numba.core.ssa:on stmt: $128return_value.7 = cast(value=$126call_method.6)
+    DEBUG:numba.core.ssa:on stmt: return $128return_value.7
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 130
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a4a8e0>
+    DEBUG:numba.core.ssa:on stmt: exp.4 = phi(incoming_values=[Var(exp.3, numbers.py:234), Var(exp.2, numbers.py:240)], incoming_blocks=[106, 154])
+    DEBUG:numba.core.ssa:on stmt: r.2 = phi(incoming_values=[Var(r, numbers.py:216), Var(r.3, numbers.py:239)], incoming_blocks=[106, 154])
+    DEBUG:numba.core.ssa:on stmt: $const132.1 = const(int, 0)
+    DEBUG:numba.core.ssa:on stmt: $134compare_op.2 = exp.4 != $const132.1
+    DEBUG:numba.core.ssa:on stmt: bool136 = global(bool: <class 'bool'>)
+    DEBUG:numba.core.ssa:on stmt: $136pred = call bool136($134compare_op.2, func=bool136, args=(Var($134compare_op.2, numbers.py:237),), kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: branch $136pred, 138, 172
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 138
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a4a8e0>
+    DEBUG:numba.core.ssa:on stmt: $const140.1 = const(int, 1)
+    DEBUG:numba.core.ssa:on stmt: $142binary_and.2 = exp.4 & $const140.1
+    DEBUG:numba.core.ssa:on stmt: bool144 = global(bool: <class 'bool'>)
+    DEBUG:numba.core.ssa:on stmt: $144pred = call bool144($142binary_and.2, func=bool144, args=(Var($142binary_and.2, numbers.py:238),), kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: branch $144pred, 146, 154
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 146
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a4a8e0>
+    DEBUG:numba.core.ssa:on stmt: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r.2, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:find_def var='a.1' stmt=$150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r.2, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:find_def_from_top label 146
+    DEBUG:numba.core.ssa:idom 138 from label 146
+    DEBUG:numba.core.ssa:find_def_from_bottom label 138
+    DEBUG:numba.core.ssa:find_def_from_top label 138
+    DEBUG:numba.core.ssa:idom 130 from label 138
+    DEBUG:numba.core.ssa:find_def_from_bottom label 130
+    DEBUG:numba.core.ssa:find_def_from_top label 130
+    DEBUG:numba.core.ssa:insert phi node a.1.2 = phi(incoming_values=[], incoming_blocks=[]) at 130
+    DEBUG:numba.core.ssa:find_def_from_bottom label 106
+    DEBUG:numba.core.ssa:find_def_from_top label 106
+    DEBUG:numba.core.ssa:idom 0 from label 106
+    DEBUG:numba.core.ssa:find_def_from_bottom label 0
+    DEBUG:numba.core.ssa:incoming_def a.1 = call $10load_deref.3(a, func=$10load_deref.3, args=[Var(a, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:find_def_from_bottom label 154
+    DEBUG:numba.core.ssa:incoming_def a.1.1 = $166inplace_multiply.5
+    DEBUG:numba.core.ssa:replaced with: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r.2, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:on stmt: r.1 = $150inplace_multiply.2
+    DEBUG:numba.core.ssa:on stmt: jump 154
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 154
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a4a8e0>
+    DEBUG:numba.core.ssa:on stmt: r.3 = phi(incoming_values=[Var(r.2, numbers.py:239), Var(r.1, numbers.py:239)], incoming_blocks=[138, 146])
+    DEBUG:numba.core.ssa:on stmt: $const156.1 = const(int, 1)
+    DEBUG:numba.core.ssa:on stmt: $158inplace_rshift.2 = inplace_binop(fn=<built-in function irshift>, immutable_fn=<built-in function rshift>, lhs=exp.4, rhs=$const156.1, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:on stmt: exp.2 = $158inplace_rshift.2
+    DEBUG:numba.core.ssa:on stmt: $166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:find_def var='a.1' stmt=$166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1, rhs=a.1, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:find_def_from_top label 154
+    DEBUG:numba.core.ssa:idom 138 from label 154
+    DEBUG:numba.core.ssa:find_def_from_bottom label 138
+    DEBUG:numba.core.ssa:find_def_from_top label 138
+    DEBUG:numba.core.ssa:idom 130 from label 138
+    DEBUG:numba.core.ssa:find_def_from_bottom label 130
+    DEBUG:numba.core.ssa:replaced with: $166inplace_multiply.5 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=a.1.2, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
+    DEBUG:numba.core.ssa:on stmt: a.1.1 = $166inplace_multiply.5
+    DEBUG:numba.core.ssa:on stmt: jump 130
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 172
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a4a8e0>
+    DEBUG:numba.core.ssa:on stmt: bool174 = global(bool: <class 'bool'>)
+    DEBUG:numba.core.ssa:on stmt: $174pred = call bool174(invert, func=bool174, args=(Var(invert, numbers.py:219),), kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: branch $174pred, 176, 184
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 176
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a4a8e0>
+    DEBUG:numba.core.ssa:on stmt: $const176.0 = const(float, 1.0)
+    DEBUG:numba.core.ssa:on stmt: $180binary_true_divide.2 = $const176.0 / r.2
+    DEBUG:numba.core.ssa:on stmt: $182return_value.3 = cast(value=$180binary_true_divide.2)
+    DEBUG:numba.core.ssa:on stmt: return $182return_value.3
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 184
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368a4a8e0>
+    DEBUG:numba.core.ssa:on stmt: $186return_value.1 = cast(value=r.2)
+    DEBUG:numba.core.ssa:on stmt: return $186return_value.1
+    DEBUG:numba.core.ssa:Fix SSA violator on var invert
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 0
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0eaf0>
+    DEBUG:numba.core.ssa:on stmt: a = arg(0, name=a)
+    DEBUG:numba.core.ssa:on stmt: b = arg(1, name=b)
+    DEBUG:numba.core.ssa:on stmt: $2load_deref.0 = freevar(tp: float64)
+    DEBUG:numba.core.ssa:on stmt: $const4.1 = const(int, 1)
+    DEBUG:numba.core.ssa:on stmt: r = call $2load_deref.0($const4.1, func=$2load_deref.0, args=[Var($const4.1, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: $10load_deref.3 = freevar(tp: float64)
+    DEBUG:numba.core.ssa:on stmt: a.1 = call $10load_deref.3(a, func=$10load_deref.3, args=[Var(a, numbers.py:216)], kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: $const20.7 = const(int, 0)
+    DEBUG:numba.core.ssa:on stmt: $22compare_op.8 = b < $const20.7
+    DEBUG:numba.core.ssa:on stmt: bool24 = global(bool: <class 'bool'>)
+    DEBUG:numba.core.ssa:on stmt: $24pred = call bool24($22compare_op.8, func=bool24, args=(Var($22compare_op.8, numbers.py:218),), kws=(), vararg=None, varkwarg=None, target=None)
+    DEBUG:numba.core.ssa:on stmt: branch $24pred, 26, 98
+    DEBUG:numba.core.ssa:==== SSA block rewrite pass on 26
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0eaf0>
     DEBUG:numba.core.ssa:on stmt: invert = const(bool, True)
     DEBUG:numba.core.ssa:first assign: invert
     DEBUG:numba.core.ssa:replaced with: invert = const(bool, True)
@@ -3787,23 +3800,23 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $42pred = call bool42($40compare_op.5, func=bool42, args=(Var($40compare_op.5, numbers.py:221),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $42pred, 44, 48
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 44
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82b3eb0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0eaf0>
     DEBUG:numba.core.ssa:on stmt: $44load_global.0 = global(OverflowError: <class 'OverflowError'>)
     DEBUG:numba.core.ssa:on stmt: <static> raise <class 'OverflowError'>
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 48
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82b3eb0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0eaf0>
     DEBUG:numba.core.ssa:on stmt: $48load_deref.0 = freevar(is_integer: False)
     DEBUG:numba.core.ssa:on stmt: bool50 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $50pred = call bool50($48load_deref.0, func=bool50, args=(Var($48load_deref.0, numbers.py:223),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 98
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82b3eb0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0eaf0>
     DEBUG:numba.core.ssa:on stmt: invert = const(bool, False)
     DEBUG:numba.core.ssa:replaced with: invert.1 = const(bool, False)
     DEBUG:numba.core.ssa:on stmt: exp.1 = b
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 106
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82b3eb0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0eaf0>
     DEBUG:numba.core.ssa:on stmt: exp.3 = phi(incoming_values=[Var(exp, numbers.py:220), Var(exp.1, numbers.py:233)], incoming_blocks=[48, 98])
     DEBUG:numba.core.ssa:on stmt: $const108.1 = const(int, 65536)
     DEBUG:numba.core.ssa:on stmt: $110compare_op.2 = exp.3 > $const108.1
@@ -3811,7 +3824,7 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $112pred = call bool112($110compare_op.2, func=bool112, args=(Var($110compare_op.2, numbers.py:234),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $112pred, 114, 130
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 114
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82b3eb0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0eaf0>
     DEBUG:numba.core.ssa:on stmt: $114load_global.0 = global(math: <module 'math' from '/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/lib-dynload/math.cpython-39-x86_64-linux-gnu.so'>)
     DEBUG:numba.core.ssa:on stmt: $116load_method.1 = getattr(value=$114load_global.0, attr=pow)
     DEBUG:numba.core.ssa:on stmt: $120load_global.3 = global(float: <class 'float'>)
@@ -3820,29 +3833,29 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $128return_value.7 = cast(value=$126call_method.6)
     DEBUG:numba.core.ssa:on stmt: return $128return_value.7
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 130
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82b3eb0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0eaf0>
+    DEBUG:numba.core.ssa:on stmt: a.1.2 = phi(incoming_values=[Var(a.1, numbers.py:217), Var(a.1.1, numbers.py:241)], incoming_blocks=[106, 154])
     DEBUG:numba.core.ssa:on stmt: exp.4 = phi(incoming_values=[Var(exp.3, numbers.py:234), Var(exp.2, numbers.py:240)], incoming_blocks=[106, 154])
     DEBUG:numba.core.ssa:on stmt: r.2 = phi(incoming_values=[Var(r, numbers.py:216), Var(r.3, numbers.py:239)], incoming_blocks=[106, 154])
-    DEBUG:numba.core.ssa:on stmt: a.1.2 = phi(incoming_values=[Var(a.1, numbers.py:217), Var(a.1.1, numbers.py:241)], incoming_blocks=[106, 154])
     DEBUG:numba.core.ssa:on stmt: $const132.1 = const(int, 0)
     DEBUG:numba.core.ssa:on stmt: $134compare_op.2 = exp.4 != $const132.1
     DEBUG:numba.core.ssa:on stmt: bool136 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $136pred = call bool136($134compare_op.2, func=bool136, args=(Var($134compare_op.2, numbers.py:237),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $136pred, 138, 172
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 138
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82b3eb0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0eaf0>
     DEBUG:numba.core.ssa:on stmt: $const140.1 = const(int, 1)
     DEBUG:numba.core.ssa:on stmt: $142binary_and.2 = exp.4 & $const140.1
     DEBUG:numba.core.ssa:on stmt: bool144 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $144pred = call bool144($142binary_and.2, func=bool144, args=(Var($142binary_and.2, numbers.py:238),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $144pred, 146, 154
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 146
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82b3eb0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0eaf0>
     DEBUG:numba.core.ssa:on stmt: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r.2, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:on stmt: r.1 = $150inplace_multiply.2
     DEBUG:numba.core.ssa:on stmt: jump 154
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 154
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82b3eb0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0eaf0>
     DEBUG:numba.core.ssa:on stmt: r.3 = phi(incoming_values=[Var(r.2, numbers.py:239), Var(r.1, numbers.py:239)], incoming_blocks=[138, 146])
     DEBUG:numba.core.ssa:on stmt: $const156.1 = const(int, 1)
     DEBUG:numba.core.ssa:on stmt: $158inplace_rshift.2 = inplace_binop(fn=<built-in function irshift>, immutable_fn=<built-in function rshift>, lhs=exp.4, rhs=$const156.1, static_lhs=Undefined, static_rhs=Undefined)
@@ -3851,25 +3864,25 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: a.1.1 = $166inplace_multiply.5
     DEBUG:numba.core.ssa:on stmt: jump 130
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 172
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82b3eb0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0eaf0>
     DEBUG:numba.core.ssa:on stmt: bool174 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $174pred = call bool174(invert, func=bool174, args=(Var(invert, numbers.py:219),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $174pred, 176, 184
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 176
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82b3eb0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0eaf0>
     DEBUG:numba.core.ssa:on stmt: $const176.0 = const(float, 1.0)
     DEBUG:numba.core.ssa:on stmt: $180binary_true_divide.2 = $const176.0 / r.2
     DEBUG:numba.core.ssa:on stmt: $182return_value.3 = cast(value=$180binary_true_divide.2)
     DEBUG:numba.core.ssa:on stmt: return $182return_value.3
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 184
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f2cb82b3eb0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FreshVarHandler object at 0x7f0368a0eaf0>
     DEBUG:numba.core.ssa:on stmt: $186return_value.1 = cast(value=r.2)
     DEBUG:numba.core.ssa:on stmt: return $186return_value.1
     DEBUG:numba.core.ssa:Replaced assignments: defaultdict(<class 'list'>,
-                {26: [<numba.core.ir.Assign object at 0x7f2cb82b3700>],
-                 98: [<numba.core.ir.Assign object at 0x7f2cb82d4bb0>]})
+                {26: [<numba.core.ir.Assign object at 0x7f0368a5d7f0>],
+                 98: [<numba.core.ir.Assign object at 0x7f0368a5da90>]})
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 0
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d83d0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: a = arg(0, name=a)
     DEBUG:numba.core.ssa:on stmt: b = arg(1, name=b)
     DEBUG:numba.core.ssa:on stmt: $2load_deref.0 = freevar(tp: float64)
@@ -3883,7 +3896,7 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $24pred = call bool24($22compare_op.8, func=bool24, args=(Var($22compare_op.8, numbers.py:218),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $24pred, 26, 98
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 26
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d83d0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: invert = const(bool, True)
     DEBUG:numba.core.ssa:on stmt: exp = unary(fn=<built-in function neg>, value=b)
     DEBUG:numba.core.ssa:on stmt: $const38.4 = const(int, 0)
@@ -3892,22 +3905,22 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $42pred = call bool42($40compare_op.5, func=bool42, args=(Var($40compare_op.5, numbers.py:221),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $42pred, 44, 48
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 44
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d83d0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $44load_global.0 = global(OverflowError: <class 'OverflowError'>)
     DEBUG:numba.core.ssa:on stmt: <static> raise <class 'OverflowError'>
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 48
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d83d0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $48load_deref.0 = freevar(is_integer: False)
     DEBUG:numba.core.ssa:on stmt: bool50 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $50pred = call bool50($48load_deref.0, func=bool50, args=(Var($48load_deref.0, numbers.py:223),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 98
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d83d0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: invert.1 = const(bool, False)
     DEBUG:numba.core.ssa:on stmt: exp.1 = b
     DEBUG:numba.core.ssa:on stmt: jump 106
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 106
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d83d0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: exp.3 = phi(incoming_values=[Var(exp, numbers.py:220), Var(exp.1, numbers.py:233)], incoming_blocks=[48, 98])
     DEBUG:numba.core.ssa:on stmt: $const108.1 = const(int, 65536)
     DEBUG:numba.core.ssa:on stmt: $110compare_op.2 = exp.3 > $const108.1
@@ -3915,7 +3928,7 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $112pred = call bool112($110compare_op.2, func=bool112, args=(Var($110compare_op.2, numbers.py:234),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $112pred, 114, 130
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 114
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d83d0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $114load_global.0 = global(math: <module 'math' from '/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/lib-dynload/math.cpython-39-x86_64-linux-gnu.so'>)
     DEBUG:numba.core.ssa:on stmt: $116load_method.1 = getattr(value=$114load_global.0, attr=pow)
     DEBUG:numba.core.ssa:on stmt: $120load_global.3 = global(float: <class 'float'>)
@@ -3924,29 +3937,29 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: $128return_value.7 = cast(value=$126call_method.6)
     DEBUG:numba.core.ssa:on stmt: return $128return_value.7
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 130
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d83d0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
+    DEBUG:numba.core.ssa:on stmt: a.1.2 = phi(incoming_values=[Var(a.1, numbers.py:217), Var(a.1.1, numbers.py:241)], incoming_blocks=[106, 154])
     DEBUG:numba.core.ssa:on stmt: exp.4 = phi(incoming_values=[Var(exp.3, numbers.py:234), Var(exp.2, numbers.py:240)], incoming_blocks=[106, 154])
     DEBUG:numba.core.ssa:on stmt: r.2 = phi(incoming_values=[Var(r, numbers.py:216), Var(r.3, numbers.py:239)], incoming_blocks=[106, 154])
-    DEBUG:numba.core.ssa:on stmt: a.1.2 = phi(incoming_values=[Var(a.1, numbers.py:217), Var(a.1.1, numbers.py:241)], incoming_blocks=[106, 154])
     DEBUG:numba.core.ssa:on stmt: $const132.1 = const(int, 0)
     DEBUG:numba.core.ssa:on stmt: $134compare_op.2 = exp.4 != $const132.1
     DEBUG:numba.core.ssa:on stmt: bool136 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $136pred = call bool136($134compare_op.2, func=bool136, args=(Var($134compare_op.2, numbers.py:237),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $136pred, 138, 172
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 138
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d83d0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $const140.1 = const(int, 1)
     DEBUG:numba.core.ssa:on stmt: $142binary_and.2 = exp.4 & $const140.1
     DEBUG:numba.core.ssa:on stmt: bool144 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $144pred = call bool144($142binary_and.2, func=bool144, args=(Var($142binary_and.2, numbers.py:238),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $144pred, 146, 154
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 146
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d83d0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $150inplace_multiply.2 = inplace_binop(fn=<built-in function imul>, immutable_fn=<built-in function mul>, lhs=r.2, rhs=a.1.2, static_lhs=Undefined, static_rhs=Undefined)
     DEBUG:numba.core.ssa:on stmt: r.1 = $150inplace_multiply.2
     DEBUG:numba.core.ssa:on stmt: jump 154
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 154
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d83d0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: r.3 = phi(incoming_values=[Var(r.2, numbers.py:239), Var(r.1, numbers.py:239)], incoming_blocks=[138, 146])
     DEBUG:numba.core.ssa:on stmt: $const156.1 = const(int, 1)
     DEBUG:numba.core.ssa:on stmt: $158inplace_rshift.2 = inplace_binop(fn=<built-in function irshift>, immutable_fn=<built-in function rshift>, lhs=exp.4, rhs=$const156.1, static_lhs=Undefined, static_rhs=Undefined)
@@ -3955,7 +3968,7 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:on stmt: a.1.1 = $166inplace_multiply.5
     DEBUG:numba.core.ssa:on stmt: jump 130
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 172
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d83d0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: bool174 = global(bool: <class 'bool'>)
     DEBUG:numba.core.ssa:on stmt: $174pred = call bool174(invert, func=bool174, args=(Var(invert, numbers.py:219),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:find_def var='invert' stmt=$174pred = call bool174(invert, func=bool174, args=(Var(invert, numbers.py:219),), kws=(), vararg=None, varkwarg=None, target=None)
@@ -3977,147 +3990,148 @@ the `k-means` initializer.
     DEBUG:numba.core.ssa:replaced with: $174pred = call bool174(invert.2, func=bool174, args=(Var(invert.2, numbers.py:243),), kws=(), vararg=None, varkwarg=None, target=None)
     DEBUG:numba.core.ssa:on stmt: branch $174pred, 176, 184
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 176
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d83d0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $const176.0 = const(float, 1.0)
     DEBUG:numba.core.ssa:on stmt: $180binary_true_divide.2 = $const176.0 / r.2
     DEBUG:numba.core.ssa:on stmt: $182return_value.3 = cast(value=$180binary_true_divide.2)
     DEBUG:numba.core.ssa:on stmt: return $182return_value.3
     DEBUG:numba.core.ssa:==== SSA block rewrite pass on 184
-    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f2cb82d83d0>
+    DEBUG:numba.core.ssa:Running <numba.core.ssa._FixSSAVars object at 0x7f0368aa9130>
     DEBUG:numba.core.ssa:on stmt: $186return_value.1 = cast(value=r.2)
     DEBUG:numba.core.ssa:on stmt: return $186return_value.1
     INFO     Solving problem OTProblem[stage='prepared', shape=(20, 20)].           
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0009658336639404297 sec
-    DEBUG:absl:Finished tracing + transforming _threefry_split for jit in 0.005521535873413086 sec
-    DEBUG:absl:Compiling _threefry_split (139830043761296 for args (ShapedArray(uint32[2]),).
-    DEBUG:absl:Finished XLA compilation of _threefry_split in 0.07215380668640137 sec
-    DEBUG:absl:Finished tracing + transforming _unstack for jit in 0.0018415451049804688 sec
-    DEBUG:absl:Compiling _unstack (139830043762016 for args (ShapedArray(uint32[3,2]),).
-    DEBUG:absl:Finished XLA compilation of _unstack in 0.01442265510559082 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0004093647003173828 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0004646778106689453 sec
-    DEBUG:absl:Compiling prim_fun (139830049219024 for args (ShapedArray(float32[]),).
-    DEBUG:absl:Finished XLA compilation of broadcast_in_dim in 0.010904788970947266 sec
-    DEBUG:absl:Finished tracing + transforming true_divide for jit in 0.0009107589721679688 sec
-    DEBUG:absl:Compiling true_divide (139830043428240 for args (ShapedArray(float32[3]), ShapedArray(int32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of true_divide in 0.01173853874206543 sec
-    DEBUG:absl:Finished tracing + transforming <unnamed wrapped function> for jit in 0.596329927444458 sec
-    DEBUG:absl:Compiling <unnamed wrapped function> (139830043428240 for args (ShapedArray(float32[20,30]), ShapedArray(uint32[2])).
-    DEBUG:absl:Finished XLA compilation of <unnamed wrapped function> in 2.486914873123169 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0005545616149902344 sec
-    DEBUG:absl:Compiling prim_fun (139830044043840 for args (ShapedArray(float32[]),).
-    DEBUG:absl:Finished XLA compilation of broadcast_in_dim in 0.01278376579284668 sec
-    DEBUG:absl:Finished tracing + transforming _where for jit in 0.0016841888427734375 sec
-    DEBUG:absl:Compiling _where (139830044043920 for args (ShapedArray(bool[20]), ShapedArray(float32[20]), ShapedArray(float32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of _where in 0.014815330505371094 sec
-    DEBUG:absl:Finished tracing + transforming fn for jit in 0.0007472038269042969 sec
-    DEBUG:absl:Compiling fn (139830043427280 for args (ShapedArray(float32[3]), ShapedArray(float32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of fn in 0.011811017990112305 sec
-    DEBUG:absl:Finished tracing + transforming _where for jit in 0.0017573833465576172 sec
-    DEBUG:absl:Compiling _where (139830044042080 for args (ShapedArray(bool[3]), ShapedArray(float32[3]), ShapedArray(float32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of _where in 0.012282609939575195 sec
-    DEBUG:absl:Finished tracing + transforming run for jit in 0.3334801197052002 sec
-    DEBUG:absl:Compiling run (139830043429120 for args (ShapedArray(float32[20,30]), ShapedArray(float32[3,30]), ShapedArray(float32[20]), ShapedArray(float32[3]), ShapedArray(float32[], weak_type=True), ShapedArray(float32[20]), ShapedArray(float32[3])).
-    DEBUG:absl:Finished XLA compilation of run in 0.45653724670410156 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0005247592926025391 sec
-    DEBUG:absl:Compiling prim_fun (139830043201920 for args (ShapedArray(float32[20]),).
-    DEBUG:absl:Finished XLA compilation of broadcast_in_dim in 0.010804176330566406 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0004591941833496094 sec
-    DEBUG:absl:Compiling prim_fun (139830043203040 for args (ShapedArray(float32[3]),).
-    DEBUG:absl:Finished XLA compilation of broadcast_in_dim in 0.009816646575927734 sec
-    DEBUG:absl:Finished tracing + transforming fn for jit in 0.0007460117340087891 sec
-    DEBUG:absl:Compiling fn (139830043205520 for args (ShapedArray(float32[20,1]), ShapedArray(float32[1,3])).
-    DEBUG:absl:Finished XLA compilation of fn in 0.015611648559570312 sec
-    DEBUG:absl:Finished tracing + transforming vdot for jit in 0.005245208740234375 sec
-    DEBUG:absl:Compiling vdot (139830044118768 for args (ShapedArray(float32[20,30]), ShapedArray(float32[3,30])).
-    DEBUG:absl:Finished XLA compilation of vdot in 0.01123809814453125 sec
-    DEBUG:absl:Finished tracing + transforming fn for jit in 0.001497030258178711 sec
-    DEBUG:absl:Compiling fn (139830044042000 for args (ShapedArray(float32[], weak_type=True), ShapedArray(float32[20,3])).
-    DEBUG:absl:Finished XLA compilation of fn in 0.015936851501464844 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0006029605865478516 sec
-    DEBUG:absl:Compiling prim_fun (139830338662784 for args (ShapedArray(float32[20,30]),).
-    DEBUG:absl:Finished XLA compilation of integer_pow in 0.016219377517700195 sec
-    DEBUG:absl:Finished tracing + transforming _reduce_sum for jit in 0.0009493827819824219 sec
-    DEBUG:absl:Compiling _reduce_sum (139830043086736 for args (ShapedArray(float32[20,30]),).
-    DEBUG:absl:Finished XLA compilation of _reduce_sum in 0.01886606216430664 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.00046443939208984375 sec
-    DEBUG:absl:Compiling prim_fun (139830338665344 for args (ShapedArray(float32[3,30]),).
-    DEBUG:absl:Finished XLA compilation of integer_pow in 0.017447471618652344 sec
-    DEBUG:absl:Finished tracing + transforming _reduce_sum for jit in 0.0009500980377197266 sec
-    DEBUG:absl:Compiling _reduce_sum (139830043205520 for args (ShapedArray(float32[3,30]),).
-    DEBUG:absl:Finished XLA compilation of _reduce_sum in 0.019072294235229492 sec
-    DEBUG:absl:Finished tracing + transforming fn for jit in 0.0008435249328613281 sec
-    DEBUG:absl:Compiling fn (139830044116208 for args (ShapedArray(float32[20,3]), ShapedArray(float32[20,3])).
-    DEBUG:absl:Finished XLA compilation of fn in 0.016967296600341797 sec
-    DEBUG:absl:Finished tracing + transforming _reduce_max for jit in 0.0007593631744384766 sec
-    DEBUG:absl:Compiling _reduce_max (139830044118768 for args (ShapedArray(float32[20,3]),).
-    DEBUG:absl:Finished XLA compilation of _reduce_max in 0.018741607666015625 sec
-    DEBUG:absl:Finished tracing + transforming true_divide for jit in 0.0009427070617675781 sec
-    DEBUG:absl:Compiling true_divide (139830044044640 for args (ShapedArray(float32[], weak_type=True), ShapedArray(float32[])).
-    DEBUG:absl:Finished XLA compilation of true_divide in 0.011728286743164062 sec
-    DEBUG:absl:Finished tracing + transforming fn for jit in 0.0008590221405029297 sec
-    DEBUG:absl:Compiling fn (139830044118768 for args (ShapedArray(float32[20,3]), ShapedArray(float32[])).
-    DEBUG:absl:Finished XLA compilation of fn in 0.0166165828704834 sec
-    DEBUG:absl:Finished tracing + transforming <lambda> for jit in 0.0009632110595703125 sec
-    DEBUG:absl:Compiling <lambda> (139830044118768 for args (ShapedArray(float32[20,3]), ShapedArray(float32[20,3])).
-    DEBUG:absl:Finished XLA compilation of <lambda> in 0.016297101974487305 sec
-    DEBUG:absl:Finished tracing + transforming true_divide for jit in 0.0009288787841796875 sec
-    DEBUG:absl:Compiling true_divide (139830043203600 for args (ShapedArray(float32[20,3]), ShapedArray(float32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of true_divide in 0.016758441925048828 sec
-    DEBUG:absl:Finished tracing + transforming <lambda> for jit in 0.0006382465362548828 sec
-    DEBUG:absl:Compiling <lambda> (139830043204720 for args (ShapedArray(float32[20,3]),).
-    DEBUG:absl:Finished XLA compilation of <lambda> in 0.0171661376953125 sec
-    DEBUG:absl:Finished tracing + transforming <unnamed wrapped function> for jit in 0.5946109294891357 sec
-    DEBUG:absl:Compiling <unnamed wrapped function> (139830043202480 for args (ShapedArray(float32[20,30]), ShapedArray(uint32[2])).
-    DEBUG:absl:Finished XLA compilation of <unnamed wrapped function> in 2.45198130607605 sec
-    DEBUG:absl:Finished tracing + transforming run for jit in 0.5344254970550537 sec
-    DEBUG:absl:Compiling run (139830047303376 for args (ShapedArray(float32[20,30]), ShapedArray(float32[20,30]), ShapedArray(float32[20]), ShapedArray(float32[20]), ShapedArray(float32[], weak_type=True), ShapedArray(float32[20,3]), ShapedArray(float32[20,3]), ShapedArray(float32[3])).
-    DEBUG:absl:Finished XLA compilation of run in 1.4230382442474365 sec
-    DEBUG:absl:Finished tracing + transforming <lambda> for jit in 0.0009968280792236328 sec
-    DEBUG:absl:Compiling <lambda> (139830044095088 for args (ShapedArray(float32[200]), ShapedArray(float32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of <lambda> in 0.030066251754760742 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0004112720489501953 sec
-    DEBUG:absl:Finished tracing + transforming fn for jit in 0.0008099079132080078 sec
-    DEBUG:absl:Compiling fn (139830044908816 for args (ShapedArray(int32[2]), ShapedArray(int32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of fn in 0.012954950332641602 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.00042176246643066406 sec
-    DEBUG:absl:Compiling prim_fun (139830042872864 for args (ShapedArray(int32[2]), ShapedArray(int32[])).
-    DEBUG:absl:Finished XLA compilation of add in 0.012842416763305664 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0004208087921142578 sec
-    DEBUG:absl:Compiling prim_fun (139830042873264 for args (ShapedArray(bool[2]), ShapedArray(int32[2]), ShapedArray(int32[2])).
-    DEBUG:absl:Finished XLA compilation of select_n in 0.012014150619506836 sec
-    DEBUG:absl:Finished tracing + transforming _broadcast_arrays for jit in 0.0003478527069091797 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0003814697265625 sec
-    DEBUG:absl:Compiling prim_fun (139830044908656 for args (ShapedArray(int32[2]),).
-    DEBUG:absl:Finished XLA compilation of broadcast_in_dim in 0.00913381576538086 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0003941059112548828 sec
-    DEBUG:absl:Compiling prim_fun (139830044909056 for args (ShapedArray(float32[200]), ShapedArray(int32[2,1])).
-    DEBUG:absl:Finished XLA compilation of gather in 0.011981725692749023 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.00041985511779785156 sec
-    DEBUG:absl:Finished tracing + transforming <lambda> for jit in 0.0008301734924316406 sec
-    DEBUG:absl:Compiling <lambda> (139830044098288 for args (ShapedArray(float32[200]), ShapedArray(int32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of <lambda> in 0.03279542922973633 sec
-    DEBUG:absl:Finished tracing + transforming _reduce_any for jit in 0.000949859619140625 sec
-    DEBUG:absl:Compiling _reduce_any (139830044908656 for args (ShapedArray(bool[200]),).
-    DEBUG:absl:Finished XLA compilation of _reduce_any in 0.052298545837402344 sec
-    DEBUG:absl:Finished tracing + transforming isfinite for jit in 0.0005767345428466797 sec
-    DEBUG:absl:Compiling isfinite (139830047302496 for args (ShapedArray(float32[200]),).
-    DEBUG:absl:Finished XLA compilation of isfinite in 0.02964305877685547 sec
-    DEBUG:absl:Finished tracing + transforming _reduce_all for jit in 0.0008714199066162109 sec
-    DEBUG:absl:Compiling _reduce_all (139830044908816 for args (ShapedArray(bool[200]),).
-    DEBUG:absl:Finished XLA compilation of _reduce_all in 0.04491066932678223 sec
-    DEBUG:absl:Finished tracing + transforming op for jit in 0.0008089542388916016 sec
-    DEBUG:absl:Compiling op (139830044908656 for args (ShapedArray(bool[]), ShapedArray(bool[])).
-    DEBUG:absl:Finished XLA compilation of op in 0.010070562362670898 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.000423431396484375 sec
-    DEBUG:absl:Compiling prim_fun (139830044240048 for args (ShapedArray(float32[200]), ShapedArray(int32[2,1])).
-    DEBUG:absl:Finished XLA compilation of gather in 0.012176275253295898 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.00045108795166015625 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0006844997406005859 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _threefry_split for jit in 0.0038068294525146484 sec
+    DEBUG:jax._src.dispatch:Compiling _threefry_split (139652615869440 for args (ShapedArray(uint32[2]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _threefry_split in 0.05438566207885742 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _unstack for jit in 0.0014772415161132812 sec
+    DEBUG:jax._src.dispatch:Compiling _unstack (139652615869040 for args (ShapedArray(uint32[3,2]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _unstack in 0.010123491287231445 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.00029277801513671875 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003173351287841797 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652621500480 for args (ShapedArray(float32[]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of broadcast_in_dim in 0.0074825286865234375 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming true_divide for jit in 0.0006558895111083984 sec
+    DEBUG:jax._src.dispatch:Compiling true_divide (139652615869440 for args (ShapedArray(float32[3]), ShapedArray(int32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of true_divide in 0.008141279220581055 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming <unnamed wrapped function> for jit in 0.3974637985229492 sec
+    DEBUG:jax._src.dispatch:Compiling <unnamed wrapped function> (139652615448192 for args (ShapedArray(float32[20,30]), ShapedArray(uint32[2])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of <unnamed wrapped function> in 1.3016357421875 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003814697265625 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652615805264 for args (ShapedArray(float32[]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of broadcast_in_dim in 0.010176897048950195 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _where for jit in 0.001453399658203125 sec
+    DEBUG:jax._src.dispatch:Compiling _where (139652614265488 for args (ShapedArray(bool[20]), ShapedArray(float32[20]), ShapedArray(float32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _where in 0.01145482063293457 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming fn for jit in 0.0006334781646728516 sec
+    DEBUG:jax._src.dispatch:Compiling fn (139652614266608 for args (ShapedArray(float32[3]), ShapedArray(float32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of fn in 0.009000301361083984 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _where for jit in 0.001512765884399414 sec
+    DEBUG:jax._src.dispatch:Compiling _where (139652614265488 for args (ShapedArray(bool[3]), ShapedArray(float32[3]), ShapedArray(float32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _where in 0.009081363677978516 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming run for jit in 0.33618760108947754 sec
+    DEBUG:jax._src.dispatch:Compiling run (139652614265488 for args (ShapedArray(float32[20,30]), ShapedArray(float32[3,30]), ShapedArray(float32[20]), ShapedArray(float32[3]), ShapedArray(float32[], weak_type=True), ShapedArray(float32[20]), ShapedArray(float32[3])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of run in 0.2822272777557373 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003867149353027344 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652615016336 for args (ShapedArray(float32[20]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of broadcast_in_dim in 0.007463932037353516 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003573894500732422 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652615014576 for args (ShapedArray(float32[3]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of broadcast_in_dim in 0.006774187088012695 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming fn for jit in 0.0005588531494140625 sec
+    DEBUG:jax._src.dispatch:Compiling fn (139652615013376 for args (ShapedArray(float32[20,1]), ShapedArray(float32[1,3])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of fn in 0.010028839111328125 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming vdot for jit in 0.0030112266540527344 sec
+    DEBUG:jax._src.dispatch:Compiling vdot (139652614582896 for args (ShapedArray(float32[20,30]), ShapedArray(float32[3,30])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of vdot in 0.006743192672729492 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming fn for jit in 0.001234292984008789 sec
+    DEBUG:jax._src.dispatch:Compiling fn (139652614884544 for args (ShapedArray(float32[], weak_type=True), ShapedArray(float32[20,3])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of fn in 0.009271621704101562 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0002646446228027344 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652614584256 for args (ShapedArray(float32[20,30]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of integer_pow in 0.009859085083007812 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _reduce_sum for jit in 0.0005567073822021484 sec
+    DEBUG:jax._src.dispatch:Compiling _reduce_sum (139652614585856 for args (ShapedArray(float32[20,30]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _reduce_sum in 0.011295080184936523 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0002770423889160156 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652614584256 for args (ShapedArray(float32[3,30]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of integer_pow in 0.009871959686279297 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _reduce_sum for jit in 0.0005500316619873047 sec
+    DEBUG:jax._src.dispatch:Compiling _reduce_sum (139652614585776 for args (ShapedArray(float32[3,30]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _reduce_sum in 0.011260032653808594 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming fn for jit in 0.000518798828125 sec
+    DEBUG:jax._src.dispatch:Compiling fn (139652614582576 for args (ShapedArray(float32[20,3]), ShapedArray(float32[20,3])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of fn in 0.009029626846313477 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _reduce_max for jit in 0.0004725456237792969 sec
+    DEBUG:jax._src.dispatch:Compiling _reduce_max (139652614582656 for args (ShapedArray(float32[20,3]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _reduce_max in 0.010386943817138672 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming true_divide for jit in 0.0005826950073242188 sec
+    DEBUG:jax._src.dispatch:Compiling true_divide (139652614583056 for args (ShapedArray(float32[], weak_type=True), ShapedArray(float32[])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of true_divide in 0.006422281265258789 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming fn for jit in 0.0005080699920654297 sec
+    DEBUG:jax._src.dispatch:Compiling fn (139652614582656 for args (ShapedArray(float32[20,3]), ShapedArray(float32[])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of fn in 0.00912332534790039 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming <lambda> for jit in 0.0005040168762207031 sec
+    DEBUG:jax._src.dispatch:Compiling <lambda> (139652614585056 for args (ShapedArray(float32[20,3]), ShapedArray(float32[20,3])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of <lambda> in 0.008995771408081055 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming true_divide for jit in 0.0005900859832763672 sec
+    DEBUG:jax._src.dispatch:Compiling true_divide (139652614583056 for args (ShapedArray(float32[20,3]), ShapedArray(float32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of true_divide in 0.009128332138061523 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming <lambda> for jit in 0.00038886070251464844 sec
+    DEBUG:jax._src.dispatch:Compiling <lambda> (139652614585136 for args (ShapedArray(float32[20,3]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of <lambda> in 0.010194540023803711 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming <unnamed wrapped function> for jit in 0.3906228542327881 sec
+    DEBUG:jax._src.dispatch:Compiling <unnamed wrapped function> (139652614582816 for args (ShapedArray(float32[20,30]), ShapedArray(uint32[2])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of <unnamed wrapped function> in 1.296593189239502 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming run for jit in 0.34747314453125 sec
+    DEBUG:jax._src.dispatch:Compiling run (139652617831984 for args (ShapedArray(float32[20,30]), ShapedArray(float32[20,30]), ShapedArray(float32[20]), ShapedArray(float32[20]), ShapedArray(float32[], weak_type=True), ShapedArray(float32[20,3]), ShapedArray(float32[20,3]), ShapedArray(float32[3])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of run in 0.9081473350524902 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming <lambda> for jit in 0.0007083415985107422 sec
+    DEBUG:jax._src.dispatch:Compiling <lambda> (139652614265248 for args (ShapedArray(float32[200]), ShapedArray(float32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of <lambda> in 0.012613058090209961 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003044605255126953 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming fn for jit in 0.0005950927734375 sec
+    DEBUG:jax._src.dispatch:Compiling fn (139652614813792 for args (ShapedArray(int32[2]), ShapedArray(int32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of fn in 0.008626222610473633 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.00032830238342285156 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652616462480 for args (ShapedArray(int32[2]), ShapedArray(int32[])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of add in 0.00799250602722168 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003192424774169922 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652616464160 for args (ShapedArray(bool[2]), ShapedArray(int32[2]), ShapedArray(int32[2])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of select_n in 0.008460760116577148 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _broadcast_arrays for jit in 0.0002791881561279297 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.00031280517578125 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652616864208 for args (ShapedArray(int32[2]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of broadcast_in_dim in 0.006476879119873047 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.00033783912658691406 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652615775232 for args (ShapedArray(float32[200]), ShapedArray(int32[2,1])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of gather in 0.008477449417114258 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003178119659423828 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming <lambda> for jit in 0.0005996227264404297 sec
+    DEBUG:jax._src.dispatch:Compiling <lambda> (139652615775232 for args (ShapedArray(float32[200]), ShapedArray(int32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of <lambda> in 0.011542081832885742 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _reduce_any for jit in 0.0006296634674072266 sec
+    DEBUG:jax._src.dispatch:Compiling _reduce_any (139652615774272 for args (ShapedArray(bool[200]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _reduce_any in 0.015582799911499023 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming isfinite for jit in 0.0003495216369628906 sec
+    DEBUG:jax._src.dispatch:Compiling isfinite (139652615777632 for args (ShapedArray(float32[200]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of isfinite in 0.011574268341064453 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _reduce_all for jit in 0.0006501674652099609 sec
+    DEBUG:jax._src.dispatch:Compiling _reduce_all (139652615774432 for args (ShapedArray(bool[200]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _reduce_all in 0.016713857650756836 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming op for jit in 0.0005936622619628906 sec
+    DEBUG:jax._src.dispatch:Compiling op (139652615774432 for args (ShapedArray(bool[]), ShapedArray(bool[])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of op in 0.006909847259521484 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.00033926963806152344 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652614604896 for args (ShapedArray(float32[200]), ShapedArray(int32[2,1])).
+    DEBUG:jax._src.lib.xla_bridge:get_compile_options: num_replicas=1 num_partitions=1 device_assignment=(CpuDevice(id=0),)
+    DEBUG:jax._src.dispatch:Finished XLA compilation of gather in 0.00841665267944336 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0005481243133544922 sec
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-61
+.. GENERATED FROM PYTHON SOURCE LINES 61-69
 
 Number of iterations
 ~~~~~~~~~~~~~~~~~~~~
@@ -4128,7 +4142,7 @@ after completing `max_iterations`, the model has not converged. `inner_iteration
 is the number of iterations after which the model checks the convergence criterion.
 If `max_iterations` is too low, the model won't converge:
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-64
+.. GENERATED FROM PYTHON SOURCE LINES 69-72
 
 .. code-block:: default
 
@@ -4146,67 +4160,70 @@ If `max_iterations` is too low, the model won't converge:
  .. code-block:: none
 
     INFO     Solving problem OTProblem[stage='solved', shape=(20, 20)].             
-    DEBUG:absl:Finished tracing + transforming run for jit in 0.4397764205932617 sec
-    DEBUG:absl:Compiling run (139830044240608 for args (ShapedArray(float32[20,30]), ShapedArray(float32[20,30]), ShapedArray(float32[20]), ShapedArray(float32[20]), ShapedArray(float32[], weak_type=True), ShapedArray(float32[20]), ShapedArray(float32[20])).
-    DEBUG:absl:Finished XLA compilation of run in 0.5356011390686035 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0005068778991699219 sec
-    DEBUG:absl:Compiling prim_fun (139830042998320 for args (ShapedArray(float32[]),).
-    DEBUG:absl:Finished XLA compilation of broadcast_in_dim in 0.010706186294555664 sec
-    DEBUG:absl:Finished tracing + transforming <lambda> for jit in 0.0008072853088378906 sec
-    DEBUG:absl:Compiling <lambda> (139830042998160 for args (ShapedArray(float32[1]), ShapedArray(float32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of <lambda> in 0.010810613632202148 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0003879070281982422 sec
-    DEBUG:absl:Finished tracing + transforming fn for jit in 0.0007150173187255859 sec
-    DEBUG:absl:Compiling fn (139830042998000 for args (ShapedArray(int32[1]), ShapedArray(int32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of fn in 0.011099576950073242 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0004012584686279297 sec
-    DEBUG:absl:Compiling prim_fun (139830042997040 for args (ShapedArray(int32[1]), ShapedArray(int32[])).
-    DEBUG:absl:Finished XLA compilation of add in 0.010185480117797852 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0003979206085205078 sec
-    DEBUG:absl:Compiling prim_fun (139830042997680 for args (ShapedArray(bool[1]), ShapedArray(int32[1]), ShapedArray(int32[1])).
-    DEBUG:absl:Finished XLA compilation of select_n in 0.010610103607177734 sec
-    DEBUG:absl:Finished tracing + transforming _broadcast_arrays for jit in 0.00038170814514160156 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.00041174888610839844 sec
-    DEBUG:absl:Compiling prim_fun (139830042998400 for args (ShapedArray(int32[1]),).
-    DEBUG:absl:Finished XLA compilation of broadcast_in_dim in 0.009957075119018555 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0005195140838623047 sec
-    DEBUG:absl:Compiling prim_fun (139830042997760 for args (ShapedArray(float32[1]), ShapedArray(int32[1,1])).
-    DEBUG:absl:Finished XLA compilation of gather in 0.010443687438964844 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.00045013427734375 sec
-    DEBUG:absl:Finished tracing + transforming <lambda> for jit in 0.000888824462890625 sec
-    DEBUG:absl:Compiling <lambda> (139830044288720 for args (ShapedArray(float32[2]), ShapedArray(float32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of <lambda> in 0.011659383773803711 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.00042891502380371094 sec
-    DEBUG:absl:Compiling prim_fun (139830043000560 for args (ShapedArray(float32[2]), ShapedArray(int32[2,1])).
-    DEBUG:absl:Finished XLA compilation of gather in 0.011908292770385742 sec
-    DEBUG:absl:Finished tracing + transforming <lambda> for jit in 0.0007779598236083984 sec
-    DEBUG:absl:Compiling <lambda> (139830044288720 for args (ShapedArray(float32[2]), ShapedArray(int32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of <lambda> in 0.014554500579833984 sec
-    DEBUG:absl:Finished tracing + transforming _reduce_any for jit in 0.0018343925476074219 sec
-    DEBUG:absl:Compiling _reduce_any (139830044287040 for args (ShapedArray(bool[2]),).
-    DEBUG:absl:Finished XLA compilation of _reduce_any in 0.01709270477294922 sec
-    DEBUG:absl:Finished tracing + transforming isfinite for jit in 0.0004742145538330078 sec
-    DEBUG:absl:Compiling isfinite (139830044288160 for args (ShapedArray(float32[2]),).
-    DEBUG:absl:Finished XLA compilation of isfinite in 0.012263774871826172 sec
-    DEBUG:absl:Finished tracing + transforming _reduce_all for jit in 0.0008604526519775391 sec
-    DEBUG:absl:Compiling _reduce_all (139830044319152 for args (ShapedArray(bool[2]),).
-    DEBUG:absl:Finished XLA compilation of _reduce_all in 0.013783454895019531 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming run for jit in 0.25673794746398926 sec
+    DEBUG:jax._src.dispatch:Compiling run (139652614605936 for args (ShapedArray(float32[20,30]), ShapedArray(float32[20,30]), ShapedArray(float32[20]), ShapedArray(float32[20]), ShapedArray(float32[], weak_type=True), ShapedArray(float32[20]), ShapedArray(float32[20])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of run in 0.31752943992614746 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003948211669921875 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652616448496 for args (ShapedArray(float32[]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of broadcast_in_dim in 0.0076751708984375 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming <lambda> for jit in 0.0006663799285888672 sec
+    DEBUG:jax._src.dispatch:Compiling <lambda> (139652614583936 for args (ShapedArray(float32[1]), ShapedArray(float32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of <lambda> in 0.00772404670715332 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0002865791320800781 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming fn for jit in 0.0006165504455566406 sec
+    DEBUG:jax._src.dispatch:Compiling fn (139652614584496 for args (ShapedArray(int32[1]), ShapedArray(int32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of fn in 0.007129669189453125 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.000324249267578125 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652615166208 for args (ShapedArray(int32[1]), ShapedArray(int32[])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of add in 0.006922245025634766 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003230571746826172 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652615166128 for args (ShapedArray(bool[1]), ShapedArray(int32[1]), ShapedArray(int32[1])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of select_n in 0.007158517837524414 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _broadcast_arrays for jit in 0.00025844573974609375 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.00029754638671875 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652616448016 for args (ShapedArray(int32[1]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of broadcast_in_dim in 0.006268024444580078 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003445148468017578 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652615354224 for args (ShapedArray(float32[1]), ShapedArray(int32[1,1])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of gather in 0.0064618587493896484 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.00030422210693359375 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming <lambda> for jit in 0.0005626678466796875 sec
+    DEBUG:jax._src.dispatch:Compiling <lambda> (139652615353184 for args (ShapedArray(float32[2]), ShapedArray(float32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of <lambda> in 0.007986783981323242 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003135204315185547 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652615354224 for args (ShapedArray(float32[2]), ShapedArray(int32[2,1])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of gather in 0.007982015609741211 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming <lambda> for jit in 0.0006260871887207031 sec
+    DEBUG:jax._src.dispatch:Compiling <lambda> (139652615353504 for args (ShapedArray(float32[2]), ShapedArray(int32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of <lambda> in 0.007985353469848633 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _reduce_any for jit in 0.0007197856903076172 sec
+    DEBUG:jax._src.dispatch:Compiling _reduce_any (139652615354224 for args (ShapedArray(bool[2]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _reduce_any in 0.008867979049682617 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming isfinite for jit in 0.00032258033752441406 sec
+    DEBUG:jax._src.dispatch:Compiling isfinite (139652615353184 for args (ShapedArray(float32[2]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of isfinite in 0.007806539535522461 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _reduce_all for jit in 0.0005791187286376953 sec
+    DEBUG:jax._src.dispatch:Compiling _reduce_all (139652615355344 for args (ShapedArray(bool[2]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _reduce_all in 0.008823156356811523 sec
     WARNING  Solver did not converge                                                
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.00048732757568359375 sec
-    DEBUG:absl:Compiling prim_fun (139830042998400 for args (ShapedArray(float32[]),).
-    DEBUG:absl:Finished XLA compilation of broadcast_in_dim in 0.009923219680786133 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0007452964782714844 sec
-    DEBUG:absl:Compiling prim_fun (139830044287040 for args (ShapedArray(float32[1]), ShapedArray(int32[1,1])).
-    DEBUG:absl:Finished XLA compilation of gather in 0.009858131408691406 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.00041174888610839844 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0003895759582519531 sec
-    DEBUG:absl:Compiling prim_fun (139830044318112 for args (ShapedArray(float32[2]), ShapedArray(int32[2,1])).
-    DEBUG:absl:Finished XLA compilation of gather in 0.011799335479736328 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003037452697753906 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652615447472 for args (ShapedArray(float32[]),).
+    DEBUG:jax._src.lib.xla_bridge:get_compile_options: num_replicas=1 num_partitions=1 device_assignment=(CpuDevice(id=0),)
+    DEBUG:jax._src.dispatch:Finished XLA compilation of broadcast_in_dim in 0.006250619888305664 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0005092620849609375 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652615355344 for args (ShapedArray(float32[1]), ShapedArray(int32[1,1])).
+    DEBUG:jax._src.lib.xla_bridge:get_compile_options: num_replicas=1 num_partitions=1 device_assignment=(CpuDevice(id=0),)
+    DEBUG:jax._src.dispatch:Finished XLA compilation of gather in 0.006419181823730469 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003056526184082031 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003008842468261719 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652617833504 for args (ShapedArray(float32[2]), ShapedArray(int32[2,1])).
+    DEBUG:jax._src.lib.xla_bridge:get_compile_options: num_replicas=1 num_partitions=1 device_assignment=(CpuDevice(id=0),)
+    DEBUG:jax._src.dispatch:Finished XLA compilation of gather in 0.00804591178894043 sec
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-72
+.. GENERATED FROM PYTHON SOURCE LINES 73-80
 
 Low rank hyperparameters
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4216,7 +4233,7 @@ indicating whether to rescale `gamma`. When tuning `gamma`, we recommend
 trying orders of 10. If `gamma` is too small or too large, the algorithm
 might not converge
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-74
+.. GENERATED FROM PYTHON SOURCE LINES 80-82
 
 .. code-block:: default
 
@@ -4233,82 +4250,83 @@ might not converge
  .. code-block:: none
 
     INFO     Solving problem OTProblem[stage='solved', shape=(20, 20)].             
-    DEBUG:absl:Finished tracing + transforming _uniform for jit in 0.013144969940185547 sec
-    DEBUG:absl:Compiling _uniform (139830044962960 for args (ShapedArray(key<fry>[]), ShapedArray(float32[], weak_type=True), ShapedArray(float32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of _uniform in 0.0850684642791748 sec
-    DEBUG:absl:Finished tracing + transforming absolute for jit in 0.000644683837890625 sec
-    DEBUG:absl:Compiling absolute (139830044238688 for args (ShapedArray(float32[3]),).
-    DEBUG:absl:Finished XLA compilation of absolute in 0.011527299880981445 sec
-    DEBUG:absl:Finished tracing + transforming fn for jit in 0.0009088516235351562 sec
-    DEBUG:absl:Compiling fn (139830044238368 for args (ShapedArray(float32[3]), ShapedArray(float32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of fn in 0.012780904769897461 sec
-    DEBUG:absl:Finished tracing + transforming _reduce_sum for jit in 0.0011448860168457031 sec
-    DEBUG:absl:Compiling _reduce_sum (139830046097216 for args (ShapedArray(float32[3]),).
-    DEBUG:absl:Finished XLA compilation of _reduce_sum in 0.013095378875732422 sec
-    DEBUG:absl:Finished tracing + transforming true_divide for jit in 0.0007853507995605469 sec
-    DEBUG:absl:Compiling true_divide (139830044239488 for args (ShapedArray(float32[3]), ShapedArray(float32[])).
-    DEBUG:absl:Finished XLA compilation of true_divide in 0.011283636093139648 sec
-    DEBUG:absl:Finished tracing + transforming _normal for jit in 0.011924028396606445 sec
-    DEBUG:absl:Compiling _normal (139830044239488 for args (ShapedArray(key<fry>[]),).
-    DEBUG:absl:Finished XLA compilation of _normal in 0.15825676918029785 sec
-    DEBUG:absl:Finished tracing + transforming absolute for jit in 0.0006539821624755859 sec
-    DEBUG:absl:Compiling absolute (139830044237968 for args (ShapedArray(float32[20,3]),).
-    DEBUG:absl:Finished XLA compilation of absolute in 0.014817953109741211 sec
-    DEBUG:absl:Finished tracing + transforming _reduce_sum for jit in 0.0010640621185302734 sec
-    DEBUG:absl:Compiling _reduce_sum (139830042872864 for args (ShapedArray(float32[20,3]),).
-    DEBUG:absl:Finished XLA compilation of _reduce_sum in 0.019858121871948242 sec
-    DEBUG:absl:Finished tracing + transforming true_divide for jit in 0.0006866455078125 sec
-    DEBUG:absl:Compiling true_divide (139829924646400 for args (ShapedArray(float32[20,3]), ShapedArray(float32[20,1])).
-    DEBUG:absl:Finished XLA compilation of true_divide in 0.014863252639770508 sec
-    DEBUG:absl:Finished tracing + transforming fn for jit in 0.0006773471832275391 sec
-    DEBUG:absl:Compiling fn (139830042872864 for args (ShapedArray(float32[20,1]), ShapedArray(float32[20,3])).
-    DEBUG:absl:Finished XLA compilation of fn in 0.014560222625732422 sec
-    DEBUG:absl:Finished tracing + transforming run for jit in 1.5018856525421143 sec
-    DEBUG:absl:Compiling run (139830044909216 for args (ShapedArray(float32[20,30]), ShapedArray(float32[20,30]), ShapedArray(float32[20]), ShapedArray(float32[20]), ShapedArray(float32[], weak_type=True), ShapedArray(float32[20,3]), ShapedArray(float32[20,3]), ShapedArray(float32[3])).
-    DEBUG:absl:Finished XLA compilation of run in 1.4032390117645264 sec
-    DEBUG:absl:Finished tracing + transforming <lambda> for jit in 0.0010325908660888672 sec
-    DEBUG:absl:Compiling <lambda> (139830044335056 for args (ShapedArray(float32[3]), ShapedArray(float32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of <lambda> in 0.01623845100402832 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0003867149353027344 sec
-    DEBUG:absl:Finished tracing + transforming fn for jit in 0.0007882118225097656 sec
-    DEBUG:absl:Compiling fn (139830044335296 for args (ShapedArray(int32[3]), ShapedArray(int32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of fn in 0.012820243835449219 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0004048347473144531 sec
-    DEBUG:absl:Compiling prim_fun (139830045779504 for args (ShapedArray(int32[3]), ShapedArray(int32[])).
-    DEBUG:absl:Finished XLA compilation of add in 0.012062311172485352 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.00044417381286621094 sec
-    DEBUG:absl:Compiling prim_fun (139830043761616 for args (ShapedArray(bool[3]), ShapedArray(int32[3]), ShapedArray(int32[3])).
-    DEBUG:absl:Finished XLA compilation of select_n in 0.012085437774658203 sec
-    DEBUG:absl:Finished tracing + transforming _broadcast_arrays for jit in 0.0003447532653808594 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0006079673767089844 sec
-    DEBUG:absl:Compiling prim_fun (139830043761616 for args (ShapedArray(int32[3]),).
-    DEBUG:absl:Finished XLA compilation of broadcast_in_dim in 0.00918269157409668 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0004627704620361328 sec
-    DEBUG:absl:Compiling prim_fun (139830046700144 for args (ShapedArray(float32[3]), ShapedArray(int32[3,1])).
-    DEBUG:absl:Finished XLA compilation of gather in 0.012547492980957031 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0004901885986328125 sec
-    DEBUG:absl:Finished tracing + transforming <lambda> for jit in 0.0008337497711181641 sec
-    DEBUG:absl:Compiling <lambda> (139830046700144 for args (ShapedArray(float32[3]), ShapedArray(int32[], weak_type=True)).
-    DEBUG:absl:Finished XLA compilation of <lambda> in 0.012459993362426758 sec
-    DEBUG:absl:Finished tracing + transforming _reduce_any for jit in 0.0010488033294677734 sec
-    DEBUG:absl:Compiling _reduce_any (139830046699744 for args (ShapedArray(bool[3]),).
-    DEBUG:absl:Finished XLA compilation of _reduce_any in 0.012331008911132812 sec
-    DEBUG:absl:Finished tracing + transforming isfinite for jit in 0.0004146099090576172 sec
-    DEBUG:absl:Compiling isfinite (139830046699904 for args (ShapedArray(float32[3]),).
-    DEBUG:absl:Finished XLA compilation of isfinite in 0.011824607849121094 sec
-    DEBUG:absl:Finished tracing + transforming _reduce_all for jit in 0.0006949901580810547 sec
-    DEBUG:absl:Compiling _reduce_all (139830046702944 for args (ShapedArray(bool[3]),).
-    DEBUG:absl:Finished XLA compilation of _reduce_all in 0.012625455856323242 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _uniform for jit in 0.005821943283081055 sec
+    DEBUG:jax._src.dispatch:Compiling _uniform (139652617831664 for args (ShapedArray(key<fry>[]), ShapedArray(float32[], weak_type=True), ShapedArray(float32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _uniform in 0.06145524978637695 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming absolute for jit in 0.00046443939208984375 sec
+    DEBUG:jax._src.dispatch:Compiling absolute (139652617831504 for args (ShapedArray(float32[3]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of absolute in 0.008670330047607422 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming fn for jit in 0.000690460205078125 sec
+    DEBUG:jax._src.dispatch:Compiling fn (139652617831344 for args (ShapedArray(float32[3]), ShapedArray(float32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of fn in 0.008553266525268555 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _reduce_sum for jit in 0.0007355213165283203 sec
+    DEBUG:jax._src.dispatch:Compiling _reduce_sum (139652617831344 for args (ShapedArray(float32[3]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _reduce_sum in 0.009675264358520508 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming true_divide for jit in 0.0006091594696044922 sec
+    DEBUG:jax._src.dispatch:Compiling true_divide (139652617831984 for args (ShapedArray(float32[3]), ShapedArray(float32[])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of true_divide in 0.008332014083862305 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _normal for jit in 0.008254051208496094 sec
+    DEBUG:jax._src.dispatch:Compiling _normal (139652617831104 for args (ShapedArray(key<fry>[]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _normal in 0.08838319778442383 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming absolute for jit in 0.0004525184631347656 sec
+    DEBUG:jax._src.dispatch:Compiling absolute (139652616493952 for args (ShapedArray(float32[20,3]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of absolute in 0.009967327117919922 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _reduce_sum for jit in 0.0008413791656494141 sec
+    DEBUG:jax._src.dispatch:Compiling _reduce_sum (139652616493952 for args (ShapedArray(float32[20,3]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _reduce_sum in 0.01153254508972168 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming true_divide for jit in 0.0005707740783691406 sec
+    DEBUG:jax._src.dispatch:Compiling true_divide (139652616492832 for args (ShapedArray(float32[20,3]), ShapedArray(float32[20,1])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of true_divide in 0.01001739501953125 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming fn for jit in 0.0005507469177246094 sec
+    DEBUG:jax._src.dispatch:Compiling fn (139652616492832 for args (ShapedArray(float32[20,1]), ShapedArray(float32[20,3])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of fn in 0.009841203689575195 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming run for jit in 0.9616391658782959 sec
+    DEBUG:jax._src.dispatch:Compiling run (139652617831664 for args (ShapedArray(float32[20,30]), ShapedArray(float32[20,30]), ShapedArray(float32[20]), ShapedArray(float32[20]), ShapedArray(float32[], weak_type=True), ShapedArray(float32[20,3]), ShapedArray(float32[20,3]), ShapedArray(float32[3])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of run in 0.9203305244445801 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming <lambda> for jit in 0.0007250308990478516 sec
+    DEBUG:jax._src.dispatch:Compiling <lambda> (139652615893616 for args (ShapedArray(float32[3]), ShapedArray(float32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of <lambda> in 0.010420560836791992 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.00029969215393066406 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming fn for jit in 0.0005986690521240234 sec
+    DEBUG:jax._src.dispatch:Compiling fn (139652615894336 for args (ShapedArray(int32[3]), ShapedArray(int32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of fn in 0.008932828903198242 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.00033020973205566406 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652618718320 for args (ShapedArray(int32[3]), ShapedArray(int32[])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of add in 0.00841832160949707 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003192424774169922 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652615894256 for args (ShapedArray(bool[3]), ShapedArray(int32[3]), ShapedArray(int32[3])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of select_n in 0.008760690689086914 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _broadcast_arrays for jit in 0.00026917457580566406 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003097057342529297 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652615894496 for args (ShapedArray(int32[3]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of broadcast_in_dim in 0.006509304046630859 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003261566162109375 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652616905408 for args (ShapedArray(float32[3]), ShapedArray(int32[3,1])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of gather in 0.008712053298950195 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003104209899902344 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming <lambda> for jit in 0.0005693435668945312 sec
+    DEBUG:jax._src.dispatch:Compiling <lambda> (139652616906208 for args (ShapedArray(float32[3]), ShapedArray(int32[], weak_type=True)).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of <lambda> in 0.008629798889160156 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _reduce_any for jit in 0.0006597042083740234 sec
+    DEBUG:jax._src.dispatch:Compiling _reduce_any (139652616905728 for args (ShapedArray(bool[3]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _reduce_any in 0.010021209716796875 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming isfinite for jit in 0.0003230571746826172 sec
+    DEBUG:jax._src.dispatch:Compiling isfinite (139652616905408 for args (ShapedArray(float32[3]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of isfinite in 0.008222818374633789 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming _reduce_all for jit in 0.00058746337890625 sec
+    DEBUG:jax._src.dispatch:Compiling _reduce_all (139652616905568 for args (ShapedArray(bool[3]),).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of _reduce_all in 0.00989985466003418 sec
     WARNING  Solver did not converge                                                
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0004241466522216797 sec
-    DEBUG:absl:Compiling prim_fun (139830047253984 for args (ShapedArray(float32[3]), ShapedArray(int32[3,1])).
-    DEBUG:absl:Finished XLA compilation of gather in 0.012844324111938477 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0003941059112548828 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.00031495094299316406 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652615894176 for args (ShapedArray(float32[3]), ShapedArray(int32[3,1])).
+    DEBUG:jax._src.lib.xla_bridge:get_compile_options: num_replicas=1 num_partitions=1 device_assignment=(CpuDevice(id=0),)
+    DEBUG:jax._src.dispatch:Finished XLA compilation of gather in 0.008641958236694336 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003159046173095703 sec
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-77
+.. GENERATED FROM PYTHON SOURCE LINES 83-85
 
 .. code-block:: default
 
@@ -4325,24 +4343,25 @@ might not converge
  .. code-block:: none
 
     INFO     Solving problem OTProblem[stage='solved', shape=(20, 20)].             
-    DEBUG:absl:Finished tracing + transforming run for jit in 1.8726038932800293 sec
-    DEBUG:absl:Compiling run (139830042572976 for args (ShapedArray(float32[20,30]), ShapedArray(float32[20,30]), ShapedArray(float32[20]), ShapedArray(float32[20]), ShapedArray(float32[], weak_type=True), ShapedArray(float32[20,3]), ShapedArray(float32[20,3]), ShapedArray(float32[3])).
-    DEBUG:absl:Finished XLA compilation of run in 1.4039833545684814 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0004947185516357422 sec
-    DEBUG:absl:Compiling prim_fun (139830045583136 for args (ShapedArray(float32[3]), ShapedArray(int32[2,1])).
-    DEBUG:absl:Finished XLA compilation of gather in 0.013681888580322266 sec
-    DEBUG:absl:Finished tracing + transforming prim_fun for jit in 0.0005409717559814453 sec
-    DEBUG:absl:Compiling prim_fun (139830045584896 for args (ShapedArray(float32[3]), ShapedArray(int32[2,1])).
-    DEBUG:absl:Finished XLA compilation of gather in 0.012916803359985352 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming run for jit in 1.0127978324890137 sec
+    DEBUG:jax._src.dispatch:Compiling run (139652614883984 for args (ShapedArray(float32[20,30]), ShapedArray(float32[20,30]), ShapedArray(float32[20]), ShapedArray(float32[20]), ShapedArray(float32[], weak_type=True), ShapedArray(float32[20,3]), ShapedArray(float32[20,3]), ShapedArray(float32[3])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of run in 0.9171953201293945 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003898143768310547 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652618721856 for args (ShapedArray(float32[3]), ShapedArray(int32[2,1])).
+    DEBUG:jax._src.dispatch:Finished XLA compilation of gather in 0.009682893753051758 sec
+    DEBUG:jax._src.dispatch:Finished tracing + transforming prim_fun for jit in 0.0003552436828613281 sec
+    DEBUG:jax._src.dispatch:Compiling prim_fun (139652618721296 for args (ShapedArray(float32[3]), ShapedArray(int32[2,1])).
+    DEBUG:jax._src.lib.xla_bridge:get_compile_options: num_replicas=1 num_partitions=1 device_assignment=(CpuDevice(id=0),)
+    DEBUG:jax._src.dispatch:Finished XLA compilation of gather in 0.008877754211425781 sec
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-89
+.. GENERATED FROM PYTHON SOURCE LINES 86-95
 
 Keyword arguments & Implementation details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Whenever the :meth:`moscot.problems.time.TemporalProblem.solve` is called,
+Whenever a `solve` method of a linear problem is called,
 a backend-specific linear solver is instantiated. Currently, :mod:`ott` is
 supported, its corresponding linear solvers are :class:`ott.core.sinkhorn.Sinkhorn`,
 which is used whenever `rank = -1`, and :class:`ott.core.sinkhorn_lr.LRSinkhorn`,
@@ -4350,14 +4369,12 @@ its counterpart whenever `rank` is a positive integer. :mod:`moscot` wraps these
 classes in :class:`moscot.backends.ott.SinkhornSolver` which handles both full and
 low rank.
 
-TODO See other examples for ...
-
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  26.314 seconds)
+   **Total running time of the script:** ( 0 minutes  16.509 seconds)
 
-**Estimated memory usage:**  413 MB
+**Estimated memory usage:**  407 MB
 
 
 .. _sphx_glr_download_auto_examples_solvers_ex_linear_problems_advanced.py:

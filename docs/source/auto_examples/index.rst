@@ -186,12 +186,12 @@
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Solving linear problems">
+    <div class="sphx-glr-thumbcontainer" tooltip="Solving linear problems - advanced">
 
 .. only:: html
 
  .. figure:: /auto_examples/solvers/images/thumb/sphx_glr_ex_linear_problems_advanced_thumb.png
-     :alt: Solving linear problems
+     :alt: Solving linear problems - advanced
 
      :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_advanced.py`
 
@@ -207,12 +207,54 @@
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Solving linear problems">
+    <div class="sphx-glr-thumbcontainer" tooltip="Solving quadratic problems - advanced">
+
+.. only:: html
+
+ .. figure:: /auto_examples/solvers/images/thumb/sphx_glr_ex_quad_problems_advanced_thumb.png
+     :alt: Solving quadratic problems - advanced
+
+     :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_advanced.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/solvers/ex_quad_problems_advanced
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Solving quadratic problems basic">
+
+.. only:: html
+
+ .. figure:: /auto_examples/solvers/images/thumb/sphx_glr_ex_quad_problems_basic_thumb.png
+     :alt: Solving quadratic problems basic
+
+     :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_basic.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/solvers/ex_quad_problems_basic
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Solving linear problems basic">
 
 .. only:: html
 
  .. figure:: /auto_examples/solvers/images/thumb/sphx_glr_ex_linear_problems_basic_thumb.png
-     :alt: Solving linear problems
+     :alt: Solving linear problems basic
 
      :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_basic.py`
 

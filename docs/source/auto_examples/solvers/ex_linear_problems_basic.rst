@@ -18,16 +18,23 @@
 .. _sphx_glr_auto_examples_solvers_ex_linear_problems_basic.py:
 
 
-Solving linear problems
------------------------
+Solving linear problems basic
+-----------------------------
+.. seealso::
+    See :ref:`sphx_glr_auto_examples_solvers_ex_linear_problems_advanced.py` for an advanced
+    example how to solve linear problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_basic.py` for an introduction
+    to solving quadratic problems.
+    See :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_advanced.py` for an advanced
+    example how to solve quadratic problems.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-11
+.. GENERATED FROM PYTHON SOURCE LINES 15-18
 
 This notebook elaborates on how to solve linear problems, e.g. the
 :class:`moscot.problems.time.TemporalProblem` and the
 :class:`moscot.problems.generic.SinkhornProblem`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-20
+.. GENERATED FROM PYTHON SOURCE LINES 18-27
 
 .. code-block:: default
 
@@ -60,12 +67,7 @@ This notebook elaborates on how to solve linear problems, e.g. the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-23
-
-The :meth:`moscot.problems.time.TemporalProblem.solve` has numerous arguments,
-a few of which will be discussed in the following.
-
-.. GENERATED FROM PYTHON SOURCE LINES 25-36
+.. GENERATED FROM PYTHON SOURCE LINES 28-39
 
 Basic parameters
 ~~~~~~~~~~~~~~~~
@@ -79,7 +81,7 @@ with the :class:`moscot.problems.generic.SinkhornProblem`.
 Whenever the prior marginals `a` and `b` of the source and the target distribution,
 respectively, are not passed (TODO link to marginals notebook), they are set to be uniform.
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-41
+.. GENERATED FROM PYTHON SOURCE LINES 39-44
 
 .. code-block:: default
 
@@ -104,14 +106,14 @@ respectively, are not passed (TODO link to marginals notebook), they are set to 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-46
+.. GENERATED FROM PYTHON SOURCE LINES 45-49
 
 First, we solve the problem in a balanced manner, such that the posterior marginals of the
 solution (the sum over the rows and the columns for the source marginals and the
 target marginals, respectively) are equal to the prior marginals up to small
 errors (which define the convergence criterion in the balanced case).
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-50
+.. GENERATED FROM PYTHON SOURCE LINES 49-53
 
 .. code-block:: default
 
@@ -130,16 +132,16 @@ errors (which define the convergence criterion in the balanced case).
  .. code-block:: none
 
     INFO     Solving problem OTProblem[stage='prepared', shape=(20, 20)].           
-    [0.04999981 0.05000011 0.05000006 0.04999984 0.04999995] [0.0499921  0.04998703 0.04998971 0.04999597 0.0499915 ]
+    [0.04999988 0.05000021 0.05000002 0.05000014 0.04999958] [0.04999239 0.04998733 0.04998971 0.04999597 0.0499909 ]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-52
+.. GENERATED FROM PYTHON SOURCE LINES 54-55
 
 If we solve an unbalanced problem, the posterior marginals will be different.
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-55
+.. GENERATED FROM PYTHON SOURCE LINES 55-58
 
 .. code-block:: default
 
@@ -157,12 +159,12 @@ If we solve an unbalanced problem, the posterior marginals will be different.
  .. code-block:: none
 
     INFO     Solving problem OTProblem[stage='solved', shape=(20, 20)].             
-    [0.03286416 0.02016635 0.02300276 0.01075785 0.01592081] [0.02210412 0.02592126 0.02502106 0.02436337 0.02419146]
+    [0.03286438 0.02016632 0.02300303 0.01075798 0.01592067] [0.02210412 0.0259211  0.02502106 0.02436337 0.02419102]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-63
+.. GENERATED FROM PYTHON SOURCE LINES 59-66
 
 Low-rank solutions
 ~~~~~~~~~~~~~~~~~~
@@ -172,12 +174,12 @@ case, `epsilon` can also be set to 0, while only the balanced case
 (`tau_a = tau_b = 1`) is supported. The `rank` should be significantly
 smaller than the number of cells in both source and target distribution.
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-66
+.. GENERATED FROM PYTHON SOURCE LINES 66-69
 
 .. code-block:: default
 
 
-    sp = sp.solve(epsilon=0, rank=3, initializer="random")
+    sp = sp.solve(epsilon=0, rank=3)
 
 
 
@@ -194,7 +196,7 @@ smaller than the number of cells in both source and target distribution.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-76
+.. GENERATED FROM PYTHON SOURCE LINES 70-79
 
 Scaling the cost
 ~~~~~~~~~~~~~~~~
@@ -206,7 +208,7 @@ complexity. Moreover, it is more stable w.r.t. outliers than for example scaling
 by the maximum. Note that the solution of the Optimal Transport is not stable
 across different scalings:
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-80
+.. GENERATED FROM PYTHON SOURCE LINES 79-83
 
 .. code-block:: default
 
@@ -225,14 +227,14 @@ across different scalings:
  .. code-block:: none
 
     INFO     Solving problem OTProblem[stage='solved', shape=(20, 20)].             
-    [[7.7331262e-15 2.5642862e-07 5.3756791e-11]
-     [3.7442808e-13 3.9273414e-06 8.2084188e-14]
-     [4.3774089e-05 1.4414739e-10 5.2908806e-12]]
+    [[7.7340994e-15 2.5644991e-07 5.3756791e-11]
+     [3.7445882e-13 3.9273637e-06 8.2092007e-14]
+     [4.3765991e-05 1.4413033e-10 5.2900635e-12]]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-85
+.. GENERATED FROM PYTHON SOURCE LINES 84-88
 
 .. code-block:: default
 
@@ -251,25 +253,24 @@ across different scalings:
  .. code-block:: none
 
     INFO     Solving problem OTProblem[stage='solved', shape=(20, 20)].             
-    [[7.8722293e-11 1.1196194e-05 4.5380293e-08]
-     [8.0387297e-10 5.2310992e-05 4.0580173e-10]
-     [5.9454376e-04 1.2423303e-07 1.6821756e-08]]
+    [[7.8727094e-11 1.1196727e-05 4.5379775e-08]
+     [8.0389750e-10 5.2311141e-05 4.0582340e-10]
+     [5.9450121e-04 1.2423077e-07 1.6821049e-08]]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-88
+.. GENERATED FROM PYTHON SOURCE LINES 89-91
 
 We can compute the correlation of the flattened transport matrix to get an
 idea of the influence of different scalings.
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-91
+.. GENERATED FROM PYTHON SOURCE LINES 91-93
 
 .. code-block:: default
 
     correlation = np.corrcoef(tm_mean.flatten(), tm_max.flatten())[0, 1]
     print(f"{correlation:.4f}")
-
 
 
 
@@ -285,16 +286,12 @@ idea of the influence of different scalings.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-93
-
-TODO See other examples for ...
-
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.087 seconds)
+   **Total running time of the script:** ( 0 minutes  6.255 seconds)
 
-**Estimated memory usage:**  33 MB
+**Estimated memory usage:**  24 MB
 
 
 .. _sphx_glr_download_auto_examples_solvers_ex_linear_problems_basic.py:
