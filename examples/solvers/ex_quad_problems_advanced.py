@@ -42,7 +42,6 @@ adata
 # a Cauchy sequence stopping criterion.
 
 
-
 ###############################################################################
 # Initializers
 # ~~~~~~~~~~~~
@@ -72,7 +71,9 @@ gwp = gwp.solve(alpha=0.5, epsilon=1e-1, min_iterations=0, max_iterations=1)
 # for :class:`ott.core.sinkhorn_lr.LRSinkhorn`, respectively. This way, we can
 # also set the minimum and maximum number of iterations for the linear solver:
 ls_kwargs = {"min_iterations": 10, "max_iterations": 1000, "threshold": 0.01}
-gwp = gwp.solve(alpha=0.5, epsilon=1e-1, threshold= 0.1, min_iterations=2, max_iterations=20, linear_solver_kwargs=ls_kwargs)
+gwp = gwp.solve(
+    alpha=0.5, epsilon=1e-1, threshold=0.1, min_iterations=2, max_iterations=20, linear_solver_kwargs=ls_kwargs
+)
 
 ###############################################################################
 # Low rank hyperparameters
