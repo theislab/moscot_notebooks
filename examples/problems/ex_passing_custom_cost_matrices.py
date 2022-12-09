@@ -36,6 +36,9 @@ fgwp = fgwp.prepare(key="batch", joint_attr="X_pca", GW_x="X_pca", GW_y="X_pca")
 fgwp
 
 ###############################################################################
+# Passing custom cost matrices one by one
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
 # We can pass the custom cost matrices by accessing the
 # :class:`moscot.problems.base.OTProblem`. The method
 # :meth:`moscot.problems.base.OTProblem.set_xy` allows to pass a custom cost matrix
@@ -76,6 +79,9 @@ fgwp["0", "1"].set_y(cm_quad_1, tag="cost_matrix")
 # :meth:`moscot.problems.generic.FGWProblem.prepare`.
 
 ###############################################################################
+# Passing custom cost matrices via :attr:`anndata.AnnData.obsp`
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#
 # A second way to pass custom cost matrices is using :attr:`anndata.AnnData.obsp`.
 # This is especially useful when saving and loading a model. On the other hand,
 # it might be more difficult to store the cost matrix in the correct place in
