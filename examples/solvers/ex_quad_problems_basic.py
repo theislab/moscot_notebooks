@@ -39,7 +39,7 @@ print(adata)
 # and `tau_b`. In fused quadratic problems (also referred to as Fused Gromov-
 # Wasserstein) there is an additional parameter `alpha` defining the convex
 # combination between the quadratic and the linear term. Setting `alpha=1` only
-# considers the quadratic term, while `alpha -> 1` only considers the linear term.
+# considers the quadratic term, while `alpha -> 0` only considers the linear term.
 # While choosing `alpha=0` is possible in fused quadratic problems, and corresponds
 # to the pure quadratic problem, `alpha=0` is
 # not possible, and hence linear problems must be chosen.
