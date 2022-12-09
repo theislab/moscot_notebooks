@@ -29,7 +29,7 @@ adata
 
 ###############################################################################
 # The first option is to prepare the problem in an arbitrary way and override
-# the corresponding subproblems after
+# the cost terms of the single OT problems after.
 
 fgwp = FGWProblem(adata)
 fgwp = fgwp.prepare(key="batch", joint_attr="X_pca", GW_x="X_pca", GW_y="X_pca")
@@ -44,7 +44,7 @@ fgwp
 # while :meth:`moscot.problems.base.OTProblem.set_y` works analogously for the quadratic
 # term in the target distribution.
 #
-# When using the abovementioned methods we need to pass a :class:`pandas.DataFrame`
+# When using the above-mentioned methods we need to pass a :class:`pandas.DataFrame`
 # to ensure that the order of the rows and columns of the cost matrix is correct.
 # In the following we retrieve the cell names to construct the :class:`pandas.DataFrame`
 # containing (random) custom cost matrices.
