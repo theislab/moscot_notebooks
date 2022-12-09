@@ -173,6 +173,48 @@
    :hidden:
 
    /auto_examples/problems/ex_passing_marginals
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Using custom cost matrices">
+
+.. only:: html
+
+ .. figure:: /auto_examples/problems/images/thumb/sphx_glr_ex_passing_custom_cost_matrices_thumb.png
+     :alt: Using custom cost matrices
+
+     :ref:`sphx_glr_auto_examples_problems_ex_passing_custom_cost_matrices.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/problems/ex_passing_custom_cost_matrices
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Tagged Arrays">
+
+.. only:: html
+
+ .. figure:: /auto_examples/problems/images/thumb/sphx_glr_ex_tagged_arrays_thumb.png
+     :alt: Tagged Arrays
+
+     :ref:`sphx_glr_auto_examples_problems_ex_tagged_arrays.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/problems/ex_tagged_arrays
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

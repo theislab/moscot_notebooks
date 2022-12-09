@@ -1,0 +1,23 @@
+
+
+Examples using ``moscot.problems.base.OTProblem.set_y``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Using custom cost matrices">
+
+.. only:: html
+
+ .. figure:: /auto_examples/problems/images/thumb/sphx_glr_ex_passing_custom_cost_matrices_thumb.png
+     :alt: Using custom cost matrices
+
+     :ref:`sphx_glr_auto_examples_problems_ex_passing_custom_cost_matrices.py`
+
+.. raw:: html
+
+    </div>
+
+.. only:: not html
+
+ * :ref:`sphx_glr_auto_examples_problems_ex_passing_custom_cost_matrices.py`

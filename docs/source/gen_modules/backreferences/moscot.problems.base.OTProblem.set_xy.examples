@@ -1,7 +1,7 @@
 
 
-Examples using ``moscot.datasets.simulate_data``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Examples using ``moscot.problems.base.OTProblem.set_xy``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
 
@@ -40,22 +40,3 @@ Examples using ``moscot.datasets.simulate_data``
 .. only:: not html
 
  * :ref:`sphx_glr_auto_examples_problems_ex_tagged_arrays.py`
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Solving quadratic problems basic">
-
-.. only:: html
-
- .. figure:: /auto_examples/solvers/images/thumb/sphx_glr_ex_quad_problems_basic_thumb.png
-     :alt: Solving quadratic problems basic
-
-     :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_basic.py`
-
-.. raw:: html
-
-    </div>
-
-.. only:: not html
-
- * :ref:`sphx_glr_auto_examples_solvers_ex_quad_problems_basic.py`

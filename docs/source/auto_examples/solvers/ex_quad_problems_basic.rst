@@ -86,7 +86,7 @@ in linear problems. Hence, we refer to TODO for the role of `epsilon`, `tau_a`,
 and `tau_b`. In fused quadratic problems (also referred to as Fused Gromov-
 Wasserstein) there is an additional parameter `alpha` defining the convex
 combination between the quadratic and the linear term. Setting `alpha=1` only
-considers the quadratic term, while `alpha -> 1` only considers the linear term.
+considers the quadratic term, while `alpha -> 0` only considers the linear term.
 While choosing `alpha=0` is possible in fused quadratic problems, and corresponds
 to the pure quadratic problem, `alpha=0` is
 not possible, and hence linear problems must be chosen.
@@ -167,9 +167,9 @@ terms will be scaled by the same argument.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.330 seconds)
+   **Total running time of the script:** ( 0 minutes  12.203 seconds)
 
-**Estimated memory usage:**  66 MB
+**Estimated memory usage:**  105 MB
 
 
 .. _sphx_glr_download_auto_examples_solvers_ex_quad_problems_basic.py:
