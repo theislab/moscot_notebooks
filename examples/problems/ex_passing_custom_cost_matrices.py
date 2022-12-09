@@ -82,7 +82,7 @@ fgwp["0", "1"].set_y(cm_quad_1, tag="cost_matrix")
 # :attr:`anndata.AnnData.obsp`.
 # In the following, we construct the attr:`anndata.AnnData.obsp` layer. When doing
 # this, be sure that the order of the cost matrix entries are correct.
-# In the following, we construct an ttr:`anndata.AnnData.obsp` layer containing
+# In the following, we construct an :attr:`anndata.AnnData.obsp` layer containing
 # custom cost matrices for both linear and quadratic terms for both OT problems,
 # mapping from batch "0" to batch "1", and from batch "1" to batch "2".
 
