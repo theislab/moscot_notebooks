@@ -22,7 +22,7 @@ This section contains various examples on how to handle :mod:`moscot.solvers`.
 
 Plotting
 ========
-This section contains various examples from the :mod:`moscot.pl` module.
+This section contains various examples from the :mod:`moscot.plotting` module.
 
 .. nbgallery::
     :glob:
