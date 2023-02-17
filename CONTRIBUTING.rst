@@ -14,12 +14,6 @@ We distinguish between four types of examples and tutorials:
   They should be placed in ``docs/source/external_tutorials/`` and prefixed with ``tutorial_``.
 - *OT tutorials* TODO
 
-Set up environment
-------------------
-1. git clone most recent versions of moscot and its notebooks.
-2. install latest version of moscot with ``pip install -e'.[dev,test]'``.
-3. run ``pre-commit install`` in both repos.
-
 Datasets for examples/tutorials
 -------------------------------
 For showcasing functions, please use one of the datasets shipped with moscot.
@@ -30,6 +24,7 @@ For showcasing functions, please use one of the datasets shipped with moscot.
 
 Main examples and tutorials
 ---------------------------
+.. TODO(michalk8): update
 Examples and Tutorials are represented as an executable **Python file**.
 The general structure is described `here <https://sphinx-gallery.github.io/stable/syntax.html>`_ .
 You can work on a jupyter notebook to develop the example, but the file needs to be pushed as a ``.py`` file.
@@ -83,23 +78,8 @@ Make sure to follow the following checklist before merging a new example/tutoria
 
 External tutorials
 ------------------
-TODO
-
+.. TODO(michalk8): update
 
 Generating documentation
 ------------------------
-To download the examples/tutorials data, you can run ``tox -e download-data``. You can use
-``tox -e download-data -- --dry-run`` to see what data would be downloaded. By default, everything in
-``moscot.datasets`` that is not already present in the destination directory will be downloaded.
-Note that downloading the data needs to happen only once.
-
-You can locally generate the docs to check that everything looks good by running ``tox -e docs``.
-
-In order to see how the documentation would look online, you can run ``tox -e docs`` from moscot's repo and set the
-``MOSCOT_NOTEBOOKS_PATH`` appropriately to point to the root of the notebooks repo (by default, this may not be needed
-since we assume that both moscot and the notebooks repo are sibling directories in the filesystem).
-If the notebooks' repo is not found and  ``MOSCOT_DOWNLOAD_NOTEBOOKS != 0``,
-we fetch the examples/tutorials from GitHub.
-
-To clean documentation, you can run ``tox -e clean-docs`` and to check whether spelling/links are correct,
-you can run ``tox -e check-docs``.
+.. TODO(michalk8): update
