@@ -8,3 +8,17 @@ sections = ["FUTURE", "STDLIB", "THIRDPARTY", "NUMERIC", "PLOTTING", "BIO", "FIR
 known_bio = ["scanpy", "squidpy"]
 known_numeric = ["numpy", "scipy", "networkx", "sklearn", "pandas"]
 known_plotting = ["matplotlib", "seaborn"]
+
+[tool.tox]
+legacy_tox_ini = """
+    [tox]
+    min_version = 4.0
+    env_list = lint
+
+    [testenv:lint]
+    description = Lint the notebooks.
+    deps = pre-commit>=3.0.0
+    skip_install = true
+    commands =
+        pre-commit run --all-files --show-diff-on-failure
+"""
