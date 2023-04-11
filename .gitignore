@@ -167,3 +167,6 @@ vscode/
 
 # data
 *.h5ad
+
+# custom folders
+tutorials/tutorial_dev
