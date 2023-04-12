@@ -6,7 +6,8 @@ Problems
 ========
 This section contains various examples how to handle :mod:`moscot.problems`.
 
-.. nbgallery::
+.. toctree::
+    :maxdepth: 1
     :glob:
 
     problems/*
@@ -15,7 +16,8 @@ Solvers
 =======
 This section contains various examples on how to handle :mod:`moscot.solvers`.
 
-.. nbgallery::
+.. toctree::
+    :maxdepth: 1
     :glob:
 
     solvers/*
@@ -24,7 +26,8 @@ Plotting
 ========
 This section contains various examples from the :mod:`moscot.plotting` module.
 
-.. nbgallery::
+.. toctree::
+    :maxdepth: 1
     :glob:
 
     plotting/*
