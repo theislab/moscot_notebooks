@@ -16,6 +16,7 @@ repos:
         args: [--fix=lf]
       - id: trailing-whitespace
       - id: check-added-large-files
+        args: ["--maxkb=2000"]
   - repo: https://github.com/nbQA-dev/nbQA
     rev: 1.6.3
     hooks:
