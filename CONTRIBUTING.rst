@@ -21,22 +21,16 @@ Datasets for examples/tutorials
 -------------------------------
 For showcasing functions, please use one of the datasets shipped with moscot.
 
-.. module:: moscot.datasets
-.. currentmodule:: moscot
-.. autosummary::
-    :toctree: genapi
-
-    datasets.bone_marrow
-    datasets.c_elegans
-    datasets.drosophila
-    datasets.hspc
-    datasets.mosta
-    datasets.sciplex
-    datasets.sim_align
-    datasets.simulate_data
-    datasets.tedsim
-    datasets.zebrafish
-
+- ``moscot.datasets.bone_marrow`` - multiome data of bone marrow measurements ``{cite}`luecken:21```
+- ``moscot.datasets.c_elegans`` - scRNA-seq time-series dataset of C.elegans embryogenesis ``{cite}`packer:19```
+- ``moscot.datasets.drosophila`` - embryo of Drosophila melanogaster described in ``{cite}`Li-spatial:22```
+- ``moscot.datasets.hspc`` - CD34+ hematopoietic stem and progenitor cells from 4 healthy human donors
+- ``moscot.datasets.mosta`` - preprocessed and extracted data as provided in ``{cite}`chen:22```
+- ``moscot.datasets.sciplex`` - perturbation dataset published in ``{cite}`srivatsan:20```
+- ``moscot.datasets.sim_align`` - spatial transcriptomics simulated dataset as described in ``{cite}`Jones-spatial:22```
+- ``moscot.datasets.simulate_data`` - simulate data
+- ``moscot.datasets.tedsim`` - dataset simulated with TedSim ``{cite}`pan:22```
+- ``moscot.datasets.zebrafish`` - lineage-traced scRNA-seq time-series dataset of Zebrafish heart regeneration ``{cite}`hu:22```
 
 
 Main examples and tutorials
