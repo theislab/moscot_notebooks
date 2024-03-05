@@ -22,8 +22,8 @@ Datasets for examples/tutorials
 For showcasing functions, please use one of the datasets shipped with moscot.
 If you would like to add a new dataset, please open an issue.
 
-- ```moscot.datasets.bone_marrow`` <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.bone_marrow.html#moscot.datasets.bone_marrow>`_ - multiome data of bone marrow measurements
-- ```moscot.datasets.c_elegans`` <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.c_elegans.html#moscot.datasets.c_elegans>`_ - scRNA-seq time-series dataset of C.elegans embryogenesis
+- `moscot.datasets.bone_marrow <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.bone_marrow.html#moscot.datasets.bone_marrow>`_ - multiome data of bone marrow measurements
+- `moscot.datasets.c_elegans <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.c_elegans.html#moscot.datasets.c_elegans>`_ - scRNA-seq time-series dataset of C.elegans embryogenesis
 - ``moscot.datasets.drosophila`` - embryo of Drosophila melanogaster
 - ``moscot.datasets.hspc`` - CD34+ hematopoietic stem and progenitor cells from 4 healthy human donors
 - ``moscot.datasets.mosta`` - preprocessed and extracted data
