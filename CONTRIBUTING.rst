@@ -20,17 +20,18 @@ Set up environment
 Datasets for examples/tutorials
 -------------------------------
 For showcasing functions, please use one of the datasets shipped with moscot.
+If you would like to add a new dataset, please open an issue.
 
-- ``moscot.datasets.bone_marrow`` - multiome data of bone marrow measurements [luecken:21]
-- ``moscot.datasets.c_elegans`` - scRNA-seq time-series dataset of C.elegans embryogenesis :cite:`packer:19`
-- ``moscot.datasets.drosophila`` - embryo of Drosophila melanogaster described in {cite}`Li-spatial:22`
+- ```moscot.datasets.bone_marrow`` <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.bone_marrow.html#moscot.datasets.bone_marrow>`_ - multiome data of bone marrow measurements
+- ```moscot.datasets.c_elegans`` <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.c_elegans.html#moscot.datasets.c_elegans>`_ - scRNA-seq time-series dataset of C.elegans embryogenesis
+- ``moscot.datasets.drosophila`` - embryo of Drosophila melanogaster
 - ``moscot.datasets.hspc`` - CD34+ hematopoietic stem and progenitor cells from 4 healthy human donors
-- ``moscot.datasets.mosta`` - preprocessed and extracted data as provided in {cite}`chen:22`
-- ``moscot.datasets.sciplex`` - perturbation dataset published in {cite}`srivatsan:20`
-- ``moscot.datasets.sim_align`` - spatial transcriptomics simulated dataset as described in {cite}`Jones-spatial:22`
+- ``moscot.datasets.mosta`` - preprocessed and extracted data
+- ``moscot.datasets.sciplex`` - perturbation dataset
+- ``moscot.datasets.sim_align`` - spatial transcriptomics simulated dataset
 - ``moscot.datasets.simulate_data`` - simulate data
-- ``moscot.datasets.tedsim`` - dataset simulated with TedSim {cite}`pan:22`
-- ``moscot.datasets.zebrafish`` - lineage-traced scRNA-seq time-series dataset of Zebrafish heart regeneration {cite}`hu:22`
+- ``moscot.datasets.tedsim`` - dataset simulated with TedSim
+- ``moscot.datasets.zebrafish`` - lineage-traced scRNA-seq time-series dataset of Zebrafish heart regeneration
 
 
 Main examples and tutorials
