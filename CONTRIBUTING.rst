@@ -20,7 +20,7 @@ Set up environment
 Datasets for examples/tutorials
 -------------------------------
 For showcasing functions, please use one of the datasets shipped with moscot.
-If you would like to add a new dataset, please open an issue.
+If you would like to add a new dataset, please open an issue in the moscot repository.
 
 - `moscot.datasets.bone_marrow <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.bone_marrow.html#moscot.datasets.bone_marrow>`_ - multiome data of bone marrow measurements
 - `moscot.datasets.c_elegans <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.c_elegans.html#moscot.datasets.c_elegans>`_ - scRNA-seq time-series dataset of C.elegans embryogenesis
@@ -73,7 +73,7 @@ Make sure to follow the following checklist before merging a new example/tutoria
 
   The first line after title should be short, since this is the hover info displayed when hovering over the tutorial.
 - ensure that citations are in ``docs/references.bib`` and are used within the examples/tutorials.
-  Cite in .rst using the ``{cite}`` directive and in .ipynb files using ``<cite data-cite="...">...</cite>``.
+  Cite in .ipynb files using the ``{cite}`` directive.
   In ``references.bib``, remove the ``url`` and ``eprint`` tags, just leave the ``DOI``.
   The problem is that for ``url``, it gets incorrectly prefixed with ``https://arxiv.org``.
 - ensure when referencing functions/classes/packages/etc., we use RST roles, such as:
