@@ -21,11 +21,11 @@ Datasets for examples/tutorials
 -------------------------------
 For showcasing functions, please use one of the datasets shipped with moscot.
 
-- ``moscot.datasets.bone_marrow`` - multiome data of bone marrow measurements {cite}`luecken:21`
-- ``moscot.datasets.c_elegans`` - scRNA-seq time-series dataset of C.elegans embryogenesis {cite}`packer:19`
+- ``moscot.datasets.bone_marrow`` - multiome data of bone marrow measurements [luecken:21]
+- ``moscot.datasets.c_elegans`` - scRNA-seq time-series dataset of C.elegans embryogenesis :cite:`packer:19`
 - ``moscot.datasets.drosophila`` - embryo of Drosophila melanogaster described in {cite}`Li-spatial:22`
 - ``moscot.datasets.hspc`` - CD34+ hematopoietic stem and progenitor cells from 4 healthy human donors
-- ``moscot.datasets.mosta`` - preprocessed and extracted data as provided in `cite}`chen:22`
+- ``moscot.datasets.mosta`` - preprocessed and extracted data as provided in {cite}`chen:22`
 - ``moscot.datasets.sciplex`` - perturbation dataset published in {cite}`srivatsan:20`
 - ``moscot.datasets.sim_align`` - spatial transcriptomics simulated dataset as described in {cite}`Jones-spatial:22`
 - ``moscot.datasets.simulate_data`` - simulate data
