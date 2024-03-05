@@ -24,14 +24,14 @@ If you would like to add a new dataset, please open an issue.
 
 - `moscot.datasets.bone_marrow <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.bone_marrow.html#moscot.datasets.bone_marrow>`_ - multiome data of bone marrow measurements
 - `moscot.datasets.c_elegans <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.c_elegans.html#moscot.datasets.c_elegans>`_ - scRNA-seq time-series dataset of C.elegans embryogenesis
-- ``moscot.datasets.drosophila`` - embryo of Drosophila melanogaster
-- ``moscot.datasets.hspc`` - CD34+ hematopoietic stem and progenitor cells from 4 healthy human donors
-- ``moscot.datasets.mosta`` - preprocessed and extracted data
-- ``moscot.datasets.sciplex`` - perturbation dataset
-- ``moscot.datasets.sim_align`` - spatial transcriptomics simulated dataset
-- ``moscot.datasets.simulate_data`` - simulate data
-- ``moscot.datasets.tedsim`` - dataset simulated with TedSim
-- ``moscot.datasets.zebrafish`` - lineage-traced scRNA-seq time-series dataset of Zebrafish heart regeneration
+- `moscot.datasets.drosophila <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.drosophila.html#moscot.datasets.drosophila>`_ - embryo of Drosophila melanogaster
+- `moscot.datasets.hspc <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.hspc.html#moscot.datasets.hspc>`_ - CD34+ hematopoietic stem and progenitor cells from 4 healthy human donors
+- `moscot.datasets.mosta <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.mosta.html#moscot.datasets.mosta>`_ - preprocessed and extracted data
+- `moscot.datasets.sciplex <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.sciplex.html#moscot.datasets.sciplex>`_ - perturbation dataset
+- `moscot.datasets.sim_align <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.sim_align.html#moscot.datasets.sim_align>`_ - spatial transcriptomics simulated dataset
+- `moscot.datasets.simulate_data <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.simulate_data.html#moscot.datasets.simulate_data>`_ - simulate data
+- `moscot.datasets.tedsim <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.tedsim.html#moscot.datasets.tedsim>`_ - dataset simulated with TedSim
+- `moscot.datasets.zebrafish <https://moscot.readthedocs.io/en/latest/genapi/moscot.datasets.zebrafish.html#moscot.datasets.zebrafish>`_ - lineage-traced scRNA-seq time-series dataset of Zebrafish heart regeneration
 
 
 Main examples and tutorials
