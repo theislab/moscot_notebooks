@@ -6,10 +6,10 @@ Examples and tutorials are created using `sphinx-gallery <https://sphinx-gallery
 We distinguish between examples and tutorials:
 
 - *Examples* are short explanations of one function (and optionally its related plotting function).
-  See `here <https://https://moscot.readthedocs.io/en/latest/notebooks/examples/plotting/200_cell_transitions.html>`__
+  See `here <https://moscot.readthedocs.io/en/latest/notebooks/examples/plotting/200_cell_transitions.html>`__
   for an example.
 - *Tutorials* are longer vignettes, e.g., showing entire workflows.
-  See `here <https://https://moscot.readthedocs.io/en/latest/notebooks/tutorials/100_lineage.html>`__ for an example.
+  See `here <https://moscot.readthedocs.io/en/latest/notebooks/tutorials/100_lineage.html>`__ for an example.
 
 Set up environment
 ------------------
