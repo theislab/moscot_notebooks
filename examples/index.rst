@@ -7,7 +7,7 @@ Problems
 This section contains various examples how to handle :mod:`moscot.problems`.
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :glob:
 
     problems/*
