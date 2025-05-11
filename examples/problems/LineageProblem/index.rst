@@ -5,4 +5,4 @@ Lineage Problem
    :maxdepth: 1
    :glob:
 
-   *
+   ./*
